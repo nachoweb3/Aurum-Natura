@@ -31,6 +31,7 @@ function renderizarProductos(productos, escasez) {
   // Renderizar productos
   grid.innerHTML = productos.map(producto => `
     <div class="product-card ${producto.featured ? 'featured' : ''}">
+      ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" class="placeholder-foto">` : `<div class="placeholder-product" ${producto.emoji ? 'data-emoji="' + producto.emoji + '"' : ''}>${producto.emoji || '🧺'}</div>`}
       <span class="product-badge">${producto.tagline}</span>
       <h3>${producto.nombre}</h3>
       <div class="product-price">${producto.precio}€<span>+ envío</span></div>
