@@ -1,8 +1,5 @@
-/* 🜂 AURUM NATURA — JavaScript Principal */
+/* AURUM NATURA - JavaScript Principal Animado */
 
-// ============================================
-   CONFIGURACIÓN
-// ============================================
 const CONFIG = {
   whatsapp: '+34640943669',
   colors: {
@@ -11,9 +8,10 @@ const CONFIG = {
   }
 };
 
-// ============================================
-   CARGA DE PRODUCTOS
-// ============================================
+function initFloatingBaskets() {
+  // Desactivado - sin cestas flotantes
+}
+
 async function cargarProductos() {
   try {
     const response = await fetch('data/productos.json');
@@ -28,44 +26,33 @@ function renderizarProductos(productos, escasez) {
   const grid = document.getElementById('productos-grid');
   const mensajeEscasez = document.getElementById('escasez-mensaje');
 
-  // Renderizar productos
   grid.innerHTML = productos.map(producto => `
     <div class="product-card ${producto.featured ? 'featured' : ''}">
-      ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" class="placeholder-foto">` : `<div class="placeholder-product" ${producto.emoji ? 'data-emoji="' + producto.emoji + '"' : ''}>${producto.emoji || '🧺'}</div>`}
-      <span class="product-badge">${producto.tagline}</span>
-      <h3>${producto.nombre}</h3>
-      <div class="product-price">${producto.precio}€<span>+ envío</span></div>
-      <ul class="product-content">
-        ${producto.contenido.map(item => `<li>${item}</li>`).join('')}
-      </ul>
-      <button class="product-cta" onclick="whatsappContact('${producto.id}')">
-        Comprar Ahora
-      </button>
+      ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}">` : `<div class="placeholder-product" data-emoji="${producto.emoji}">${producto.emoji || '🧺'}</div>`}
+      <div class="product-card-content">
+        <span class="product-badge">${producto.tagline}</span>
+        <h3>${producto.nombre}</h3>
+        <div class="product-price">${producto.precio}€<span>+ envío</span></div>
+        <ul class="product-content">
+          ${producto.contenido.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+        <button class="product-cta" onclick="whatsappContact('${producto.id}')">
+          Comprar Ahora
+        </button>
+      </div>
     </div>
   `).join('');
 
-  // Mensaje de escasez
   const totalStock = productos.reduce((sum, p) => sum + p.stock, 0);
   mensajeEscasez.textContent = escasez.mensaje.replace('{stock}', totalStock);
 }
 
-// ============================================
-   WHATSAPP CONTACT
-// ============================================
 function whatsappContact(productoId = '') {
-  let mensaje = CONFIG.whatsapp.mensaje;
-
-  if (productoId) {
-    mensaje = `Hola, quiero comprar la ${productoId}. ¿Está disponible?`;
-  }
-
+  const mensaje = productoId ? `Hola, quiero comprar la ${productoId}. ¿Está disponible?` : 'Hola, quiero acceder a la Caja Aurum. ¿Qué opciones tengo disponibles esta semana?';
   const url = `https://wa.me/${CONFIG.whatsapp.replace('+', '')}?text=${encodeURIComponent(mensaje)}`;
   window.open(url, '_blank');
 }
 
-// ============================================
-   NAV MÓVIL
-// ============================================
 function initNavMobile() {
   const toggle = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
@@ -78,12 +65,9 @@ function initNavMobile() {
   }
 }
 
-// ============================================
-   SCROLL ANIMATIONS (Intersection Observer)
-// ============================================
 function initScrollAnimations() {
   const observerOptions = {
-    threshold: 0.2,
+    threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
 
@@ -100,9 +84,6 @@ function initScrollAnimations() {
   });
 }
 
-// ============================================
-   HEADER SCROLL BEHAVIOR
-// ============================================
 let lastScroll = 0;
 const header = document.getElementById('header');
 
@@ -112,7 +93,6 @@ function initHeaderScroll() {
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    // Hide on scroll down, show on scroll up
     if (currentScroll > lastScroll && currentScroll > 100) {
       header.classList.add('hidden');
     } else {
@@ -121,202 +101,171 @@ function initHeaderScroll() {
 
     lastScroll = currentScroll;
   });
+
+  header.addEventListener('mouseenter', () => {
+    header.classList.remove('hidden');
+  });
 }
 
-// ============================================
-   SMOOTH SCROLL
-// ============================================
 function scrollToCta() {
   document.getElementById('cta-final').scrollIntoView({
     behavior: 'smooth'
   });
 }
 
-// ============================================
-   THREE.JS PARTICLES (Hero Background)
-// ============================================
 function initHeroParticles() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
-
-  // Setup Three.js scene
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas,
-    antialias: true,
-    alpha: true
-  });
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-  // Create particles
-  const particleCount = 100;
-  const geometry = new THREE.BufferGeometry();
-  const positions = new Float32Array(particleCount * 3);
-  const colors = new Float32Array(particleCount * 3);
-
-  for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 20; // x
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 20; // y
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10 - 5; // z
-
-    // Gold color variations
-    const colorMix = Math.random();
-    colors[i * 3] = CONFIG.colors.dorado;
-    colors[i * 3 + 1] = CONFIG.colors.dorado;
-    colors[i * 3 + 2] = colorMix > 0.5 ? CONFIG.colors.dorado : CONFIG.colors.doradoClaro;
-  }
-
-  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-  const material = new THREE.PointsMaterial({
-    size: 0.15,
-    vertexColors: true,
-    transparent: true,
-    opacity: 0.8,
-    sizeAttenuation: true
-  });
-
-  const particles = new THREE.Points(geometry, material);
-  scene.add(particles);
-
-  camera.position.z = 5;
-
-  // Mouse interaction
-  let mouseX = 0;
-  let mouseY = 0;
-
-  document.addEventListener('mousemove', (event) => {
-    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-  });
-
-  // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-
-    // Gentle floating motion
-    const positions = particles.geometry.attributes.position.array;
-    for (let i = 0; i < particleCount; i++) {
-      const i3 = i * 3;
-
-      // Vertical floating
-      positions[i3 + 1] += Math.sin(Date.now() * 0.001 + i) * 0.002;
-
-      // Mouse influence
-      positions[i3 + 1] += (mouseX * 0.5 - positions[i3 + 1]) * 0.02;
-      positions[i3 + 1] += (mouseY * 0.5 - positions[i3 + 1]) * 0.02;
-    }
-
-    particles.geometry.attributes.position.needsUpdate = true;
-
-    // Slow rotation
-    particles.rotation.y += 0.0005;
-    particles.rotation.x += 0.0002;
-
-    renderer.render(scene, camera);
-  }
-
-  animate();
-
-  // Resize handler
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
+  // No usado - ahora usamos video
 }
 
-// ============================================
-   FALLBACK: Three.js no disponible
-// ============================================
-function initFallbackParticles() {
-  const canvas = document.getElementById('hero-canvas');
-  if (!canvas) return;
+function initParallaxProducts() {
+  const products = document.querySelectorAll('.product-card');
 
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const particles = [];
-
-  for (let i = 0; i < 50; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 3 + 1,
-      speedY: Math.random() * 0.5 + 0.2,
-      opacity: Math.random() * 0.5 + 0.3
-    });
-  }
-
-  function animateFallback() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
-      ctx.fill();
-
-      p.y -= p.speedY;
-
-      if (p.y < -10) {
-        p.y = canvas.height + 10;
-        p.x = Math.random() * canvas.width;
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    products.forEach((card, index) => {
+      const speed = 0.05 * (index + 1);
+      const rect = card.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        card.style.transform = `translateY(${scrollY * speed}px)`;
       }
     });
-
-    requestAnimationFrame(animateFallback);
-  }
-
-  animateFallback();
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
   });
 }
 
-// ============================================
-   INITIALIZATION
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-  // Cargar productos
-  cargarProductos();
+function initTiltEffect() {
+  const cards = document.querySelectorAll('.product-card');
 
-  // Inicializar navegación móvil
-  initNavMobile();
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
 
-  // Inicializar scroll animations
-  initScrollAnimations();
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+    });
 
-  // Inicializar header scroll
-  initHeaderScroll();
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
 
-  // Inicializar partículas (Three.js o fallback)
-  if (typeof THREE !== 'undefined') {
-    initHeroParticles();
-  } else {
-    console.log('Three.js no disponible, usando fallback');
-    initFallbackParticles();
+  initHeroVideoInteractive();
+}
+
+function initHeroVideoInteractive() {
+  const hero = document.querySelector('.hero');
+  const heroVideo = document.querySelector('.hero-video');
+
+  if (!hero || !heroVideo) return;
+
+  let currentTranslateX = 0;
+  let currentTranslateY = 0;
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    currentTranslateX = (x - 0.5) * 6;
+    currentTranslateY = (y - 0.5) * 3;
+
+    const scrollY = window.pageYOffset;
+    const scale = 1.1 + (scrollY * 0.0001);
+    const translateY = scrollY * 0.1;
+
+    heroVideo.style.transform = `translate(-50%, -50%) scale(${scale}) translate(${currentTranslateX}%, ${translateY + currentTranslateY}px)`;
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    const scrollY = window.pageYOffset;
+    const scale = 1.1 + (scrollY * 0.0001);
+    const translateY = scrollY * 0.1;
+    heroVideo.style.transform = `translate(-50%, -50%) scale(${scale}) translateY(${translateY}px)`;
+  });
+}
+
+function initTypingEffect() {
+  const heroTitle = document.querySelector('.hero-title');
+  if (!heroTitle) return;
+
+  const text = heroTitle.textContent;
+  heroTitle.textContent = '';
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      heroTitle.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 50);
+    }
   }
+
+  setTimeout(type, 1000);
+}
+
+function initCounterAnimation() {
+  const stockElement = document.getElementById('escasez-mensaje');
+  if (!stockElement) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const text = stockElement.textContent;
+        const numbers = text.match(/\d+/g);
+        if (numbers) {
+          numbers.forEach(num => {
+            animateCounter(stockElement, num);
+          });
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(stockElement);
+}
+
+function animateCounter(element, target) {
+  let current = 0;
+  const increment = target / 50;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = element.textContent.replace(/\d+/, Math.floor(target));
+      clearInterval(timer);
+    }
+  }, 30);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initFloatingBaskets();
+  cargarProductos();
+  initNavMobile();
+  initScrollAnimations();
+  initHeaderScroll();
+  initParallaxProducts();
+  initTiltEffect();
+  initTypingEffect();
+  initCounterAnimation();
+  initHeroVideoParallax();
+  initHeroVideoInteractive();
 });
 
-// ============================================
-   LOADER (Three.js desde CDN)
-// ============================================
-const threeScript = document.createElement('script');
-threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-threeScript.onload = () => {
-  console.log('Three.js cargado');
-  initHeroParticles();
-};
-threeScript.onerror = () => {
-  console.log('Error cargando Three.js, usando fallback');
-  initFallbackParticles();
-};
-document.head.appendChild(threeScript);
+function initHeroVideoParallax() {
+  const hero = document.querySelector('.hero');
+  const heroVideo = document.querySelector('.hero-video');
+
+  if (!hero || !heroVideo) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    if (scrollY < window.innerHeight) {
+      const scale = 1.1 + (scrollY * 0.0001);
+      const translateY = scrollY * 0.1;
+      heroVideo.style.transform = `translate(-50%, -50%) scale(${scale}) translateY(${translateY}px)`;
+    }
+  });
+}
