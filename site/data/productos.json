@@ -11,6 +11,7 @@
         "Hierbas naturales"
       ],
       "imagen": "img/productos/caja-basica.jpg",
+      "emoji": "🧺",
       "disponible": true,
       "stock": 10,
       "featured": false
@@ -28,6 +29,7 @@
         "Nota firmada"
       ],
       "imagen": "img/productos/caja-premium.jpg",
+      "emoji": "🥇",
       "disponible": true,
       "stock": 5,
       "featured": true
@@ -44,6 +46,7 @@
         "Detalles especiales"
       ],
       "imagen": "img/productos/caja-elite.jpg",
+      "emoji": "🥉",
       "disponible": true,
       "stock": 2,
       "featured": false

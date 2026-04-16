@@ -761,3 +761,110 @@ a:hover {
 
 .mt-lg { margin-top: var(--espaciado-lg); }
 .mb-lg { margin-bottom: var(--espaciado-lg); }
+
+/* ============================================
+   PLACEHOLDERS ELEGANTES (CSS Gradients)
+   ============================================ */
+.placeholder-logo {
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--color-dorado);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 48px;
+  background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-claro) 100%);
+}
+
+.placeholder-logo span {
+  color: var(--color-negro);
+}
+
+.placeholder-product {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #4a5d2a 0%, #2a3d1a 100%);
+}
+
+.placeholder-product::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    transparent 10px,
+    rgba(212, 175, 55, 0.1) 10px,
+    transparent
+  );
+  animation: patternMove 20s linear infinite;
+}
+
+.placeholder-product::after {
+  content: attr(data-emoji);
+  font-size: 64px;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes patternMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.placeholder-hero {
+  background: linear-gradient(180deg, var(--color-negro) 0%, var(--color-negro-suave) 50%, var(--color-negro) 100%);
+}
+
+.placeholder-hero::after {
+  content: '🜂';
+  font-size: 128px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
+
+.placeholder-foto {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--color-verde-tierra) 0%, #3a4d22 100%);
+}
+
+/* Imagen no disponible fallback */
+img[src=""], img:not([src]) {
+  display: none;
+}
+
+/* Mostrar placeholder cuando imagen no carga */
+.product-card img:not([src]) ~ .product-badge {
+  display: block;
+}
+
+.product-card img:not([src]) ~ .product-badge ~ * {
+  display: block;
+  text-align: center;
+}

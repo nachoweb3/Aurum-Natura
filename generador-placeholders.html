@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de Placeholders — Aurum Natura</title>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      padding: 40px;
+      text-align: center;
+    }
+    .placeholder-preview {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+    .placeholder {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #a0a0a0;
+      position: relative;
+      overflow: hidden;
+    }
+    .placeholder::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(212, 175, 55, 0.1) 10px,
+        transparent 10px,
+        rgba(212, 175, 55, 0.1) 10px,
+        transparent 10px,
+        rgba(212, 175, 55, 0.1) 10px,
+        transparent 10px,
+        rgba(212, 175, 55, 0.1) 10px,
+        transparent
+      );
+      animation: patternMove 20s linear infinite;
+    }
+    @keyframes patternMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+    .placeholder-logo {
+      background: linear-gradient(135deg, #d4af37 0%, #f4cf57 100%);
+    }
+    .placeholder-product {
+      background: linear-gradient(135deg, #4a5d2a 0%, #2a3d1a 100%);
+    }
+    .placeholder-hero {
+      background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    }
+    .placeholder-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: 700;
+      color: #d4af37;
+      z-index: 2;
+    }
+    .code {
+      font-family: 'Courier New', monospace;
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 12px;
+      color: #a0a0a0;
+    }
+    button {
+      background: linear-gradient(135deg, #d4af37 0%, #f4cf57 100%);
+      color: #0a0a0a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>🜂 Placeholders Elegantes — Aurum Natura</h1>
+
+  <!-- Logo -->
+  <div class="placeholder-preview">
+    <h2>Logo Placeholder</h2>
+    <div class="placeholder placeholder-logo">
+      <span class="placeholder-text">🜂</span>
+    </div>
+    <div class="code">Logo SVG inline en HTML</div>
+    <button onclick="copyLogo()">Copiar Logo HTML</button>
+  </div>
+
+  <!-- Caja Básica -->
+  <div class="placeholder-preview">
+    <h2>Caja Aurum — Básica</h2>
+    <div class="placeholder placeholder-product">
+      <span class="placeholder-text">🧺</span>
+    </div>
+    <div class="code">caja-basica.jpg → 300x250px</div>
+  </div>
+
+  <!-- Caja Premium -->
+  <div class="placeholder-preview">
+    <h2>Caja Aurum — Premium (Edición Fundadores)</h2>
+    <div class="placeholder placeholder-product">
+      <span class="placeholder-text">🥇</span>
+    </div>
+    <div class="code">caja-premium.jpg → 300x250px</div>
+  </div>
+
+  <!-- Caja Élite -->
+  <div class="placeholder-preview">
+    <h2>Caja Aurum — Élite</h2>
+    <div class="placeholder placeholder-product">
+      <span class="placeholder-text">🥉</span>
+    </div>
+    <div class="code">caja-elite.jpg → 300x250px</div>
+  </div>
+
+  <!-- Hero Background -->
+  <div class="placeholder-preview">
+    <h2>Hero Background</h2>
+    <div class="placeholder placeholder-hero">
+      <span class="placeholder-text">🜂</span>
+    </div>
+    <div class="code">hero-bg.jpg → 1920x1080px</div>
+  </div>
+
+  <!-- Extras -->
+  <div class="placeholder-preview">
+    <h2>Extras (Hierbas, Huevos, Verdura)</h2>
+    <div class="placeholder placeholder-product">
+      <span class="placeholder-text">🌿</span>
+    </div>
+    <div class="code">hierbas-aromaticas.jpg → 800x600px</div>
+  </div>
+
+  <script>
+    function copyLogo() {
+      const logoSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="35" fill="none" stroke="#d4af37" stroke-width="2"/>
+        <text x="40" y="55" text-anchor="middle" font-family="serif" font-size="48" font-weight="bold" fill="#d4af37">🜂</text>
+        <path d="M40 20 Q40 30 35 40 Q35 45 40 40" stroke="#d4af37" stroke-width="1.5" fill="none"/>
+      </svg>`;
+      navigator.clipboard.writeText(logoSVG);
+      alert('¡Logo SVG copiado! Pégalo en el HTML');
+    }
+  </script>
+</body>
+</html>
