@@ -12,6 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
@@ -70,29 +71,47 @@
     </div>
   </section>
 
-  <!-- FILMO DE FINCA (Placeholder) -->
-  <section class="section section-dark">
+  <!-- FILMO DE FINCA -->
+  <section class="section section-dark" style="background: #000; overflow: hidden;">
     <div class="container">
-      <div class="section-title text-center">
+      <div class="section-title text-center scroll-animate">
         <h2>Nuestra Finca</h2>
         <p class="subtitle">Donde todo comienza. Donde respetamos el proceso.</p>
       </div>
 
       <div style="
-        background: var(--color-negro-suave);
-        border: 2px dashed rgba(212, 175, 55, 0.3);
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: var(--espaciado-xl) auto 0;
         border-radius: 16px;
-        padding: 80px 20px;
-        text-align: center;
-        margin-top: var(--espaciado-lg);
+        overflow: hidden;
+        border: 2px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 20px 60px rgba(212, 175, 55, 0.1);
       ">
-        <p style="color: var(--color-dorado); font-size: 18px; margin-bottom: 10px;">
-          📽 VIDEO PLACEHOLDER
-        </p>
-        <p style="color: var(--color-gris-texto); font-size: 14px;">
-          Coloca aquí tu video de finca (MP4, 1920x1080px)<br>
-          Sugerencia: Recorrido de las instalaciones, procesos naturales, animales de corral
-        </p>
+        <video autoplay muted loop playsinline style="
+          width: 100%;
+          height: auto;
+          display: block;
+          filter: brightness(0.6) contrast(1.1) saturate(1.2);
+        ">
+          <source src="assets/img/extras/VIDEOHEADER.mp4" type="video/mp4">
+        </video>
+        <div style="
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 30px;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        ">
+          <p style="color: var(--color-dorado); font-size: 18px; font-weight: 600;">
+            🌱 Finca Aurum — Producción Certificada
+          </p>
+          <p style="color: var(--color-gris-texto); font-size: 14px; margin: 0;">
+            Sin pesticidas • Sin procesos artificiales • Solo naturaleza
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -193,6 +212,47 @@
     </div>
   </section>
 
+  <!-- GALERÍA DE FINCA -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Nuestra Finca</h2>
+        <p class="subtitle">Donde todo comienza</p>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="gallery-filter active" data-category="all">Todos</button>
+        <button class="gallery-filter" data-category="huerto">Huerto</button>
+        <button class="gallery-filter" data-category="gallinas">Gallinas</button>
+        <button class="gallery-filter" data-category="procesos">Procesos</button>
+      </div>
+
+      <div class="gallery-farm" id="farm-gallery">
+        <div class="gallery-farm-item" data-category="huerto">
+          <img src="assets/img/extras/Hero — Finca de Origen.png" alt="Huerto">
+          <div class="gallery-farm-overlay">
+            <h4>Huerto Orgánico</h4>
+            <p>Verduras cultivadas sin pesticidas</p>
+          </div>
+        </div>
+        <div class="gallery-farm-item" data-category="gallinas">
+          <img src="assets/img/productos/caja-premium.png" alt="Gallinas">
+          <div class="gallery-farm-overlay">
+            <h4>Gallinas de Corral</h4>
+            <p>Huevos camperos de calidad</p>
+          </div>
+        </div>
+        <div class="gallery-farm-item" data-category="procesos">
+          <img src="assets/img/extras/858ad7e6-3461-4595-ba59-689831c5adc5.png" alt="Procesos">
+          <div class="gallery-farm-overlay">
+            <h4>Procesos Naturales</h4>
+            <p>Respetando los ciclos de la tierra</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EQUIPO -->
   <section class="section section-light">
     <div class="container">
@@ -246,6 +306,44 @@
     </div>
   </section>
 
+  <!-- TESTIMONIOS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <p class="subtitle">Experiencias reales de la comunidad Aurum</p>
+      </div>
+
+      <div class="gallery-testimonials">
+        <div class="gallery-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">MJ</div>
+            <div class="testimonial-name">María José</div>
+            <div class="testimonial-role">Cliente desde 3 meses</div>
+            <p class="testimonial-text">"No es solo la calidad. Es la sensación de estar comiendo algo real otra vez."</p>
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">CR</div>
+            <div class="testimonial-name">Carlos Ruiz</div>
+            <div class="testimonial-role">Cliente desde 6 meses</div>
+            <p class="testimonial-text">"La diferencia es abismal. Ya no puedo volver a comer productos industriales."</p>
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">AL</div>
+            <div class="testimonial-name">Ana López</div>
+            <div class="testimonial-role">Cliente desde 2 meses</div>
+            <p class="testimonial-text">"Cada caja es una sorpresa. Me encanta descubrir qué hay esta semana."</p>
+            <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
@@ -256,40 +354,15 @@
   </footer>
 
   <!-- JavaScript -->
+  <script src="js/common.js"></script>
+  <script src="js/gallery.js"></script>
+
   <script>
-    // Navegación móvil
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    if (toggle && navLinks) {
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-      });
-    }
+    // Initialize farm gallery with filters
+    initGallery('farm', '#farm-gallery');
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
-
-    // Header scroll
-    let lastScroll = 0;
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        header.classList.add('hidden');
-      } else {
-        header.classList.remove('hidden');
-      }
-      lastScroll = currentScroll;
-    });
+    // Initialize testimonials gallery
+    initGallery('testimonials', '.gallery-testimonials .gallery-grid');
   </script>
 </body>
 </html>
