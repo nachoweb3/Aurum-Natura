@@ -12,6 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -88,6 +89,19 @@
 
       <div class="escasez-info">
         <p id="escasez-mensaje"></p>
+      </div>
+
+      <!-- Galería de Productos -->
+      <div class="gallery-product" style="margin-top: 60px;">
+        <div class="section-title">
+          <h2>Galería de Productos</h2>
+          <p class="subtitle">Descubre nuestras cajas en detalle</p>
+        </div>
+        <div class="gallery-grid" id="product-gallery-grid">
+          <img src="assets/img/productos/caja-basica.png" alt="Caja Básica" onclick="gallery.openLightbox(this.src)">
+          <img src="assets/img/productos/caja-premium.png" alt="Caja Premium" onclick="gallery.openLightbox(this.src)">
+          <img src="assets/img/productos/caja-elite.png" alt="Caja Élite" onclick="gallery.openLightbox(this.src)">
+        </div>
       </div>
     </div>
   </section>
@@ -202,6 +216,64 @@
     </div>
   </section>
 
+  <!-- PRODUCT MODAL -->
+  <div class="product-modal" id="productModal">
+    <div class="product-modal-content">
+      <button class="product-modal-close" onclick="closeProductModal()">✕</button>
+      <div class="product-modal-body">
+        <div class="product-modal-hero">
+          <div class="product-modal-image">
+            <img id="modalImage" src="" alt="">
+          </div>
+          <div class="product-modal-details">
+            <div class="product-modal-tagline" id="modalTagline"></div>
+            <h2 id="modalTitle"></h2>
+            <div class="product-modal-price">
+              <span id="modalPrice"></span>€
+              <span>+ envío</span>
+            </div>
+            <div class="product-modal-description">
+              <h3>🌟 Descripción Premium</h3>
+              <p id="modalDescription"></p>
+            </div>
+            <div class="product-modal-content-list">
+              <h3>📦 Contenido de esta Caja</h3>
+              <ul id="modalContent"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-modal-media">
+          <h3>🎥 Video del Producto</h3>
+          <div class="product-modal-video-container">
+            <video autoplay muted loop playsinline style="width: 100%; height: auto; display: block;">
+              <source src="assets/img/extras/VIDEOHEADER.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <h3>📷 Galería de Imágenes</h3>
+          <div class="product-modal-gallery">
+            <img src="assets/img/productos/caja-basica.png" alt="Caja Básica">
+            <img src="assets/img/productos/caja-premium.png" alt="Caja Premium">
+            <img src="assets/img/productos/caja-elite.png" alt="Caja Élite">
+          </div>
+        </div>
+
+        <div class="product-modal-cta">
+          <button class="hero-cta" onclick="whatsappFromModal()">
+            Comprar Esta Caja
+          </button>
+          <p style="margin-top: 20px; color: var(--color-gris-texto); font-size: 14px;">
+            ✅ Garantía de satisfacción 100%
+          </p>
+          <p style="color: var(--color-gris-texto); font-size: 14px;">
+            🚚 Entrega en 24-48 horas
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-content">
@@ -212,34 +284,46 @@
   </footer>
 
   <!-- JavaScript -->
+  <script src="js/common.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/gallery.js"></script>
   <script>
-    // Cargar productos
-    async function cargarProductos() {
-      try {
-        const response = await fetch('data/productos.json');
-        const data = await response.json();
-        renderizarProductos(data.productos, data.escasez);
-      } catch (error) {
-        console.error('Error al cargar productos:', error);
-      }
-    }
+    // Initialize product gallery
+    initGallery('product', '#product-gallery-grid');
 
+    // Modificar función de renderizado para agregar botón de carrito
     function renderizarProductos(productos, escasez) {
       const grid = document.getElementById('productos-grid');
       const mensajeEscasez = document.getElementById('escasez-mensaje');
 
       grid.innerHTML = productos.map(producto => `
-        <div class="product-card ${producto.featured ? 'featured' : ''}">
+        <div class="product-card ${producto.featured ? 'featured' : ''}" onclick="openProductModal('${producto.id}')" style="cursor: pointer;">
           <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px 12px 0 0;">
           <span class="product-badge">${producto.tagline}</span>
           <h3>${producto.nombre}</h3>
           <div class="product-price">${producto.precio}€<span>+ envío</span></div>
           <ul class="product-content">
-            ${producto.contenido.map(item => `<li>${item}</li>`).join('')}
+            ${producto.contenido.slice(0, 4).map(item => `<li>${item}</li>`).join('')}
+            ${producto.contenido.length > 4 ? `<li style="color: var(--color-dorado);">+${producto.contenido.length - 4} más...</li>` : ''}
           </ul>
-          <button class="product-cta" onclick="whatsappContact('${producto.id}')">
-            Comprar Ahora
+          <button class="product-cta" onclick="event.stopPropagation(); cart.addItem(${JSON.stringify(producto).replace(/"/g, "'")})">
+            Añadir a la Cesta
           </button>
+          <div style="text-align: center; margin-top: 12px;">
+            <button onclick="event.stopPropagation(); openProductModal('${producto.id}')" style="
+              background: transparent;
+              border: 1px solid var(--color-dorado);
+              color: var(--color-dorado);
+              padding: 8px 16px;
+              border-radius: 6px;
+              cursor: pointer;
+              font-size: 12px;
+              transition: all 0.3s ease;
+            " onmouseover="this.style.background='var(--color-dorado)'; this.style.color='var(--color-negro)';"
+               onmouseout="this.style.background='transparent'; this.style.color='var(--color-dorado)';">
+              Ver Detalles
+            </button>
+          </div>
         </div>
       `).join('');
 
@@ -254,7 +338,7 @@
     function whatsappContact(productoId = '') {
       let mensaje = 'Hola, quiero acceder a la Caja Aurum. ¿Qué opciones tengo disponibles esta semana?';
       if (productoId) {
-        mensaje = `Hola, quiero comprar la ${productoId}. ¿Está disponible?`;
+        mensaje = `Hola, quiero comprar la ${productoId}. ¿Está disponible esta semana?`;
       }
       const url = `https://wa.me/34640943669?text=${encodeURIComponent(mensaje)}`;
       window.open(url, '_blank');
@@ -292,6 +376,51 @@
         header.classList.remove('hidden');
       }
       lastScroll = currentScroll;
+    });
+
+    // Modal Functions
+    function openProductModal(productId) {
+      const modal = document.getElementById('productModal');
+      const producto = allProductos.find(p => p.id === productId);
+
+      if (!producto) return;
+
+      document.getElementById('modalImage').src = producto.imagen;
+      document.getElementById('modalTagline').textContent = producto.tagline;
+      document.getElementById('modalTitle').textContent = producto.nombre;
+      document.getElementById('modalPrice').textContent = producto.precio;
+      document.getElementById('modalDescription').textContent = producto.descripcion;
+
+      const contentList = document.getElementById('modalContent');
+      contentList.innerHTML = producto.contenido.map(item => `<li>${item}</li>`).join('');
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function whatsappFromModal() {
+      const title = document.getElementById('modalTitle').textContent;
+      whatsappContact(title);
+    }
+
+    // Close modal on outside click
+    document.getElementById('productModal').addEventListener('click', (e) => {
+      if (e.target.classList.contains('product-modal')) {
+        closeProductModal();
+      }
+    });
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductModal();
+      }
     });
 
     // Init
