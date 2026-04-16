@@ -812,10 +812,227 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .editorial-info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   SUPPORT CARDS
+   ============================================ */
+
+.support-grid {
+  display: grid;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* FAQ Accordion */
+.support-faq {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.faq-item {
+  background: var(--color-negro-suave);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-blanco);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.faq-icon {
+  color: var(--color-dorado);
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 20px;
+}
+
+.faq-item.active {
+  border-color: var(--color-dorado);
+}
+
+.faq-answer p {
+  font-size: 14px;
+  color: var(--color-gris-texto);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Contact Cards */
+.support-contact {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contact-card {
+  background: var(--color-negro-suave);
+  border: var(--support-card-border);
+  border-radius: var(--support-card-radius);
+  padding: 40px 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--support-card-shadow);
+}
+
+.contact-card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--support-card-shadow-hover);
+  border-color: var(--color-dorado);
+}
+
+.contact-icon {
+  font-size: 48px;
+  color: var(--color-dorado);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.contact-card h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-blanco);
+  margin-bottom: 12px;
+}
+
+.contact-card p {
+  font-size: 14px;
+  color: var(--color-gris-texto);
+  margin-bottom: 24px;
+}
+
+.contact-btn {
+  background: var(--cart-btn-gradient);
+  color: var(--color-negro);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Shipping Cards */
+.support-shipping {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.shipping-card {
+  background: var(--color-negro-suave);
+  border: var(--support-card-border);
+  border-radius: var(--support-card-radius);
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+  box-shadow: var(--support-card-shadow);
+}
+
+.shipping-card:hover {
+  border-color: var(--color-dorado);
+  box-shadow: var(--support-card-shadow-hover);
+}
+
+.shipping-icon {
+  font-size: 40px;
+  color: var(--color-dorado);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.shipping-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-blanco);
+  margin-bottom: 12px;
+}
+
+.shipping-info {
+  font-size: 14px;
+  color: var(--color-gris-texto);
+  line-height: 1.6;
+}
+
+.shipping-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--color-dorado);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 12px;
+  border: 1px solid var(--color-dorado);
+}
+
+.shipping-card.premium .shipping-badge {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .support-faq,
+  .support-contact,
+  .support-shipping {
     grid-template-columns: 1fr;
   }
+
+  .contact-card,
+  .shipping-card {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-contact,
+  .support-shipping {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .support-contact,
+  .support-shipping {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
   .editorial-featured {
     min-height: 300px;
