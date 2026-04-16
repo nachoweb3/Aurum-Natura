@@ -31,6 +31,13 @@
   --support-card-shadow: 0 4px 20px rgba(0,0,0,0.3);
   --support-card-shadow-hover: 0 8px 30px rgba(212, 175, 55, 0.3);
 
+  /* Lightbox System */
+  --lightbox-nav-offset: -80px;
+  --lightbox-nav-size: 50px;
+  --lightbox-close-size: 40px;
+  --lightbox-padding: 20px;
+  --lightbox-content-max-width: 90%;
+
   /* Common transitions */
   --transition-fast: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --transition-medium: 0.5s ease;
@@ -101,7 +108,7 @@
   z-index: 10000;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: var(--lightbox-padding);
   animation: fadeInLightbox 0.3s ease-out;
 }
 
@@ -119,7 +126,7 @@
 }
 
 .lightbox-content {
-  max-width: 90%;
+  max-width: var(--lightbox-content-max-width);
   max-height: 90vh;
   position: relative;
   animation: slideUpLightbox 0.4s ease-out;
@@ -144,8 +151,8 @@
   background: rgba(212, 175, 55, 0.2);
   border: 2px solid var(--color-dorado);
   color: var(--color-dorado);
-  width: 50px;
-  height: 50px;
+  width: var(--lightbox-nav-size);
+  height: var(--lightbox-nav-size);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -162,10 +169,15 @@
   transform: translateY(-50%) scale(1.1);
 }
 
+.lightbox-nav:hover:focus-visible {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 4px;
+}
+
 .lightbox-nav.prev {
-  left: -80px;
+  left: var(--lightbox-nav-offset);
 }
 
 .lightbox-nav.next {
-  right: -80px;
+  right: var(--lightbox-nav-offset);
 }
