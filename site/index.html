@@ -12,6 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -62,7 +63,10 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <canvas id="hero-canvas"></canvas>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" playsinline>
+      <source src="assets/img/extras/VIDEOHEADER.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 class="hero-title">Aurum Natura — El Oro de la Tierra</h1>
       <p class="hero-subtitle">
@@ -88,6 +92,74 @@
         <p class="impact-highlight">
           Es tierra. Es proceso. Es origen.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN DE PRODUCCIÓN -->
+  <section class="editorial-band section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Información de Producción</h2>
+        <p class="subtitle">Transparencia total sobre origen y tiempos</p>
+      </div>
+
+      <div class="editorial-info-cards">
+        <div class="editorial-card">
+          <span class="editorial-card-icon">📅</span>
+          <h3>Corte de Pedidos</h3>
+          <p>Los pedidos se cierran cada jueves a las 18:00 para la semana siguiente. Esto permite preparar cajas frescas con exactitud.</p>
+        </div>
+
+        <div class="editorial-card">
+          <span class="editorial-card-icon">🚚</span>
+          <h3>Entrega Semanal</h3>
+          <p>Las cajas se entregan de jueves a domingo según tu zona. Siempre frescas, recién preparadas.</p>
+        </div>
+
+        <div class="editorial-card">
+          <span class="editorial-card-icon">🔄</span>
+          <h3>Contenido Variable</h3>
+          <p>Cada semana, la tierra decide qué hay. Respetamos la temporada. Nunca recibes lo mismo dos semanas seguidas.</p>
+        </div>
+
+        <div class="editorial-card">
+          <span class="editorial-card-icon">📦</span>
+          <h3>Empaque Premium</h3>
+          <p>Cajas de madera certificada, papel de seda y nota firmada. Cuidamos cada detalle de la experiencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDA DESTACADA -->
+  <section class="editorial-featured" style="background-image: url('assets/img/extras/Hero — Finca de Origen.png');">
+    <div class="editorial-featured-content">
+      <h2>No todo el mundo debería comer así.</h2>
+      <p class="subtitle">Porque cuando entiendes, no puedes volver atrás.</p>
+      <p>Esto no es comida industrial. No es producción masiva. No es supermercado.</p>
+      <button class="hero-cta" onclick="document.getElementById('cta-final').scrollIntoView({ behavior: 'smooth' })">
+        Acceder a la Caja Aurum
+      </button>
+    </div>
+  </section>
+
+  <!-- BANDA STORYTELLING -->
+  <section class="editorial-band section-dark">
+    <div class="container">
+      <div class="editorial-story quote">
+        <div class="editorial-story-content">
+          <p class="editorial-quote">
+            "Porque cuando entiendes lo que estás poniendo en tu cuerpo, ya no puedes volver atrás."
+          </p>
+          <p class="editorial-story-text">
+            Es tierra. Es proceso. Es origen. Y cuando lo pruebas, todo cambia.
+            No es solo la calidad. Es la sensación de estar conectado con lo real.
+          </p>
+        </div>
+        <div class="editorial-story-image">
+          <img src="assets/img/productos/caja-premium.png" alt="Caja Aurum Premium">
+        </div>
       </div>
     </div>
   </section>
@@ -276,6 +348,39 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/gallery.js"></script>
+
+  <script>
+    // Initialize product gallery
+    initGallery('product', '#product-gallery-grid');
+
+    // Modificar función de renderizado para agregar botón de carrito
+    function renderizarProductos(productos, escasez) {
+      const grid = document.getElementById('productos-grid');
+      const mensajeEscasez = document.getElementById('escasez-mensaje');
+
+      grid.innerHTML = productos.map(producto => `
+        <div class="product-card ${producto.featured ? 'featured' : ''}">
+          ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}">` : `<div class="placeholder-product" data-emoji="${producto.emoji}">${producto.emoji || '🧺'}</div>`}
+          <div class="product-card-content">
+            <span class="product-badge">${producto.tagline}</span>
+            <h3>${producto.nombre}</h3>
+            <div class="product-price">${producto.precio}€<span>+ envío</span></div>
+            <ul class="product-content">
+              ${producto.contenido.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            <button class="product-cta" onclick="cart.addItem(${JSON.stringify(producto).replace(/"/g, "'")})">
+              Añadir a la Cesta
+            </button>
+          </div>
+        </div>
+      `).join('');
+
+      const totalStock = productos.reduce((sum, p) => sum + p.stock, 0);
+      mensajeEscasez.textContent = escasez.mensaje.replace('{stock}', totalStock);
+    }
+  </script>
 </body>
 </html>
