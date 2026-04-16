@@ -12,6 +12,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
 
@@ -43,105 +44,154 @@
   </header>
 
   <!-- HERO CONTACTO -->
-  <section class="hero" style="min-height: 50vh;">
-    <div class="hero-content">
+  <section class="hero" style="min-height: 60vh; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
+    <div class="hero-content scroll-animate">
       <h1 class="hero-title">Contacta con Nosotros</h1>
-      <p class="hero-subtitle">
-        ¿Tienes dudas? ¿Quieres más información?<br>
-        Estamos aquí para ayudarte.
+      <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto 32px;">
+        ¿Tienes dudas sobre las Cajas Aurum? ¿Quieres más información sobre nuestros productos?
+        Estamos aquí para ayudarte a acceder a la mejor comida de origen.
       </p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <button class="hero-cta" onclick="whatsappContact()" style="display: inline-block;">
+          WhatsApp Directo
+        </button>
+        <a href="#form" style="
+          display: inline-block;
+          padding: 20px 48px;
+          border: 2px solid var(--color-dorado);
+          color: var(--color-dorado);
+          border-radius: 12px;
+          text-decoration: none;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          transition: all 0.3s ease;
+        " onmouseover="this.style.background='var(--color-dorado)'; this.style.color='var(--color-negro)';"
+           onmouseout="this.style.background='transparent'; this.style.color='var(--color-dorado)';">
+          Formulario
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- FORMULARIO -->
-  <section class="section section-light">
+  <section class="section section-light" id="form">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title scroll-animate">
         <h2>Envíanos un Mensaje</h2>
-        <p class="subtitle">Te responderemos en menos de 2 horas.</p>
+        <p class="subtitle">Te responderemos en menos de 2 horas. Garantizado.</p>
       </div>
 
-      <form id="contact-form" style="
-        max-width: 600px;
+      <form id="contact-form" class="scroll-animate" style="
+        max-width: 700px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: var(--espaciado-md);
-      ">
+        background: var(--color-negro-suave);
+        border: 2px solid rgba(212, 175, 55, 0.1);
+        border-radius: 20px;
+        padding: var(--espaciado-xl);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+      " onmouseover="this.style.borderColor='rgba(212, 175, 55, 0.3)';"
+           onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.1)';">
 
-        <div style="
-          background: var(--color-negro-suave);
-          border: 1px solid rgba(212, 175, 55, 0.1);
-          border-radius: 12px;
-          padding: var(--espaciado-lg);
-        ">
-
-          <div style="margin-bottom: var(--espaciado-md);">
-            <label for="nombre" style="
-              display: block;
-              color: var(--color-gris-texto);
-              font-size: 14px;
-              margin-bottom: var(--espaciado-sm);
-              font-weight: 500;
-            ">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" required style="
-              width: 100%;
-              padding: 12px 16px;
-              background: var(--color-negro);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              border-radius: 8px;
-              color: var(--color-blanco);
-              font-size: 16px;
-              font-family: var(--font-body);
-            ">
-          </div>
-
-          <div style="margin-bottom: var(--espaciado-md);">
-            <label for="email" style="
-              display: block;
-              color: var(--color-gris-texto);
-              font-size: 14px;
-              margin-bottom: var(--espaciado-sm);
-              font-weight: 500;
-            ">Email</label>
-            <input type="email" id="email" name="email" required style="
-              width: 100%;
-              padding: 12px 16px;
-              background: var(--color-negro);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              border-radius: 8px;
-              color: var(--color-blanco);
-              font-size: 16px;
-              font-family: var(--font-body);
-            ">
-          </div>
-
-          <div style="margin-bottom: var(--espaciado-md);">
-            <label for="mensaje" style="
-              display: block;
-              color: var(--color-gris-texto);
-              font-size: 14px;
-              margin-bottom: var(--espaciado-sm);
-              font-weight: 500;
-            ">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="5" required style="
-              width: 100%;
-              padding: 12px 16px;
-              background: var(--color-negro);
-              border: 1px solid rgba(255, 255, 255, 0.1);
-              border-radius: 8px;
-              color: var(--color-blanco);
-              font-size: 16px;
-              font-family: var(--font-body);
-              resize: vertical;
-            "></textarea>
-          </div>
-
-          <button type="submit" class="hero-cta" style="width: 100%;">
-            Enviar Mensaje
-          </button>
-
+        <div style="margin-bottom: var(--espaciado-md);">
+          <label for="nombre" style="
+            display: block;
+            color: var(--color-dorado);
+            font-size: 14px;
+            margin-bottom: var(--espaciado-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          ">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" style="
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--color-negro);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--color-blanco);
+            font-size: 16px;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+          " onfocus="this.style.borderColor='var(--color-dorado)'; this.style.boxShadow='0 0 20px rgba(212, 175, 55, 0.2)';"
+             onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.boxShadow='none';">
         </div>
+
+        <div style="margin-bottom: var(--espaciado-md);">
+          <label for="email" style="
+            display: block;
+            color: var(--color-dorado);
+            font-size: 14px;
+            margin-bottom: var(--espaciado-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          ">Email</label>
+          <input type="email" id="email" name="email" required placeholder="tu@email.com" style="
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--color-negro);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--color-blanco);
+            font-size: 16px;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+          " onfocus="this.style.borderColor='var(--color-dorado)'; this.style.boxShadow='0 0 20px rgba(212, 175, 55, 0.2)';"
+             onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.boxShadow='none';">
+        </div>
+
+        <div style="margin-bottom: var(--espaciado-md);">
+          <label for="mensaje" style="
+            display: block;
+            color: var(--color-dorado);
+            font-size: 14px;
+            margin-bottom: var(--espaciado-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          ">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="6" required placeholder="¿En qué podemos ayudarte?" style="
+            width: 100%;
+            padding: 16px 20px;
+            background: var(--color-negro);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--color-blanco);
+            font-size: 16px;
+            font-family: var(--font-body);
+            resize: vertical;
+            transition: all 0.3s ease;
+          " onfocus="this.style.borderColor='var(--color-dorado)'; this.style.boxShadow='0 0 20px rgba(212, 175, 55, 0.2)';"
+             onblur="this.style.borderColor='rgba(255,255,255,0.1)'; this.style.boxShadow='none';"></textarea>
+        </div>
+
+        <button type="submit" class="hero-cta" style="
+          width: 100%;
+          background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-claro) 100%);
+          color: var(--color-negro);
+          padding: 20px;
+          border: none;
+          border-radius: 12px;
+          font-size: 18px;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(212, 175, 55, 0.5)';"
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 175, 55, 0.3)';">
+          Enviar por WhatsApp
+        </button>
+
+        <p style="text-align: center; color: var(--color-gris-texto); font-size: 14px; margin: 0;">
+          ⚡ Respuesta garantizada en menos de 2 horas
+        </p>
 
       </form>
     </div>
@@ -150,59 +200,121 @@
   <!-- INFO DIRECTA -->
   <section class="section section-dark">
     <div class="container">
-      <div class="section-title">
+      <div class="section-title scroll-animate">
         <h2>Contacto Directo</h2>
-        <p class="subtitle">Más rápido. Más personal.</p>
+        <p class="subtitle">Más rápido. Más personal. Sin intermediarios.</p>
       </div>
 
-      <div style="
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: var(--espaciado-lg);
-        margin-top: var(--espaciado-xl);
-      ">
+      <div class="filosofia-grid">
 
-        <div class="filosofia-card scroll-animate">
-          <span class="filosofia-icon">📱</span>
-          <h3>WhatsApp</h3>
-          <p style="margin-bottom: var(--espaciado-sm);">
+        <div class="filosofia-card scroll-animate" style="
+          border: 2px solid rgba(212, 175, 55, 0.2);
+          transition: all 0.3s ease;
+        " onmouseover="this.style.borderColor='var(--color-dorado)'; this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(212, 175, 55, 0.2)';"
+           onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <span class="filosofia-icon" style="font-size: 48px;">📱</span>
+          <h3 style="color: var(--color-dorado);">WhatsApp</h3>
+          <p style="margin-bottom: var(--espaciado-sm); font-weight: 500;">
             Respuesta inmediata
           </p>
-          <button class="product-cta" onclick="whatsappContact()">
+          <button class="product-cta" onclick="whatsappContact()" style="
+            background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-claro) 100%);
+            color: var(--color-negro);
+            font-weight: 700;
+            padding: 16px 32px;
+          ">
             Abrir WhatsApp
           </button>
+          <p style="font-size: 13px; margin-top: 12px; color: var(--color-gris-texto);">
+            +34 640 943 669
+          </p>
         </div>
 
-        <div class="filosofia-card scroll-animate">
-          <span class="filosofia-icon">📧</span>
-          <h3>Email</h3>
-          <p style="margin-bottom: var(--espaciado-sm);">
-            hola@aumnatura.es
+        <div class="filosofia-card scroll-animate" style="
+          border: 2px solid rgba(212, 175, 55, 0.2);
+          transition: all 0.3s ease;
+          text-align: center;
+        " onmouseover="this.style.borderColor='var(--color-dorado)'; this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(212, 175, 55, 0.2)';"
+           onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <span class="filosofia-icon" style="font-size: 48px;">📧</span>
+          <h3 style="color: var(--color-dorado);">Email Premium</h3>
+          <p style="margin-bottom: var(--espaciado-sm); font-weight: 600; font-size: 15px; color: var(--color-blanco);">
+            Respuesta garantizada
           </p>
-          <a href="mailto:hola@aumnatura.es" class="product-cta" style="display: inline-block; text-align: center; text-decoration: none;">
+          <a href="mailto:aurumnatura@gmail.com" class="product-cta" style="
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-claro) 100%);
+            color: var(--color-negro);
+            border: 2px solid var(--color-dorado);
+            font-weight: 700;
+            padding: 16px 32px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+          " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(212, 175, 55, 0.5)';"
+             onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 175, 55, 0.3)';">
             Enviar Email
+          </a>
+          <p style="font-size: 14px; margin-top: 12px; color: var(--color-dorado); font-weight: 600;">
+            aurumnatura@gmail.com
+          </p>
+          <p style="font-size: 13px; margin-top: 8px; color: var(--color-gris-texto);">
+            ⚡ Respuesta en menos de 2 horas
+          </p>
+        </div>
+
+        <div class="filosofia-card scroll-animate" style="
+          border: 2px solid rgba(212, 175, 55, 0.2);
+          transition: all 0.3s ease;
+          text-align: center;
+        " onmouseover="this.style.borderColor='var(--color-dorado)'; this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(212, 175, 55, 0.2)';"
+           onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <span class="filosofia-icon" style="font-size: 48px;">📍</span>
+          <h3 style="color: var(--color-dorado);">Nuestra Finca</h3>
+          <p style="margin-bottom: var(--espaciado-sm); font-weight: 600; font-size: 15px; color: var(--color-blanco);">
+            Finca Aurum Natura
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto); margin-bottom: 4px; line-height: 1.6;">
+            Calle Viana 54
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto); margin-bottom: 4px; line-height: 1.6;">
+            Nombela, Toledo
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto); margin-bottom: 8px; line-height: 1.6;">
+            Castilla la Mancha, España
+          </p>
+          <a href="https://maps.google.com/?q=Calle+Viana+54+Nombela+Toledo+Castilla+la+Mancha+Espana" target="_blank" style="
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-dorado);
+            border: 2px solid var(--color-dorado);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          " onmouseover="this.style.background='var(--color-dorado)'; this.style.color='var(--color-negro)';"
+             onmouseout="this.style.background='rgba(212, 175, 55, 0.1)'; this.style.color='var(--color-dorado)';">
+            Ver en Google Maps
           </a>
         </div>
 
-        <div class="filosofia-card scroll-animate">
-          <span class="filosofia-icon">📍</span>
-          <h3>Ubicación</h3>
-          <p style="margin-bottom: var(--espaciado-sm);">
-            Finca en zona rural España
+        <div class="filosofia-card scroll-animate" style="
+          border: 2px solid rgba(212, 175, 55, 0.2);
+          transition: all 0.3s ease;
+        " onmouseover="this.style.borderColor='var(--color-dorado)'; this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 60px rgba(212, 175, 55, 0.2)';"
+           onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.2)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+          <span class="filosofia-icon" style="font-size: 48px;">⏰</span>
+          <h3 style="color: var(--color-dorado);">Horario</h3>
+          <p style="margin-bottom: var(--espaciado-sm); font-weight: 500;">
+            Atención personalizada
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto); margin-bottom: 4px;">
+            L-V: 9:00 - 18:00
           </p>
           <p style="font-size: 14px; color: var(--color-gris-texto);">
-            (Dirección exacta al hacer pedido)
-          </p>
-        </div>
-
-        <div class="filosofia-card scroll-animate">
-          <span class="filosofia-icon">⏰</span>
-          <h3>Horario</h3>
-          <p style="margin-bottom: var(--espaciado-sm);">
-            Lunes a Viernes: 9:00 - 18:00
-          </p>
-          <p style="font-size: 14px; color: var(--color-gris-texto);">
-            Sábados: 10:00 - 14:00
+            Sáb: 10:00 - 14:00
           </p>
         </div>
 
@@ -229,6 +341,131 @@
         </p>
       </div>
     </div>
+    </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+        <p class="subtitle">Todo lo que necesitas saber</p>
+      </div>
+
+      <div class="support-grid support-faq">
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Puedo elegir el contenido de mi caja?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No. El contenido es sorpresa según lo que la tierra produce esta semana. Confiamos en el proceso natural y respetamos la temporada.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Cuánto dura el envío?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Entre 24-48 horas según tu zona en España peninsular. Las cajas se entregan siempre frescas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Hay suscripción obligatoria?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No. Compras semanales sin compromiso. Solo cuando tú lo decides. Sin cobros automáticos ni contratos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            ¿Tienen garantía de satisfacción?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Sí. Primera caja, notarás la diferencia. Si no, te devolvemos el dinero sin preguntas. Garantía 100%.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contáctanos</h2>
+        <p class="subtitle">Estamos aquí para ayudarte</p>
+      </div>
+
+      <div class="support-grid support-contact">
+        <div class="contact-card">
+          <span class="contact-icon">💬</span>
+          <h4>WhatsApp</h4>
+          <p>+34 640 943 669</p>
+          <button class="contact-btn" onclick="whatsappContact()">Contactar</button>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">📧</span>
+          <h4>Email</h4>
+          <p>hola@aurumnatura.es</p>
+          <button class="contact-btn" onclick="window.location.href='mailto:hola@aurumnatura.es'">Escribir</button>
+        </div>
+
+        <div class="contact-card">
+          <span class="contact-icon">📱</span>
+          <h4>Teléfono</h4>
+          <p>+34 640 943 669</p>
+          <button class="contact-btn" onclick="window.location.href='tel:+34640943669'">Llamar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFORMACIÓN DE ENVÍOS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>Información de Envíos</h2>
+        <p class="subtitle">Todo lo que necesitas saber sobre entregas</p>
+      </div>
+
+      <div class="support-grid support-shipping">
+        <div class="shipping-card">
+          <span class="shipping-icon">⏱️</span>
+          <h4>Tiempo de Entrega</h4>
+          <div class="shipping-info">
+            <p>24-48 horas en España peninsular</p>
+            <p>Entregas de jueves a domingo según zona</p>
+          </div>
+        </div>
+
+        <div class="shipping-card">
+          <span class="shipping-icon">🚚</span>
+          <h4>Zonas de Entrega</h4>
+          <div class="shipping-info">
+            <p>Madrid, Barcelona, Valencia</p>
+            <p>Y toda España peninsular</p>
+          </div>
+        </div>
+
+        <div class="shipping-card premium">
+          <span class="shipping-icon">💰</span>
+          <h4>Coste de Envío</h4>
+          <div class="shipping-info">
+            <p>Gratis para pedidos +50€</p>
+            <p>5€ para pedidos inferiores</p>
+            <span class="shipping-badge">Entrega Garantizada</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -241,65 +478,7 @@
   </footer>
 
   <!-- JavaScript -->
-  <script>
-    function whatsappContact() {
-      const mensaje = 'Hola, quiero información sobre Aurum Natura. ¿Podrían ayudarme?';
-      const url = `https://wa.me/34640943669?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
-    }
-
-    // Formulario
-    document.getElementById('contact-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-      const email = document.getElementById('email').value;
-      const mensaje = document.getElementById('mensaje').value;
-
-      // Enviar a WhatsApp con los datos del formulario
-      const whatsappMsg = `Hola, soy ${nombre}. Mi email es ${email}. ${mensaje}`;
-      const url = `https://wa.me/34640943669?text=${encodeURIComponent(whatsappMsg)}`;
-
-      // Confirmar al usuario
-      alert('¡Gracias! Te redirigiremos a WhatsApp para completar tu consulta.');
-
-      // Abrir WhatsApp
-      window.open(url, '_blank');
-    });
-
-    // Navegación móvil
-    const toggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    if (toggle && navLinks) {
-      toggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-      });
-    }
-
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
-
-    // Header scroll
-    let lastScroll = 0;
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        header.classList.add('hidden');
-      } else {
-        header.classList.remove('hidden');
-      }
-      lastScroll = currentScroll;
-    });
-  </script>
+  <script src="js/common.js"></script>
+  <script src="js/accordion.js"></script>
 </body>
 </html>
