@@ -207,7 +207,7 @@ function initHeroParticles() {
       positions[i3 + 1] += Math.sin(Date.now() * 0.001 + i) * 0.002;
 
       // Mouse influence
-      positions[i3] += (mouseX * 0.5 - positions[i3]) * 0.02;
+      positions[i3 + 1] += (mouseX * 0.5 - positions[i3 + 1]) * 0.02;
       positions[i3 + 1] += (mouseY * 0.5 - positions[i3 + 1]) * 0.02;
     }
 
