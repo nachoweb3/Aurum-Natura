@@ -1,0 +1,37 @@
+/* ============================================
+   AURUM NATURA - COMPONENTS CSS PREMIUM
+   ============================================ */
+
+:root {
+  /* Variables de color */
+  --color-dorado: #d4af37;
+  --color-dorado-claro: #f4cf57;
+  --color-negro: #0a0a0a;
+  --color-negro-suave: #1a1a1a;
+  --color-gris-texto: #a0a0a0;
+
+  /* Gallery System */
+  --gallery-grid-gap: 16px;
+  --gallery-zoom-scale: 1.15;
+  --gallery-transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --gallery-shadow-hover: 0 10px 30px rgba(212, 175, 55, 0.3);
+
+  /* Cart System */
+  --cart-item-bg: rgba(26, 26, 26, 0.8);
+  --cart-border-color: rgba(212, 175, 55, 0.2);
+  --cart-btn-gradient: linear-gradient(135deg, var(--color-dorado) 0%, var(--color-dorado-claro) 100%);
+
+  /* Editorial System */
+  --editorial-padding: 80px 0;
+  --editorial-overlay: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.9) 100%);
+
+  /* Support System */
+  --support-card-radius: 16px;
+  --support-card-border: 1px solid rgba(212, 175, 55, 0.15);
+  --support-card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  --support-card-shadow-hover: 0 8px 30px rgba(212, 175, 55, 0.3);
+
+  /* Common transitions */
+  --transition-fast: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-medium: 0.5s ease;
+}
