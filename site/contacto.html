@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto Aurum Natura — Pedidos alimentos orgánicos, WhatsApp delivery comida, directo de finca.">
+  <meta name="keywords" content="pedidos alimentos orgánicos, whatsapp delivery comida, directo de finca">
+  <title>Contacto | Aurum Natura — Pedidos y Consultas</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <div class="logo-icon">🜂</div>
+          <span>Aurum Natura</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#filosofia">Filosofía</a></li>
+          <li><a href="/#productos">Productos</a></li>
+          <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="/contacto" class="active">Contacto</a></li>
+        </ul>
+
+        <a href="/productos" class="btn-cta-nav">Comprar Ahora</a>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO CONTACTO -->
+  <section class="hero" style="min-height: 50vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Contacta con Nosotros</h1>
+      <p class="hero-subtitle">
+        ¿Tienes dudas? ¿Quieres más información?<br>
+        Estamos aquí para ayudarte.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Envíanos un Mensaje</h2>
+        <p class="subtitle">Te responderemos en menos de 2 horas.</p>
+      </div>
+
+      <form id="contact-form" style="
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--espaciado-md);
+      ">
+
+        <div style="
+          background: var(--color-negro-suave);
+          border: 1px solid rgba(212, 175, 55, 0.1);
+          border-radius: 12px;
+          padding: var(--espaciado-lg);
+        ">
+
+          <div style="margin-bottom: var(--espaciado-md);">
+            <label for="nombre" style="
+              display: block;
+              color: var(--color-gris-texto);
+              font-size: 14px;
+              margin-bottom: var(--espaciado-sm);
+              font-weight: 500;
+            ">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required style="
+              width: 100%;
+              padding: 12px 16px;
+              background: var(--color-negro);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 8px;
+              color: var(--color-blanco);
+              font-size: 16px;
+              font-family: var(--font-body);
+            ">
+          </div>
+
+          <div style="margin-bottom: var(--espaciado-md);">
+            <label for="email" style="
+              display: block;
+              color: var(--color-gris-texto);
+              font-size: 14px;
+              margin-bottom: var(--espaciado-sm);
+              font-weight: 500;
+            ">Email</label>
+            <input type="email" id="email" name="email" required style="
+              width: 100%;
+              padding: 12px 16px;
+              background: var(--color-negro);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 8px;
+              color: var(--color-blanco);
+              font-size: 16px;
+              font-family: var(--font-body);
+            ">
+          </div>
+
+          <div style="margin-bottom: var(--espaciado-md);">
+            <label for="mensaje" style="
+              display: block;
+              color: var(--color-gris-texto);
+              font-size: 14px;
+              margin-bottom: var(--espaciado-sm);
+              font-weight: 500;
+            ">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required style="
+              width: 100%;
+              padding: 12px 16px;
+              background: var(--color-negro);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 8px;
+              color: var(--color-blanco);
+              font-size: 16px;
+              font-family: var(--font-body);
+              resize: vertical;
+            "></textarea>
+          </div>
+
+          <button type="submit" class="hero-cta" style="width: 100%;">
+            Enviar Mensaje
+          </button>
+
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- INFO DIRECTA -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contacto Directo</h2>
+        <p class="subtitle">Más rápido. Más personal.</p>
+      </div>
+
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--espaciado-lg);
+        margin-top: var(--espaciado-xl);
+      ">
+
+        <div class="filosofia-card scroll-animate">
+          <span class="filosofia-icon">📱</span>
+          <h3>WhatsApp</h3>
+          <p style="margin-bottom: var(--espaciado-sm);">
+            Respuesta inmediata
+          </p>
+          <button class="product-cta" onclick="whatsappContact()">
+            Abrir WhatsApp
+          </button>
+        </div>
+
+        <div class="filosofia-card scroll-animate">
+          <span class="filosofia-icon">📧</span>
+          <h3>Email</h3>
+          <p style="margin-bottom: var(--espaciado-sm);">
+            hola@aumnatura.es
+          </p>
+          <a href="mailto:hola@aumnatura.es" class="product-cta" style="display: inline-block; text-align: center; text-decoration: none;">
+            Enviar Email
+          </a>
+        </div>
+
+        <div class="filosofia-card scroll-animate">
+          <span class="filosofia-icon">📍</span>
+          <h3>Ubicación</h3>
+          <p style="margin-bottom: var(--espaciado-sm);">
+            Finca en zona rural España
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto);">
+            (Dirección exacta al hacer pedido)
+          </p>
+        </div>
+
+        <div class="filosofia-card scroll-animate">
+          <span class="filosofia-icon">⏰</span>
+          <h3>Horario</h3>
+          <p style="margin-bottom: var(--espaciado-sm);">
+            Lunes a Viernes: 9:00 - 18:00
+          </p>
+          <p style="font-size: 14px; color: var(--color-gris-texto);">
+            Sábados: 10:00 - 14:00
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA (Placeholder) -->
+  <section class="section section-light">
+    <div class="container">
+      <div style="
+        background: var(--color-negro-suave);
+        border: 2px dashed rgba(212, 175, 55, 0.3);
+        border-radius: 16px;
+        padding: 80px 20px;
+        text-align: center;
+      ">
+        <p style="color: var(--color-dorado); font-size: 18px; margin-bottom: 10px;">
+          🗺 MAPA GOOGLE PLACEHOLDER
+        </p>
+        <p style="color: var(--color-gris-texto); font-size: 14px;">
+          Integra aquí tu mapa de Google Maps con iframe<br>
+          Sugerencia: Usar "aumnatura.es" como business name
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">🜂 Aurum Natura</div>
+      <p>Producción limitada. Origen real.</p>
+      <p>© 2026 Aurum Natura. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function whatsappContact() {
+      const mensaje = 'Hola, quiero información sobre Aurum Natura. ¿Podrían ayudarme?';
+      const url = `https://wa.me/34640943669?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    // Formulario
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+
+      // Enviar a WhatsApp con los datos del formulario
+      const whatsappMsg = `Hola, soy ${nombre}. Mi email es ${email}. ${mensaje}`;
+      const url = `https://wa.me/34640943669?text=${encodeURIComponent(whatsappMsg)}`;
+
+      // Confirmar al usuario
+      alert('¡Gracias! Te redirigiremos a WhatsApp para completar tu consulta.');
+
+      // Abrir WhatsApp
+      window.open(url, '_blank');
+    });
+
+    // Navegación móvil
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+      });
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+    // Header scroll
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+</body>
+</html>

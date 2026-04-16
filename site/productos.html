@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caja Aurum Básica (29€), Premium (49€) y Élite (79€). Huevos camperos, verdura ecológica, hierbas aromáticas. Producción limitada, envío semanal.">
+  <meta name="keywords" content="caja productos ecológicos España, huevo campero calidad, verdura orgánica premium, suscripción alimentos frescos">
+  <title>Cajas Aurum | Alimentos Premium de Finca</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Caja Aurum — Edición Fundadores",
+      "image": "https://aumnatura.es/img/productos/caja-premium.jpg",
+      "description": "24 huevos camperos, verdura seleccionada, hierbas aromáticas. Producción limitada.",
+      "brand": {"@type": "Brand", "name": "Aurum Natura"},
+      "offers": {
+        "@type": "Offer",
+        "price": "49.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <div class="logo-icon">🜂</div>
+          <span>Aurum Natura</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="#filosofia">Filosofía</a></li>
+          <li><a href="#como-funciona">Cómo Funciona</a></li>
+          <li><a href="/productos" class="active">Productos</a></li>
+          <li><a href="/sobre-nosotros">Sobre Nosotros</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+
+        <a href="#cta" class="btn-cta-nav">Comprar Ahora</a>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO PRODUCTOS -->
+  <section class="hero" style="min-height: 60vh;">
+    <div class="hero-content">
+      <h1 class="hero-title">Cajas Aurum</h1>
+      <p class="hero-subtitle">
+        Tres niveles. Solo un criterio: calidad real de origen.
+      </p>
+      <button class="hero-cta" onclick="scrollToProductos()">Ver Opciones</button>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="section section-dark" id="productos">
+    <div class="container">
+      <div class="section-title">
+        <h2>Elige tu Nivel</h2>
+        <p class="subtitle">Cada caja es diferente. Porque cada semana, la tierra decide.</p>
+      </div>
+
+      <div class="productos-grid" id="productos-grid">
+        <!-- Products will be loaded from JSON -->
+      </div>
+
+      <div class="escasez-info">
+        <p id="escasez-mensaje"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO PRODUCCIÓN -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-title">
+        <h2>Información de Producción</h2>
+        <p class="subtitle">Transparencia total sobre origen y tiempos</p>
+      </div>
+
+      <div class="filosofia-grid">
+        <div class="filosofia-card">
+          <span class="filosofia-icon">📅</span>
+          <h3>Corte de Pedidos</h3>
+          <p>
+            Los pedidos se cierran cada jueves a las 18:00 para la semana siguiente.
+            Esto permite preparar cajas frescas con exactitud.
+          </p>
+        </div>
+
+        <div class="filosofia-card">
+          <span class="filosofia-icon">🚚</span>
+          <h3>Entrega Semanal</h3>
+          <p>
+            Las cajas se entregan de jueves a domingo según tu zona.
+            Siempre frescas, recién preparadas.
+          </p>
+        </div>
+
+        <div class="filosofia-card">
+          <span class="filosofia-icon">🔄</span>
+          <h3>Contenido Variable</h3>
+          <p>
+            Cada semana, la tierra decide qué hay. Respetamos la temporada.
+            Nunca recibes lo mismo dos semanas seguidas.
+          </p>
+        </div>
+
+        <div class="filosofia-card">
+          <span class="filosofia-icon">📦</span>
+          <h3>Empaque Premium</h3>
+          <p>
+            Cajas de madera certificada, papel de seda y nota firmada.
+            Cuidamos cada detalle de la experiencia.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-title">
+        <h2>Preguntas Frecuentes</h2>
+        <p class="subtitle">Todo lo que necesitas saber antes de empezar</p>
+      </div>
+
+      <div class="filosofia-grid">
+        <div class="filosofia-card" style="text-align: left;">
+          <h4>¿Puedo elegir el contenido?</h4>
+          <p>
+            No. El contenido es sorpresa según lo que la tierra produce esta semana.
+            Confiamos en el proceso natural.
+          </p>
+        </div>
+
+        <div class="filosofia-card" style="text-align: left;">
+          <h4>¿Cuánto dura el envío?</h4>
+          <p>
+            Entre 24-48 horas según tu zona. En España peninsular.
+          </p>
+        </div>
+
+        <div class="filosofia-card" style="text-align: left;">
+          <h4>¿Hay suscripción?</h4>
+          <p>
+            No. Compras semanales. Solo cuando tú lo decides.
+            Sin compromiso, sin cobros automáticos.
+          </p>
+        </div>
+
+        <div class="filosofia-card" style="text-align: left;">
+          <h4>¿Garantía de satisfacción?</h4>
+          <p>
+            Sí. Primera caja, notarás la diferencia.
+            Si no, te devolvemos el dinero sin preguntas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-light" id="cta">
+    <div class="container">
+      <div class="section-title">
+        <h2>¿Listo para Empezar?</h2>
+        <p class="subtitle">Elige tu caja y reserva tu lugar esta semana.</p>
+      </div>
+
+      <div class="text-center">
+        <button class="hero-cta" onclick="whatsappContact()">
+          Comprar Caja Aurum
+        </button>
+        <p class="mt-lg" style="font-size: 14px; color: var(--color-gris-texto);">
+          O escríbenos al WhatsApp para dudas
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-logo">🜂 Aurum Natura</div>
+      <p>Producción limitada. Origen real.</p>
+      <p>© 2026 Aurum Natura. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Cargar productos
+    async function cargarProductos() {
+      try {
+        const response = await fetch('data/productos.json');
+        const data = await response.json();
+        renderizarProductos(data.productos, data.escasez);
+      } catch (error) {
+        console.error('Error al cargar productos:', error);
+      }
+    }
+
+    function renderizarProductos(productos, escasez) {
+      const grid = document.getElementById('productos-grid');
+      const mensajeEscasez = document.getElementById('escasez-mensaje');
+
+      grid.innerHTML = productos.map(producto => `
+        <div class="product-card ${producto.featured ? 'featured' : ''}">
+          <span class="product-badge">${producto.tagline}</span>
+          <h3>${producto.nombre}</h3>
+          <div class="product-price">${producto.precio}€<span>+ envío</span></div>
+          <ul class="product-content">
+            ${producto.contenido.map(item => `<li>${item}</li>`).join('')}
+          </ul>
+          <button class="product-cta" onclick="whatsappContact('${producto.id}')">
+            Comprar Ahora
+          </button>
+        </div>
+      `).join('');
+
+      const totalStock = productos.reduce((sum, p) => sum + p.stock, 0);
+      mensajeEscasez.textContent = escasez.mensaje.replace('{stock}', totalStock);
+    }
+
+    function scrollToProductos() {
+      document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function whatsappContact(productoId = '') {
+      let mensaje = 'Hola, quiero acceder a la Caja Aurum. ¿Qué opciones tengo disponibles esta semana?';
+      if (productoId) {
+        mensaje = `Hola, quiero comprar la ${productoId}. ¿Está disponible?`;
+      }
+      const url = `https://wa.me/34640943669?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    // Navegación móvil
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (toggle && navLinks) {
+      toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+      });
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+    // Header scroll
+    let lastScroll = 0;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Init
+    document.addEventListener('DOMContentLoaded', cargarProductos);
+  </script>
+</body>
+</html>

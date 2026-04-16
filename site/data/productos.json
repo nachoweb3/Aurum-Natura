@@ -1,0 +1,60 @@
+{
+  "productos": [
+    {
+      "id": "caja-basica",
+      "nombre": "Caja Aurum — Básica",
+      "precio": 29,
+      "tagline": "Para empezar a comer real",
+      "contenido": [
+        "Huevos camperos",
+        "Verdura de temporada",
+        "Hierbas naturales"
+      ],
+      "imagen": "img/productos/caja-basica.jpg",
+      "disponible": true,
+      "stock": 10,
+      "featured": false
+    },
+    {
+      "id": "caja-premium",
+      "nombre": "Caja Aurum — Premium",
+      "precio": 49,
+      "tagline": "Edición Fundadores",
+      "contenido": [
+        "24 huevos camperos",
+        "Verdura seleccionada",
+        "Hierbas aromáticas",
+        "Selección especial de la finca",
+        "Nota firmada"
+      ],
+      "imagen": "img/productos/caja-premium.jpg",
+      "disponible": true,
+      "stock": 5,
+      "featured": true
+    },
+    {
+      "id": "caja-elite",
+      "nombre": "Caja Aurum — Élite",
+      "precio": 79,
+      "tagline": "Para los que entienden",
+      "contenido": [
+        "Todo lo de Premium",
+        "Productos exclusivos (ediciones limitadas)",
+        "Selección superior",
+        "Detalles especiales"
+      ],
+      "imagen": "img/productos/caja-elite.jpg",
+      "disponible": true,
+      "stock": 2,
+      "featured": false
+    }
+  ],
+  "escasez": {
+    "mensaje": "Solo {stock} cajas disponibles esta semana",
+    "actualizado": "16/04/2026"
+  },
+  "whatsapp": {
+    "numero": "+34640943669",
+    "mensaje": "Hola, quiero acceder a la Caja Aurum. ¿Qué opciones tengo disponibles esta semana?"
+  }
+}

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompts de Imagen — Aurum Natura</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #d4af37 0%, #f4cf57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    header p {
+      color: #a0a0a0;
+      font-size: 16px;
+    }
+    .prompt-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .prompt-card:hover {
+      border-color: rgba(212, 175, 55, 0.5);
+      transform: translateY(-2px);
+    }
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .prompt-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #d4af37;
+    }
+    .prompt-tag {
+      background: rgba(212, 175, 55, 0.15);
+      color: #f4cf57;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .prompt-body {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .prompt-text {
+      font-family: 'Inter', monospace;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #e8e8ed;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f4cf57 100%);
+      color: #0a0a0a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .copy-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    .copy-btn.copied {
+      background: linear-gradient(135deg, #4a5d2a 0%, #5d7a3a 100%);
+      color: #ffffff;
+    }
+    .settings {
+      color: #a0a0a0;
+      font-size: 13px;
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+    }
+    .settings strong {
+      color: #d4af37;
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #d4af37;
+      animation: confetti-fall 3s ease-in forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="confetti" id="confetti"></div>
+
+  <div class="container">
+    <header>
+      <h1>Prompts de Imagen</h1>
+      <p>Aurum Natura — El Oro de la Tierra</p>
+    </header>
+
+    <!-- LOGO -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🜂 LOGO AURUM NATURA</span>
+        <span class="prompt-tag">Branding</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Minimalist luxury logo design for "Aurum Natura" — gold (#d4af37) circle with stylized tree root inside, centered on pure black background (#0a0a0a). The tree root is elegant, organic, with fine lines resembling gold filigree work. The circle represents perfection and earth's bounty. Professional luxury branding, 200€ wine label aesthetic. Clean, timeless, sophisticated. No text inside the logo, just the symbol. Vector-style precision, ultra-sharp lines, golden matte finish effect. 16:9 aspect ratio, centered composition, negative space balanced.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9 aspect ratio, highest quality, vector-style output
+      </div>
+    </div>
+
+    <!-- CAJA AURUM — ASSEMBLED -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🧺 CAJA AURUM — ARMADA</span>
+        <span class="prompt-tag">Producto Hero</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Professional product photography of a premium farm-to-table food box, assembled and complete, centered on clean white background (#FFFFFF). Box contains: fresh organic eggs (speckled brown, pristine), seasonal vegetables (bright greens, vibrant colors, dew-fresh), aromatic herbs (lavender, rosemary, thyme — lush green with visible leaves). The box is artisan wooden crate with gold branding (#d4af37), elegantly arranged. Soft studio lighting with subtle shadows. The food looks hyper-fresh, just harvested, dew drops visible. Product catalog quality, sharp focus, Apple-style food photography. Ultra-fresh appearance, luxury organic aesthetic. Shot on medium format camera, 120mm lens, f/8, studio strobe with large softbox. 16:9 aspect ratio.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, highest quality, photorealistic rendering
+      </div>
+    </div>
+
+    <!-- CAJA AURUM — DECONSTRUCTED -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🧺 CAJA AURUM — EXPLODIDA</span>
+        <span class="prompt-tag">Explosion View</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Exploded-view product photography of the premium farm-to-table food box, deconstructed into individual ingredients, all floating in space against clean white background (#FFFFFF). Components are visible and separated: wooden crate box (gold branded), 6 speckled brown eggs (pristine, individual), 4 types of seasonal vegetables (fresh greens, vibrant colors, dew drops — tomatoes, lettuce, carrots, zucchini), 3 types of aromatic herbs (lavender sprigs, rosemary branches, thyme clumps — lush green with visible leaf texture). Each piece floats with even spacing, maintaining general spatial relationship of original arrangement. Explosion follows vertical axis, pieces cascade upward like culinary creation. Soft studio lighting with subtle shadows on each floating piece. Components are pristine and detailed — you can see dew drops, egg texture, herb veins, vegetable glossiness. Photorealistic rendering, 16:9 aspect ratio, technical illustration meets food photography. Focus-stacked for sharpness across all floating elements. Same lighting setup as assembled shot for visual continuity.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, highest quality, explosion-style composition
+      </div>
+    </div>
+
+    <!-- HUEVOS CAMPEROS -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🥚 HUEVOS CAMPEROS</span>
+        <span class="prompt-tag">Producto</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Professional macro photography of 6 free-range organic eggs, speckled brown, arranged artistically on slate black stone surface. Eggs are pristine, just laid, natural variation in color and speckling pattern. Warm studio lighting from softbox at 45° angle, creating gentle highlights on eggshell curvature. Subtle shadows beneath eggs. Fresh straw scattered artistically around eggs (golden wheat color). Egg texture visible — subtle gloss, natural imperfections. Farm-to-table aesthetic, rustic luxury. Shot on 120mm macro lens, f/5.6, shallow depth of field with soft bokeh in background. 16:9 aspect ratio. Ultra-sharp detail on eggshell texture.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, macro photography, shallow DOF
+      </div>
+    </div>
+
+    <!-- VERDURA DE TEMPORADA -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🥬 VERDURA DE TEMPORADA</span>
+        <span class="prompt-tag">Producto</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Professional product photography of seasonal organic vegetables, vibrant and dew-fresh, arranged on weathered wooden crate. Vegetables include: heirloom tomatoes (various reds, vibrant skin), lettuce (bright green, crisp leaves), carrots (orange with green tops, soil particles on tips), zucchini (dark green, glossy skin). Dew drops visible on all vegetables, hyper-fresh appearance. Warm studio lighting with back-lighting creating rim light on dew drops. Subtle shadows, depth in arrangement. Farm aesthetic, premium organic quality. Shot on 120mm lens, f/8, studio strobe with large softbox overhead and backlight. 16:9 aspect ratio. Ultra-sharp detail on vegetable textures.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, highest quality, product photography
+      </div>
+    </div>
+
+    <!-- HIERBAS AROMÁTICAS -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🌿 HIERBAS AROMÁTICAS</span>
+        <span class="prompt-tag">Producto</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Professional macro photography of aromatic herbs, lush and freshly cut, arranged on slate surface. Herbs include: lavender sprigs (purple flowers, green stems), rosemary branches (needles visible, woody stems), thyme clumps (tiny leaves, delicate texture). Herbs are arranged artistically, overlapping slightly, creating depth. Warm studio lighting with softbox, creating gentle highlights on leaf veins. Subtle shadows beneath. Visible water droplets from washing, hyper-fresh. Herb texture prominent — you can see fine leaf veins, stem details, flower petal structure. Rustic luxury, farm aesthetic. Shot on 120mm macro lens, f/5.6, shallow depth of field. 16:9 aspect ratio. Ultra-sharp detail.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, macro photography, shallow DOF
+      </div>
+    </div>
+
+    <!-- HERO BACKGROUND — FINCA -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">🜂 HERO — FINCA DE ORIGEN</span>
+        <span class="prompt-tag">Hero Background</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Epic cinematic landscape photography of a premium organic farm at golden hour, wide shot capturing the essence of origin. Scene includes: rolling green hills, organic vegetable gardens with rows of fresh greens, chicken coop with free-range birds visible, golden wheat fields in distance, warm golden light from setting sun. The image conveys abundance, natural process, connection to earth. Atmospheric quality — slight haze, warm color temperature, dreamlike quality. Luxury organic aesthetic, 200€ wine label landscape style. Ultra-wide angle, 24mm equivalent lens, f/11 for deep depth of field. 16:9 aspect ratio, 8K quality. Golden hour lighting, shadows elongating, warm color palette. Cinematic feel, premium production quality.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, ultra-wide, cinematic quality
+      </div>
+    </div>
+
+    <!-- NOTA FIRMADA -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">📝 NOTA FIRMADA</span>
+        <span class="prompt-tag">Detalle Premium</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Premium close-up product photography of a handwritten thank-you note on thick textured paper (cream color, 200gsm paper). Note is written in elegant cursive handwriting with gold fountain pen ink (#d4af37). The note reads: "Para [Nombre], Gracias por elegir comer real — Aurum Natura". The note is placed on dark wooden table, beside a single fresh organic egg and sprig of lavender. Warm studio lighting from 45° angle, creating gentle highlights on paper texture and ink. Subtle shadows, depth in arrangement. Luxury aesthetic, personal touch, farm-to-table feel. Shot on 100mm macro lens, f/4, shallow depth of field with soft bokeh in background. 16:9 aspect ratio. Ultra-sharp detail on paper texture and ink.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, macro photography, shallow DOF
+      </div>
+    </div>
+
+    <!-- MANOS TRABAJANDO -->
+    <div class="prompt-card">
+      <div class="prompt-header">
+        <span class="prompt-title">👨‍🌾 MANOS TRABAJANDO</span>
+        <span class="prompt-tag">Process</span>
+      </div>
+      <div class="prompt-body">
+        <div class="prompt-text">Emotive documentary-style photography of hands preparing a farm-to-table food box. Scene shows farmer's hands (weathered, authentic, soil stains on fingernails) gently placing fresh organic eggs into wooden crate. The hands are in focus, mid-shot, conveying care and craft. Warm natural lighting from window, soft shadows. Background is blurred but shows interior of barn or farm kitchen. The image conveys authenticity, human touch, natural process. No artificial styling — authentic and honest. Shot on 85mm lens, f/2.8, natural light. 16:9 aspect ratio. Warm color temperature, golden hour feel. Emotional storytelling, premium documentary quality.</div>
+      </div>
+      <button class="copy-btn" onclick="copyPrompt(this)">📋 Copiar Prompt</button>
+      <div class="settings">
+        <strong>Settings:</strong> 16:9, documentary style, natural light
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function copyPrompt(button) {
+      const promptBody = button.previousElementSibling.previousElementSibling;
+      const promptText = promptBody.querySelector('.prompt-text').textContent;
+
+      navigator.clipboard.writeText(promptText).then(() => {
+        button.textContent = '✅ ¡Copiado!';
+        button.classList.add('copied');
+        fireConfetti();
+
+        setTimeout(() => {
+          button.textContent = '📋 Copiar Prompt';
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+        button.textContent = '❌ Error';
+        setTimeout(() => {
+          button.textContent = '📋 Copiar Prompt';
+        }, 2000);
+      });
+    }
+
+    function fireConfetti() {
+      const confetti = document.getElementById('confetti');
+      const colors = ['#d4af37', '#f4cf57', '#4a5d2a', '#ffffff'];
+
+      for (let i = 0; i < 50; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 0.5 + 's';
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+        confetti.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 3500);
+      }
+    }
+  </script>
+</body>
+</html>
