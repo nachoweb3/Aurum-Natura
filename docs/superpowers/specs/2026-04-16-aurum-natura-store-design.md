@@ -1,235 +1,52 @@
-# Aurum Natura Store Design
+# Aurum Natura Store Redesign
 
 Date: 2026-04-16
-Status: Approved in conversation, pending final written-spec review
+Status: Approved in conversation, written spec pending user review
 
 ## Summary
 
-Aurum Natura will evolve from a premium static landing into a real multilingual online store with a warm luxury visual language, a medium-size curated catalog, a fully functional cart, and a serious checkout flow that sends structured orders to WhatsApp instead of taking payment online for now.
+Aurum Natura will evolve from a premium static landing page into a fully structured storefront for a finca-based brand selling across Europe. The experience will remain emotionally driven and visually rich, but the site will behave like a serious store: clear catalog navigation, stronger product detail pages, a real cart flow, a polished checkout experience, and a final order handoff through WhatsApp.
 
-The store will preserve the brand's cinematic finca atmosphere while becoming a usable e-commerce experience. The homepage carries the strongest emotional and 3D visual weight. The catalog, product pages, cart, and checkout become progressively clearer and more conversion-oriented. The frontend and data model must be prepared so that the final WhatsApp confirmation step can later be replaced by a real payment provider without redesigning the site.
+The design direction is explicitly `lujo rural cinematografico`, but translated into a commerce system rather than a poster site. The homepage and brand pages will carry the strongest editorial and cinematic weight. The shopping surfaces will become more controlled, clearer, and more conversion-oriented.
 
-## Business Direction
+The frontend must also be prepared to receive a large amount of future real media from the finca: hero videos, category banners, product galleries, documentary photography, and story-driven editorial imagery. The redesign should therefore prioritize reusable media slots and visual components so the site can scale up in richness without structural rework.
 
-### Positioning
+## Confirmed Product Direction
 
-- Premium accessible, not mass market
-- Premium rural lifestyle brand, not only food
-- Europe-facing brand
-- Main languages in v1: Spanish, English, French
+The first version of the store is prepared for the following product families:
 
-### Real product base that must remain credible
+- cajas
+- huevos
+- verduras
+- hierbas
+- plantas
+- aceite
+- miel
+- cuadros
+- visitas
 
-- Boxes and curated packs
-- Eggs
-- Vegetables
-- Herbs
-- Pots and potted plants
-- Tree cuttings / saplings
-- Framed art / cuadros
+This product mix must feel coherent under one brand world. The site should not read like a generic grocery catalog, nor like an art-only lifestyle brand. The common thread is curated finca-origin quality with a premium, atmospheric presentation.
 
-### Sales model for v1
+## Sales Model
 
-- The site behaves like a real store
-- The cart and checkout are real and complete
-- Final confirmation sends the order to WhatsApp
-- Architecture must remain payment-ready for future online checkout
+### Order completion
 
-## Goals
+- The storefront behaves like a real e-commerce frontend
+- Users browse categories and products normally
+- Users add products to a cart
+- Users complete a structured checkout form
+- The final action sends the order through WhatsApp
 
-1. Replace the current landing-first structure with a modular e-commerce storefront
-2. Keep the emotional, premium, dark-gold finca mood from the existing brand reference
-3. Expand the current small offering into a curated medium-size catalog of roughly 28 to 32 products
-4. Support Spanish, English, and French from the first version
-5. Support Europe-wide shopping flows while marking plant and cutting products as country-restricted
-6. Build the UI and data layer so real checkout can be added later with minimal front-end change
+### Why this matters
 
-## Non-Goals
+The user must feel they are using a serious premium online store, not a landing page that happens to open WhatsApp. WhatsApp is the operational close, not the UX identity of the site.
 
-- No live online payment in v1
-- No admin panel in v1
-- No complex stock synchronization or ERP integration in v1
-- No marketplace-style mega catalog
-- No generic Shopify-looking UI
+## Market Scope
 
-## Audience
+### Geography
 
-Primary audience:
-
-- Customers in Europe looking for premium but approachable finca-origin products
-- Buyers attracted by food provenance, gifting, home atmosphere, decor, and botanical objects
-
-Secondary audience:
-
-- Customers who may discover the brand through lifestyle aesthetics first and then buy boxes, fresh goods, or decor
-
-## Experience Principles
-
-1. Atmosphere first, clarity immediately after
-2. Premium presentation without luxury intimidation
-3. Curated assortment over catalog sprawl
-4. Motion should support storytelling and perceived value, not distract from shopping
-5. Cart and checkout must feel reliable, not improvised
-
-## Information Architecture
-
-### Main pages
-
-- Home
-- Catalog
-- Product detail
-- Cart
-- Checkout
-- Brand / About
-- Help / FAQ / Shipping
-- Contact
-- Legal pages
-
-### Homepage structure
-
-- Cinematic hero with strong brand scene and direct shopping CTA
-- Trust strip: Europe shipping, limited production, WhatsApp ordering, multilingual support
-- Featured categories
-- Product highlights
-- Brand story / finca origin block
-- Lifestyle and decor editorial block
-- Featured boxes and seasonal selections
-- Final CTA into catalog or cart
-
-### Catalog behavior
-
-- Category-driven browsing
-- Filtering by category, subcategory, price, availability, country restriction, and featured status
-- Product cards emphasize image quality, category, price, badges, and direct add-to-cart actions
-
-### Product detail behavior
-
-- Large visual gallery
-- Strong above-the-fold summary
-- Clear price, quantity, variants if needed, and shipping restriction messaging
-- Longer editorial description below
-- Care, shipping, or origin blocks depending on product type
-- Recommended related products
-
-### Cart and checkout behavior
-
-- Quick cart drawer
-- Full cart page
-- Structured checkout page with customer details, language, destination country, notes, and order summary
-- Final action generates a WhatsApp order message
-
-## Catalog Design
-
-### Catalog scale
-
-Target approximately 28 to 32 references in v1
-
-### Product families
-
-#### Boxes and Packs
-
-- Existing Aurum boxes remain
-- Additional curated packs and gift bundles
-- Subscription can be visible as future-ready, but not active as paid recurring checkout in v1
-
-#### Fresh Finca Goods
-
-- Eggs
-- Vegetable selections
-- Herb bundles
-- Seasonal fresh combinations
-
-#### Living Botanical
-
-- Pots
-- Mediterranean plants or character plants
-- Tree cuttings or young saplings
-
-#### Art and Decor
-
-- Framed botanical pieces
-- Decorative objects
-- Small curated home pieces connected to the Aurum Natura world
-
-#### Seasonal / Limited
-
-- Rotating or highlighted selections tied to scarcity and curation
-
-### Commercial logic
-
-- Boxes are the brand anchor
-- Fresh goods make the brand believable and recurrent
-- Living botanical products expand the lifestyle identity
-- Art and decor raise perceived value and average order value
-- Seasonal curation strengthens collection behavior without fake urgency
-
-### Restrictions
-
-- Plants and cuttings must display a country-based restriction notice
-- Restriction messaging appears on cards, product page, cart, and checkout summary when applicable
-
-## Visual Direction
-
-### Approved visual direction
-
-Approved style direction is the equivalent of "Option B": warm luxury commerce.
-
-This means:
-
-- Keep the dark, cinematic, gold-toned finca atmosphere
-- Increase shopping clarity versus the current landing
-- Preserve emotional impact without turning the site into a purely editorial poster
-
-### Palette
-
-- Dark warm base
-- Aged gold accents
-- Toasted ivory / parchment-like light surfaces for selected UI contrast
-- Very restrained botanical green accents only where useful
-
-### Typography
-
-- Expressive serif for brand, section headers, hero lines, and editorial emphasis
-- Clean sans-serif for product data, forms, cart, filters, and all commerce interactions
-
-### Image system
-
-- Strong coordinated image family across hero, category visuals, and product cards
-- Images should feel consistent, curated, and intentionally art-directed
-- Product visuals for different product families must still feel like one brand world
-
-### Motion and 3D
-
-3D is required, but must be purposeful.
-
-#### Where 3D/motion should be strongest
-
-- Hero section
-- Highlight sections on home
-- Select featured product storytelling blocks
-
-#### Where motion should become calmer
-
-- Catalog grid
-- Product page purchase controls
-- Cart
-- Checkout
-
-#### Target motion language
-
-- Scroll-led cinematic depth
-- Layered parallax
-- Atmospheric particles only if subtle
-- Card tilt and depth hover effects
-- Smooth scene transitions between major sections
-
-#### Hard constraints
-
-- Must provide non-WebGL or reduced fallback behavior
-- Must respect `prefers-reduced-motion`
-- Must not tank mobile usability or performance
-
-## Multilingual Strategy
+- Spain
+- Rest of Europe
 
 ### Languages
 
@@ -237,172 +54,478 @@ This means:
 - English
 - French
 
-### v1 localization scope
+The store should be architected as multilingual from the start. This includes navigation, category labels, product texts, system messages, cart labels, checkout content, shipping/help/legal essentials, and the final WhatsApp order message.
 
-- Header and navigation
-- Category names
-- Product cards
-- Product pages
+## Design Direction
+
+### Chosen visual direction
+
+The approved direction is `Cinematic Commerce`.
+
+This means:
+
+- Keep the emotional, dark, atmospheric finca identity
+- Push the brand toward premium rural luxury
+- Use strong imagery and cinematic rhythm on high-level pages
+- Reduce visual noise as the user gets closer to buying
+- Avoid a generic Shopify-like aesthetic
+- Avoid a rustic-but-low-end craft market aesthetic
+
+### Visual principles
+
+1. Atmosphere first, clarity immediately after
+2. Emotion must support buying, not block it
+3. Editorial richness on brand surfaces, discipline on commerce surfaces
+4. Large-format media should feel intentional and premium
+5. The interface should feel international, not improvised
+
+### Palette direction
+
+- Deep warm dark backgrounds
+- Tobacco, earth, charcoal, and night tones
+- Gold or aged-brass highlights used selectively
+- Warm parchment or ivory contrast surfaces where needed
+- Very restrained green accents only when useful
+
+### Typography direction
+
+- Expressive serif for hero lines, section titles, editorial blocks, and brand moments
+- Clear sans-serif for navigation, product data, filters, pricing, forms, and checkout
+
+Typography must feel more distinctive than the current baseline and avoid generic visual sameness.
+
+## Information Architecture
+
+### Main pages
+
+- Home
+- Shop / Catalog
+- Product detail
 - Cart
 - Checkout
-- Shipping/help/legal essentials
+- About the finca
+- Contact
+- Help / FAQ / Shipping
+- Legal pages
 
-### Localization behavior
+### Homepage role
 
-- The store uses structured language content, not runtime machine translation
-- The checkout-to-WhatsApp output uses the active user language
-- The store architecture should allow future SEO-oriented localized routes and metadata
+The homepage is no longer a short premium landing page. It becomes the storefront's cinematic front door and brand anchor.
 
-## Data Model
+Its job is to:
 
-The storefront must be data-driven rather than hardcoded page-by-page.
+- communicate origin and desirability quickly
+- establish trust for Europe-wide sales
+- direct users into product discovery
+- show curation and scarcity
+- make the finca story visible
+- prepare the customer emotionally and practically to buy
 
-Each product should support:
+## Homepage Structure
 
-- `id`
-- `slug`
-- `category`
-- `subcategory`
-- `type`
-- `price`
-- `compare_price` if useful
-- `currency`
-- `stock`
-- `featured`
-- `badges`
-- `images`
-- `attributes`
-- `restricted_countries`
-- translated content for `es`, `en`, `fr`
-- short summary
-- long description
-- care/shipping/origin blocks as applicable
+### 1. Hero
 
-This model must support:
+- Full-width cinematic hero with either video or high-impact image
+- Strong brand headline
+- Descriptive subheading
+- Primary CTA to shop
+- Secondary CTA to discover the finca
+- Premium composition with stronger visual depth than the current implementation
 
-- Filtering
-- Product recommendation logic
-- Cart summaries
-- WhatsApp message generation
-- Future replacement of WhatsApp checkout with payment checkout
+### 2. Trust bar
 
-## Checkout-to-WhatsApp Flow
+- Europe shipping
+- limited production
+- finca-origin products
+- multilingual experience
+- guided WhatsApp order completion
 
-### Customer flow
+### 3. Category entry block
 
-1. Customer adds products to cart
-2. Customer reviews cart
-3. Customer completes a real checkout form
-4. Store generates a structured WhatsApp message
-5. Customer confirms order through WhatsApp
+Large editorial category cards for:
 
-### Checkout fields
+- cajas
+- frescos
+- plantas
+- aceite y miel
+- arte
+- visitas
 
-- Name
-- Email if needed
-- Phone if useful
-- Country
-- City / region
-- Preferred language
-- Order notes
+### 4. Featured products
 
-### WhatsApp message payload
+Product cards with:
 
-- Order reference
-- Customer details
-- Product list
-- Quantities
-- Variants if any
-- Destination country
-- Restriction warnings if any
-- Subtotal estimate
-- Free-text notes
+- large image
+- category
+- name
+- price
+- useful short descriptor
+- badges where relevant
+- strong CTA
 
-### Future-readiness requirement
+### 5. Editorial manifesto block
 
-The final submit action must be decoupled from UI rendering so it can later be replaced by:
+A brand block that explains why Aurum Natura is more than a food site. This section carries narrative, value, and emotional differentiation.
 
-- Stripe Checkout
-- other hosted checkout
-- custom backend order creation
+### 6. Visual finca story
 
-without redesigning cart, order summary, or form structure.
+A gallery or mosaic section that can later absorb a much larger quantity of real photography and video stills from the finca.
 
-## Research and Deliverables
+### 7. Seasonal or curated selection
 
-The design should incorporate the user's requested `website intelligence` approach, adapted to the current tool availability.
+A more commercially focused block for immediate purchase momentum.
 
-That means the project should include:
+### 8. Social proof / credibility
 
-- `research/01-client-brand.md`
-- `research/02-competitor-analysis.md`
-- `research/03-build-brief.md`
-- `research/04-quality-audit.md`
+Prepared space for:
 
-The implementation should treat the current site as the starting brand source and produce a build brief informed by real competitive patterns rather than arbitrary styling choices.
+- testimonials
+- trust messaging
+- editorial mentions
+- customer reassurance
 
-## SEO and Discoverability
+### 9. Final premium CTA
 
-The store must be structurally ready for SEO from the start:
+A large closing section with powerful image support and direct routing into catalog or WhatsApp-driven conversion.
 
-- unique page titles
-- unique meta descriptions
-- logical H1/H2/H3 hierarchy
-- alt text strategy for product and category imagery
-- schema markup for organization and product-level content where appropriate
-- multilingual metadata readiness
-- robots.txt and sitemap generation
+## Catalog Design
 
-## Accessibility and Performance
+### Catalog role
 
-### Accessibility
+The catalog becomes the primary buying surface. It should feel like a premium store, not a decorative gallery and not a sparse list of products.
 
-- Keyboard-accessible navigation
-- Visible focus states
-- WCAG AA contrast target
-- Motion reduction support
-- Semantic HTML structure
+### Catalog behavior
 
-### Performance
+- category-led browsing
+- clearer hierarchy and filtering
+- stronger product cards
+- easier scanning on desktop and mobile
+- country-related or product-type-related restrictions visible early
 
-- Lazy-loaded imagery where appropriate
-- No render-blocking heavy visual assets beyond necessity
-- 3D and motion must degrade gracefully
-- Mobile responsiveness is mandatory, not secondary
-- Target a storefront that still feels premium on low-power devices
+### Suggested filters
 
-## Risks
+- category
+- price
+- featured
+- seasonal / limited
+- shipping restriction
+- suitable for Europe-wide shipping vs restricted items
 
-### Main risk
+### Product cards
 
-Overweighting the cinematic layer could make the store feel slow or unclear.
+Each card should be more useful and more premium than the current implementation. Cards should support:
 
-### Mitigation
+- large image
+- category label
+- product name
+- price
+- short commercial description
+- scarcity or featured badge
+- restriction badge if needed
+- direct add-to-cart or view-product CTA
 
-- Strongest visual expression on home and featured sections only
-- Cleaner layout on catalog and checkout
-- Data and shopping behavior stay independent from motion layer
+## Product Detail Pages
 
-### Secondary risk
+### Product page role
 
-An expanded invented assortment could feel fake if it breaks the real product base.
+The product page is where emotional storytelling and practical buying information meet. It must feel significantly richer and more descriptive than the current state.
 
-### Mitigation
+### Required structure
 
-- Expansion must stay adjacent to the real categories already approved
-- Product families should feel curated, not randomly broadened
+- image and/or video gallery prepared for multiple assets
+- strong above-the-fold summary
+- price and quantity control
+- add-to-cart action
+- concise product promise
+- expanded descriptive sections
+- trust and logistics information
+- related products
+
+### Content blocks by default
+
+- what it is
+- what is included
+- origin
+- production or care details
+- shipping or delivery information
+- restrictions by country if relevant
+- who it is for
+- related recommendations
+
+### Tone by product family
+
+- boxes, oil, honey, art: more editorial and aspirational
+- eggs, vegetables, herbs: descriptive, origin-focused, confidence-building
+- plants: care + shipping + restriction clarity
+- visits: experiential and trust-led
+
+## Cart and Checkout
+
+### Cart
+
+The cart must feel real, useful, and premium. It should not behave like a thin staging area before WhatsApp.
+
+Required behaviors:
+
+- quantity adjustments
+- remove items
+- subtotal visibility
+- shipping/restriction messaging
+- notes field if needed
+- visual consistency with product detail pages
+
+### Checkout
+
+The checkout should feel like a real premium purchase flow, even though payment is not collected online in v1.
+
+Required fields and behavior:
+
+- customer details
+- country
+- preferred language
+- contact details
+- notes for order
+- summary of selected items
+- clear next-step explanation
+- final structured WhatsApp order generation
+
+### WhatsApp handoff
+
+The generated message must be clean and professional, containing:
+
+- customer name
+- country
+- contact data
+- selected products and quantities
+- notes
+- preferred language
+
+The message should be easy for the finca team to process without manual cleanup.
+
+## About the Finca
+
+### Role
+
+The About page is a central brand asset. It should not be a short generic "who we are" page.
+
+### Purpose
+
+- raise trust
+- increase perceived value
+- support premium pricing
+- justify the product philosophy
+- make the finca visually memorable
+
+### Content direction
+
+- origin story
+- philosophy
+- process
+- environment
+- rhythm of the finca
+- why production is limited
+- human side of the brand
+
+### Media direction
+
+The page must be prepared for:
+
+- horizontal photography
+- documentary stills
+- portrait photography
+- process imagery
+- embedded video moments
+- editorial text blocks
+
+## Contact and Help
+
+### Contact page
+
+The contact page should feel like premium hospitality, not a generic support form.
+
+Expected elements:
+
+- primary WhatsApp contact
+- email
+- service framing
+- shipping/help entry points
+- elegant FAQ preview or reassurance blocks
+
+### Help / shipping content
+
+Prepare a professional support layer with:
+
+- shipping scope
+- expected fulfillment model
+- product restrictions
+- returns or policy guidance where applicable
+- ordering clarification
+
+## Multimedia Preparation
+
+### Core requirement
+
+The redesign must be structurally prepared for a large future media upgrade without redesigning layouts later.
+
+### Media slots to support
+
+- hero video
+- hero fallback image
+- category cover images
+- product gallery images
+- product video where useful
+- editorial story sections
+- finca documentary strips
+- testimonial or proof visuals
+- section background visuals
+
+### Placeholder strategy
+
+Until the user provides real media, placeholders must still look intentional and premium. The temporary system should not make the site feel unfinished.
+
+## Technical Direction
+
+### Recommended frontend architecture
+
+Maintain a static modular frontend rather than adding framework complexity prematurely.
+
+This means:
+
+- lightweight deploy
+- fast load times
+- strong control over visual output
+- easier future media replacement
+- simpler multilingual and catalog data layer if structured well
+
+### Data model requirements
+
+Data should be centralized for:
+
+- products
+- categories
+- pricing
+- featured flags
+- scarcity badges
+- restrictions
+- language content
+- trust messages
+- media references
+
+### Component requirements
+
+Create reusable building blocks for:
+
+- hero
+- trust bar
+- category cards
+- product cards
+- media galleries
+- editorial text-image blocks
+- testimonial blocks
+- FAQ items
+- cart summaries
+- checkout sections
+- call-to-action sections
+
+### Commerce state requirements
+
+- real cart state in frontend
+- persistence between pages
+- clean summary rendering
+- compatibility with multilingual labels
+- compatibility with future real checkout replacement
+
+## Motion and Interaction
+
+### Motion goals
+
+- cinematic depth on hero and storytelling surfaces
+- restrained animation on shopping surfaces
+- premium microinteractions
+- no gimmicky motion that harms usability
+
+### Priority areas for motion
+
+- homepage hero
+- category transitions
+- selected editorial reveal moments
+- image hovers and refined card interactions
+
+### Low-intensity areas
+
+- catalog filters
+- cart
+- checkout
+- legal/help pages
+
+### Accessibility and fallback
+
+- respect `prefers-reduced-motion`
+- graceful fallback if video fails
+- no dependency on WebGL for core brand experience
+- mobile interactions must remain fast and stable
+
+## Mobile and Responsive Behavior
+
+The redesign must be explicitly mobile-first in buying behavior, even if some visual hero moments are more dramatic on desktop.
+
+The mobile experience must deliver:
+
+- fast load
+- clear navigation
+- clean catalog scanning
+- easy add-to-cart flow
+- frictionless checkout fields
+- readable typography
+- stable media behavior
+
+No section should rely on desktop-only composition logic to remain understandable.
+
+## Performance Requirements
+
+- lazy-load non-critical images
+- optimize video usage and fallback
+- avoid excessive runtime animation cost
+- keep shopping pages calmer than editorial pages
+- maintain strong perceived performance on mobile
+
+## Error Handling and Robustness
+
+The storefront should account for:
+
+- missing image fallback
+- video fallback
+- empty cart state
+- restricted product messaging
+- language defaults
+- malformed or incomplete product data
+
+The interface must stay polished even when content is temporarily incomplete.
 
 ## Success Criteria
 
-The design is successful if:
+The redesign is successful when:
 
-- The site feels recognizably Aurum Natura, but more commercially usable
-- A visitor can browse categories, add products, and complete a believable checkout
-- The final order message to WhatsApp is structured and professional
-- The store supports Spanish, English, and French in all purchase-critical areas
-- Plant/cutting restrictions are visible and handled clearly
-- The codebase is ready for future online payments without a front-end rewrite
+1. the site feels like a premium European storefront rather than a local landing page
+2. the homepage communicates brand, origin, and desire immediately
+3. the catalog is easier to browse and clearly more commercial
+4. product pages are much more descriptive and visually richer
+5. the cart and checkout feel real and trustworthy
+6. the final WhatsApp handoff feels structured and professional
+7. the frontend is clearly ready to absorb real photos and videos without redesign
+8. the site works well in Spanish, English, and French
+9. the experience is strong on mobile as well as desktop
 
-## Implementation Boundary
+## Non-Goals
 
-No implementation work should start until this written spec is reviewed and accepted.
+- No online payment integration in v1
+- No full admin panel in v1
+- No backend inventory system in v1
+- No generic marketplace scale
+- No generic minimal white-label store styling
+
+## Implementation Notes
+
+This redesign should prioritize frontend quality and structural readiness over backend complexity. The experience must be elevated through layout, hierarchy, typography, media strategy, content richness, cart flow, and language architecture.
+
+The final implementation should make it obvious that Aurum Natura is ready to become a serious brand storefront as soon as real media assets arrive.
