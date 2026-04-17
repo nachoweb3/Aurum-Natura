@@ -1111,8 +1111,8 @@ h3 {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   height: 100vh;
-  min-height: 600px;
-  overflow: hidden;
+  height: 100dvh;
+  min-height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1122,12 +1122,14 @@ h3 {
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .video-hero__media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .video-hero__overlay {
@@ -1136,47 +1138,45 @@ h3 {
   z-index: 1;
   background:
     linear-gradient(180deg,
-      rgba(9, 7, 6, 0.78) 0%,
-      rgba(9, 7, 6, 0.35) 18%,
-      rgba(9, 7, 6, 0.15) 40%,
-      rgba(9, 7, 6, 0.15) 60%,
-      rgba(9, 7, 6, 0.8) 100%),
-    radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(9, 7, 6, 0.5) 100%);
+      rgba(9, 7, 6, 0.7) 0%,
+      rgba(9, 7, 6, 0.4) 25%,
+      rgba(9, 7, 6, 0.3) 50%,
+      rgba(9, 7, 6, 0.4) 75%,
+      rgba(9, 7, 6, 0.85) 100%);
 }
 
 .video-hero__vignette {
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 6px solid transparent;
   box-shadow:
-    inset 0 0 120px rgba(217, 177, 106, 0.08),
-    inset 0 0 40px rgba(0, 0, 0, 0.5);
+    inset 0 0 150px rgba(0, 0, 0, 0.5),
+    inset 0 0 40px rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
 
 .video-hero__content {
   position: relative;
-  z-index: 3;
+  z-index: 5;
   text-align: center;
+  width: 100%;
   max-width: 820px;
   padding: 0 24px;
-  animation: heroFadeUp 1.2s ease-out both;
 }
 
 .video-hero__content .brand-logo {
   width: 100px;
   height: 100px;
   margin: 0 auto 24px;
-  filter: drop-shadow(0 8px 32px rgba(217, 177, 106, 0.3));
-  animation: heroPulse 4s ease-in-out infinite;
+  filter: drop-shadow(0 8px 32px rgba(217, 177, 106, 0.4));
 }
 
 .video-hero__content h1 {
   margin: 0 0 20px;
   font-size: clamp(2.4rem, 5.5vw, 4.6rem);
   line-height: 1;
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.5);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
@@ -1190,13 +1190,14 @@ h3 {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   margin-bottom: 16px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 .video-hero__content .hero-copy__lede {
   max-width: 540px;
   margin: 0 auto 32px;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  color: rgba(243, 232, 218, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
   font-size: 0.95rem;
   line-height: 1.75;
 }
@@ -1206,36 +1207,37 @@ h3 {
 }
 
 .video-hero__content .trust-bar {
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .video-hero__content .trust-bar span {
   font-size: 0.72rem;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* ── Video hero fade-out transition to content ── */
+/* Fade to page background at bottom of hero */
 .video-hero::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
-  z-index: 2;
+  height: 150px;
+  z-index: 4;
   background: linear-gradient(transparent, #090706);
   pointer-events: none;
 }
 
 .video-hero__scroll-cue {
   position: absolute;
-  bottom: 32px;
+  bottom: 36px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1252,11 +1254,6 @@ h3 {
   width: 1px;
   height: 32px;
   background: linear-gradient(180deg, var(--gold), transparent);
-}
-
-@keyframes heroFadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes heroPulse {
@@ -1838,17 +1835,44 @@ h3 {
 @media (max-width: 640px) {
   .video-hero {
     height: 100svh;
-    min-height: 500px;
+    height: 100dvh;
+    min-height: 480px;
+  }
+
+  .video-hero__content {
+    padding: 0 16px;
   }
 
   .video-hero__content .brand-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
   }
 
   .video-hero__content h1 {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    line-height: 1.05;
+  }
+
+  .video-hero__content .hero-tagline {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+
+  .video-hero__content .hero-copy__lede {
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+  }
+
+  .video-hero__content .trust-bar span {
+    font-size: 0.65rem;
+    padding: 6px 10px;
+  }
+
+  .video-hero__scroll-cue {
+    bottom: 24px;
+    font-size: 0.65rem;
   }
 
   .victorian-corner {
