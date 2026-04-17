@@ -1,5 +1,4 @@
 import { getFeaturedProducts } from '../catalog.mjs';
-import { initHeroScene } from '../ui/hero-3d.mjs';
 import { getMediaAsset, renderCategoryCard, renderProductCard } from '../runtime.mjs';
 
 const HOME_COPY = {
@@ -78,34 +77,28 @@ export async function renderHomePage(app) {
   const featured = getFeaturedProducts(app.catalog, app.state.locale, 3);
 
   app.shell.pageRoot.innerHTML = `
-    <section class="hero-block">
-      <div class="hero-copy">
-        <p class="eyebrow">${copy.kicker}</p>
+    <section class="video-hero">
+      <div class="video-hero__media">
+        <video autoplay muted loop playsinline poster="${getMediaAsset('homeHero')}">
+          <source src="assets/img/extras/VIDEOHEADER.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video-hero__overlay"></div>
+      <div class="video-hero__vignette"></div>
+      <div class="video-hero__content">
+        <img src="assets/img/logo.png" alt="Aurum Natura" class="brand-logo" />
+        <p class="hero-tagline">${copy.kicker}</p>
         <h1>${copy.title}</h1>
         <p class="hero-copy__lede">${copy.intro}</p>
         <div class="hero-copy__actions">
           <a href="${app.createUrl('productos.html')}" class="button button--primary">${copy.primary}</a>
           <a href="https://wa.me/${app.catalog.store.whatsappNumber}" class="button button--ghost">${copy.secondary}</a>
         </div>
-        <div class="trust-bar">
+        <div class="trust-bar" style="justify-content:center;margin-top:18px;">
           ${copy.trust.map((item) => `<span>${item}</span>`).join('')}
         </div>
       </div>
-      <div class="hero-scene" data-hero-root>
-        <div class="hero-stage">
-          <div class="hero-stage__image" data-depth="0.4" style="background-image:url('${getMediaAsset('homeHero')}')"></div>
-          <div class="hero-stage__halo" data-depth="0.8"></div>
-          <div class="hero-stage__card hero-stage__card--box" data-depth="1.2">
-            <span>Huevos camperos</span>
-          </div>
-          <div class="hero-stage__card hero-stage__card--pot" data-depth="1.6">
-            <span>Huerta de temporada</span>
-          </div>
-          <div class="hero-stage__card hero-stage__card--frame" data-depth="2">
-            <span>Suscripcion semanal</span>
-          </div>
-        </div>
-      </div>
+      <div class="video-hero__scroll-cue">Descubre</div>
     </section>
 
     <section class="section-block">
@@ -235,5 +228,4 @@ export async function renderHomePage(app) {
     </section>
   `;
 
-  initHeroScene(document.querySelector('[data-hero-root]'));
 }
