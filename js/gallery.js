@@ -25,6 +25,10 @@ class Gallery {
   }
 
   createLightbox() {
+    if (document.getElementById('gallery-lightbox')) {
+      return;
+    }
+
     const lightboxHTML = `
       <div class="lightbox" id="gallery-lightbox">
         <div class="lightbox-content">
@@ -192,11 +196,28 @@ class Gallery {
 // Helper function to initialize galleries
 function initGallery(type, containerSelector, options = {}) {
   const container = document.querySelector(containerSelector);
-  if (container) {
-    new Gallery({
-      type,
-      container,
-      ...options
-    });
+  if (!container) {
+    return null;
   }
+
+  const instance = new Gallery({
+    type,
+    container,
+    ...options
+  });
+
+  if (typeof window !== 'undefined') {
+    window.galleryInstances = window.galleryInstances || {};
+    window.galleryInstances[type] = instance;
+
+    if (!window.gallery || type === 'product') {
+      window.gallery = instance;
+    }
+  }
+
+  return instance;
+}
+
+if (typeof window !== 'undefined') {
+  window.initGallery = initGallery;
 }
