@@ -1,0 +1,216 @@
+{
+  "store": {
+    "name": "Aurum Natura",
+    "currency": "EUR",
+    "defaultLocale": "es",
+    "supportedLocales": ["es"],
+    "whatsappNumber": "34640943669",
+    "orderPrefix": "AN",
+    "freeShippingThreshold": 95,
+    "origin": {
+      "addressLine": "Calle Viana 54",
+      "town": "Nombela",
+      "province": "Toledo",
+      "region": "Castilla-La Mancha",
+      "country": "Espana"
+    }
+  },
+  "categories": [
+    {
+      "id": "subscriptions",
+      "slug": "suscripciones",
+      "tone": "gold",
+      "label": {
+        "es": "Suscripciones"
+      },
+      "description": {
+        "es": "Cajas semanales y quincenales con huevos camperos, huerta y fruta de temporada."
+      }
+    },
+    {
+      "id": "eggs",
+      "slug": "huevos-camperos",
+      "tone": "amber",
+      "label": {
+        "es": "Huevos camperos"
+      },
+      "description": {
+        "es": "Huevos de gallinas de raza, recogidos con ritmo corto y pensados para una cocina mejor."
+      }
+    },
+    {
+      "id": "vegetables",
+      "slug": "huerta-de-temporada",
+      "tone": "olive",
+      "label": {
+        "es": "Huerta de temporada"
+      },
+      "description": {
+        "es": "Verdura y hortaliza seleccionada según el momento del campo y la calidad real de la semana."
+      }
+    },
+    {
+      "id": "fruit",
+      "slug": "fruta-de-temporada",
+      "tone": "moss",
+      "label": {
+        "es": "Fruta de temporada"
+      },
+      "description": {
+        "es": "Fruta escogida para hogares que valoran sabor, origen y una compra más cuidada."
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "p-box-essential",
+      "slug": "caja-esencial",
+      "category": "subscriptions",
+      "subcategory": "weekly-boxes",
+      "price": 49,
+      "compareAt": 55,
+      "featured": true,
+      "badge": "signature",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "farm-box",
+        "palette": "gold",
+        "media": "boxEssential",
+        "gallery": ["eggsHero", "vegetableHarvest", "seasonKitchen"]
+      },
+      "content": {
+        "es": {
+          "name": "Caja Esencial",
+          "shortDescription": "La forma elegante de empezar a comer mejor en casa cada semana.",
+          "description": "Una selección compacta y premium para parejas o hogares pequeños. Incluye huevos camperos de gallinas de raza, verdura, hortaliza y fruta de temporada en una proporción pensada para una cocina semanal más consciente."
+        }
+      }
+    },
+    {
+      "id": "p-box-family",
+      "slug": "caja-familiar",
+      "category": "subscriptions",
+      "subcategory": "weekly-boxes",
+      "price": 79,
+      "compareAt": 89,
+      "featured": true,
+      "badge": "bestseller",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "farm-box",
+        "palette": "amber",
+        "media": "boxFamily",
+        "gallery": ["familyTable", "seasonKitchen", "vegetableHarvest"]
+      },
+      "content": {
+        "es": {
+          "name": "Caja Familiar",
+          "shortDescription": "La suscripción familiar y semanal para hogares que quieren una mesa mejor toda la semana.",
+          "description": "Nuestra opción más completa para el ritmo real de una familia o una pareja que cocina en serio. Más variedad, más cantidad útil y una combinación equilibrada de huevos camperos, huerta y fruta de temporada."
+        }
+      }
+    },
+    {
+      "id": "p-box-reserve",
+      "slug": "caja-reserva",
+      "category": "subscriptions",
+      "subcategory": "weekly-boxes",
+      "price": 119,
+      "compareAt": 132,
+      "featured": true,
+      "badge": "limited",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "farm-box",
+        "palette": "ember",
+        "media": "boxReserve",
+        "gallery": ["homeHero", "familyTable", "seasonKitchen"]
+      },
+      "content": {
+        "es": {
+          "name": "Caja Reserva",
+          "shortDescription": "La expresión más amplia de la finca para hogares que quieren lo mejor.",
+          "description": "Una caja con más presencia, más producto y una selección especialmente cuidada para quienes valoran el origen, la estacionalidad y una experiencia semanal más abundante."
+        }
+      }
+    },
+    {
+      "id": "p-eggs-dozen",
+      "slug": "docena-huevos-camperos",
+      "category": "eggs",
+      "subcategory": "weekly-addons",
+      "price": 14,
+      "compareAt": 16,
+      "featured": false,
+      "badge": "farm-fresh",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "egg-crate",
+        "palette": "amber",
+        "media": "eggsHero",
+        "gallery": ["eggsHero", "seasonKitchen"]
+      },
+      "content": {
+        "es": {
+          "name": "Docena de huevos camperos",
+          "shortDescription": "Huevos de gallinas de raza con yema firme y recogida de ritmo corto.",
+          "description": "Una docena de huevos camperos seleccionados para clientes que quieren asegurar calidad diaria en tortillas, desayunos, repostería y cocina de base."
+        }
+      }
+    },
+    {
+      "id": "p-vegetable-selection",
+      "slug": "seleccion-huerta-de-temporada",
+      "category": "vegetables",
+      "subcategory": "seasonal-addons",
+      "price": 24,
+      "compareAt": 27,
+      "featured": false,
+      "badge": "seasonal",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "vegetable-crate",
+        "palette": "olive",
+        "media": "vegetableHarvest",
+        "gallery": ["vegetableHarvest", "seasonKitchen", "familyTable"]
+      },
+      "content": {
+        "es": {
+          "name": "Selección de huerta de temporada",
+          "shortDescription": "Verdura y hortaliza fresca para cocinar con variedad real durante la semana.",
+          "description": "Una selección variable según el momento del campo, pensada para complementar la suscripción o para una compra puntual con más nivel que el lineal habitual."
+        }
+      }
+    },
+    {
+      "id": "p-fruit-selection",
+      "slug": "seleccion-fruta-de-temporada",
+      "category": "fruit",
+      "subcategory": "seasonal-addons",
+      "price": 22,
+      "compareAt": 25,
+      "featured": false,
+      "badge": "kitchen",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "fruit-basket",
+        "palette": "moss",
+        "media": "seasonKitchen",
+        "gallery": ["seasonKitchen", "familyTable", "homeHero"]
+      },
+      "content": {
+        "es": {
+          "name": "Selección de fruta de temporada",
+          "shortDescription": "Fruta escogida para hogares que quieren sabor, origen y compra bien hecha.",
+          "description": "Una selección de temporada que cambia con el calendario natural y acompaña desayunos, meriendas y una forma más cuidada de comprar fruta para casa."
+        }
+      }
+    }
+  ]
+}
