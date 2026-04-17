@@ -93,10 +93,31 @@ const COPY = {
   }
 };
 
+const VICTORIAN_CORNER_SVG = `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M2 2C2 2 8 20 20 32C32 44 50 50 50 50" stroke="rgba(217,177,106,0.45)" stroke-width="1.2" fill="none"/>
+  <path d="M2 2C2 2 14 8 26 14C38 20 50 50 50 50" stroke="rgba(217,177,106,0.3)" stroke-width="0.8" fill="none"/>
+  <path d="M2 8C2 8 6 16 10 22" stroke="rgba(217,177,106,0.35)" stroke-width="0.6" fill="none"/>
+  <path d="M8 2C8 2 16 6 22 10" stroke="rgba(217,177,106,0.35)" stroke-width="0.6" fill="none"/>
+  <circle cx="6" cy="6" r="2.5" fill="rgba(217,177,106,0.3)"/>
+  <circle cx="20" cy="20" r="1.5" fill="rgba(217,177,106,0.2)"/>
+  <path d="M2 2L12 2L12 4L4 4L4 12L2 12Z" fill="rgba(217,177,106,0.25)"/>
+</svg>`;
+
+function injectVictorianBorder() {
+  const positions = ['tl', 'tr', 'bl', 'br'];
+  for (const pos of positions) {
+    const el = document.createElement('div');
+    el.className = `victorian-corner victorian-corner--${pos}`;
+    el.innerHTML = VICTORIAN_CORNER_SVG;
+    document.body.appendChild(el);
+  }
+}
+
 export async function bootStorefront(pageId, renderPage) {
   const catalog = await fetch('data/catalogo.json').then((response) => response.json());
   const app = createStorefrontApp(catalog, pageId);
 
+  injectVictorianBorder();
   app.renderChrome();
   bindGlobalEvents(app);
   await renderPage(app);
@@ -429,7 +450,7 @@ function renderHeader(app) {
   return `
     <div class="header-shell">
       <a href="${app.createUrl('index.html')}" class="brand">
-        <span class="brand__seal">AN</span>
+        <span class="brand__seal"><img src="assets/img/logo.png" alt="Aurum Natura" /></span>
         <span>
           <strong>Aurum Natura</strong>
           <small>Nombela · Toledo</small>
