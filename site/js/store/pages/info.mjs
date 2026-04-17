@@ -3,32 +3,52 @@ import { getMediaAsset } from '../runtime.mjs';
 const INFO_COPY = {
   es: {
     about: {
-      eyebrow: 'Origen y manera de trabajar',
-      title: 'Aurum Natura nace en Nombela y trabaja con una escala mas corta, mas visible y mas honesta.',
-      body:
-        'No somos una cesta generica. Somos una seleccion de finca y temporada pensada para hogares que quieren saber mejor de donde viene lo que comen y por que merece su precio.',
-      storyTitle: 'Una finca real con criterio de seleccion real.',
-      storyBody:
-        'Desde Calle Viana 54, en Nombela, seleccionamos huevos camperos de gallinas de raza, verdura, hortaliza y fruta de temporada con una idea simple: ofrecer un producto mejor, mas cuidado y mas coherente con el ritmo del hogar.',
-      timeline: [
-        'Origen claro: Nombela, Toledo, Castilla-La Mancha.',
-        'Produccion limitada: menos volumen, mas atencion a la calidad de cada semana.',
-        'Suscripcion con trato directo: confirmamos disponibilidad y modalidad de entrega por WhatsApp.'
+      eyebrow: 'Sobre Aurum Natura',
+      heroTitle: 'Hay una diferencia entre consumir y elegir de donde viene lo que forma tu vida.',
+      heroBody:
+        'Aurum Natura nace en una finca en Nombela, lejos del ruido, de la produccion masiva y de los ritmos artificiales. Aqui, cada dia empieza con tierra en las manos, animales que dependen de nosotros y ciclos que no se pueden forzar.',
+      manifestoLines: [
+        'No somos una empresa industrial.',
+        'No seguimos procesos acelerados.',
+        'No anadimos nada que no pertenezca a la propia naturaleza.'
       ],
-      qualityCards: [
-        {
-          title: 'Huevos con diferencia',
-          body: 'Las gallinas de raza y el ritmo de recogida cambian el resultado en cocina y refuerzan la sensacion de producto bien elegido.'
-        },
-        {
-          title: 'Temporada de verdad',
-          body: 'No forzamos un contenido fijo cuando el campo pide otra cosa. La variacion bien explicada forma parte del valor.'
-        },
-        {
-          title: 'Escala manejable',
-          body: 'Preferimos atender menos hogares con mas criterio antes que prometer una abundancia industrial sin alma.'
-        }
-      ]
+      farmTitle: 'Cultivamos respetando el ritmo real de la tierra.',
+      farmBody:
+        'Criamos nuestros animales con espacio, alimento natural y tiempo. Sin aditivos, sin quimicos, sin artificios. Porque creemos en algo muy simple, pero cada vez mas escaso: lo real no necesita ser mejorado.',
+      usTitle: 'Nuestra forma de vivir',
+      usBody:
+        'Detras de Aurum Natura estamos Nacho y Nahomi. Elegimos alejarnos del modelo convencional. No queriamos depender de sistemas que sacrifican calidad por velocidad, ni consumir productos que no entendemos de donde vienen. Decidimos construir algo distinto.',
+      usBody2:
+        'Nuestra finca no es solo un lugar de produccion. Es un espacio vivo donde convivimos con lo que crece, con lo que nace y con lo que requiere cuidado constante. Aqui no hay automatizacion que sustituya el criterio humano ni decisiones tomadas desde una oficina.',
+      usQuote: 'Cada huevo, cada planta, cada pieza que sale de aqui ha pasado por nuestras manos. Y eso cambia todo.',
+      moreTitle: 'Mas que productos',
+      moreBody:
+        'Con el tiempo entendimos que no solo estabamos produciendo alimentos o creando piezas. Estabamos creando una forma de vida.',
+      morePoints: [
+        'Una forma de volver a lo esencial.',
+        'De valorar el origen.',
+        'De elegir calidad en lugar de cantidad.',
+        'De rodearse de objetos y alimentos que tienen historia.'
+      ],
+      moreClosing: 'Por eso Aurum Natura no es solo una tienda. Es una seleccion de todo aquello que nosotros mismos consumiriamos, usariamos y pondriamos en nuestro propio hogar.',
+      limitedTitle: 'Produccion limitada, valor real',
+      limitedLines: [
+        'No producimos en masa. No queremos hacerlo.',
+        'Cada temporada es distinta. Cada cosecha es diferente. Cada pieza artesanal es unica o parte de una serie muy limitada.',
+        'Esto significa que lo que encuentras aqui no siempre estara disponible manana.',
+        'Y eso es precisamente lo que le da valor.'
+      ],
+      forWhomTitle: 'Para quien sabe reconocerlo',
+      forWhomBody: 'Aurum Natura no es para todo el mundo.',
+      forWhomPoints: [
+        'Es para quien entiende la diferencia entre lo natural y lo vendido como natural.',
+        'Para quien valora el proceso, no solo el resultado.',
+        'Para quien prefiere menos cantidad, pero mas verdad.',
+        'Para quien quiere rodearse de cosas con sentido.'
+      ],
+      forWhomClosing: 'Nosotros simplemente decidimos compartir lo que ya formaba parte de nuestra vida. Si estas aqui, probablemente tu tambien lo entiendes.',
+      signoff: 'Aurum Natura',
+      signoffSub: 'El oro de la tierra.'
     },
     help: {
       eyebrow: 'Entrega y consultas',
@@ -104,46 +124,98 @@ function formatDisplayPhone(number) {
 }
 
 function renderAboutPage(copy) {
+  const a = copy.about;
   return `
-    <section class="page-hero page-hero--compact">
-      <p class="eyebrow">${copy.about.eyebrow}</p>
-      <h1>${copy.about.title}</h1>
-      <p>${copy.about.body}</p>
+    <section class="page-hero page-hero--about">
+      <p class="eyebrow">${a.eyebrow}</p>
+      <h1>${a.heroTitle}</h1>
+      <p class="about-hero__body">${a.heroBody}</p>
     </section>
 
-    <section class="editorial-band editorial-band--split">
+    <section class="manifesto-band manifesto-band--about">
+      <div class="manifesto-band__inner">
+        ${a.manifestoLines.map((line) => `<p class="manifesto-line">${line}</p>`).join('')}
+      </div>
+    </section>
+
+    <section class="editorial-band editorial-band--split editorial-band--spacious">
       <div class="editorial-band__copy">
-        <p class="eyebrow">Desde Nombela</p>
-        <h2>${copy.about.storyTitle}</h2>
-        <p>${copy.about.storyBody}</p>
-        <div class="timeline-list">
-          ${copy.about.timeline.map((item) => `<div class="timeline-list__item">${item}</div>`).join('')}
-        </div>
+        <h2>${a.farmTitle}</h2>
+        <p>${a.farmBody}</p>
       </div>
       <div class="editorial-band__stack">
         <figure class="stack-media-card is-highlight">
-          <img src="${getMediaAsset('farmOrigin')}" alt="Finca de Aurum Natura" loading="lazy" />
+          <img src="${getMediaAsset('farmOrigin')}" alt="Finca de Aurum Natura en Nombela" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="about-chapter">
+      <div class="about-chapter__inner">
+        <p class="eyebrow">Quienes somos</p>
+        <h2>${a.usTitle}</h2>
+        <p>${a.usBody}</p>
+        <p>${a.usBody2}</p>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="quote-band__inner">
+        <blockquote class="about-pullquote">
+          <p>${a.usQuote}</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="editorial-band editorial-band--split editorial-band--spacious editorial-band--reverse">
+      <div class="editorial-band__stack">
+        <figure class="stack-media-card is-highlight">
+          <img src="${getMediaAsset('vegetableHarvest')}" alt="Recoleccion de huerta" loading="lazy" />
         </figure>
         <figure class="stack-media-card">
           <img src="${getMediaAsset('eggsHero')}" alt="Huevos camperos" loading="lazy" />
         </figure>
+      </div>
+      <div class="editorial-band__copy">
+        <h2>${a.moreTitle}</h2>
+        <p>${a.moreBody}</p>
+        <div class="timeline-list">
+          ${a.morePoints.map((item) => `<div class="timeline-list__item">${item}</div>`).join('')}
+        </div>
+        <p class="about-closing-line">${a.moreClosing}</p>
+      </div>
+    </section>
+
+    <section class="about-chapter">
+      <div class="about-chapter__inner">
+        <h2>${a.limitedTitle}</h2>
+        ${a.limitedLines.map((line) => `<p class="about-emphasis-line">${line}</p>`).join('')}
+      </div>
+    </section>
+
+    <section class="editorial-band editorial-band--split editorial-band--spacious">
+      <div class="editorial-band__copy">
+        <h2>${a.forWhomTitle}</h2>
+        <p class="about-emphasis-line">${a.forWhomBody}</p>
+        <div class="timeline-list">
+          ${a.forWhomPoints.map((item) => `<div class="timeline-list__item">${item}</div>`).join('')}
+        </div>
+        <p class="about-closing-line">${a.forWhomClosing}</p>
+      </div>
+      <div class="editorial-band__stack">
+        <figure class="stack-media-card is-highlight">
+          <img src="${getMediaAsset('familyTable')}" alt="Mesa con producto de temporada" loading="lazy" />
+        </figure>
         <figure class="stack-media-card">
-          <img src="${getMediaAsset('vegetableHarvest')}" alt="Huerta de temporada" loading="lazy" />
+          <img src="${getMediaAsset('seasonKitchen')}" alt="Cocina de temporada" loading="lazy" />
         </figure>
       </div>
     </section>
 
-    <section class="detail-card-grid">
-      ${copy.about.qualityCards
-        .map(
-          (card) => `
-            <article class="glass-card">
-              <strong>${card.title}</strong>
-              <p>${card.body}</p>
-            </article>
-          `
-        )
-        .join('')}
+    <section class="about-signoff">
+      <img src="assets/img/logo.png" alt="Aurum Natura" class="about-signoff__logo" />
+      <h2>${a.signoff}</h2>
+      <p class="about-signoff__sub">${a.signoffSub}</p>
     </section>
   `;
 }

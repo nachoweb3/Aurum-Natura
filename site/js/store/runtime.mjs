@@ -44,8 +44,8 @@ const COPY = {
   es: {
     nav: {
       home: 'Inicio',
+      about: 'Sobre Nosotros',
       catalog: 'Productos',
-      about: 'Origen',
       contact: 'Contacto',
       cart: 'Cesta',
       checkout: 'Confirmar pedido'
@@ -441,8 +441,8 @@ function bindGlobalEvents(app) {
 function renderHeader(app) {
   const links = [
     { page: 'home', href: app.createUrl('index.html'), label: app.copy.nav.home },
-    { page: 'catalog', href: app.createUrl(PRODUCT_LIST_PATH), label: app.copy.nav.catalog },
     { page: 'about', href: app.createUrl('sobre-nosotros.html'), label: app.copy.nav.about },
+    { page: 'catalog', href: app.createUrl(PRODUCT_LIST_PATH), label: app.copy.nav.catalog },
     { page: 'contact', href: app.createUrl('contacto.html'), label: app.copy.nav.contact }
   ];
   const showLocaleSwitcher = (app.catalog.store.supportedLocales ?? []).length > 1;
@@ -502,12 +502,16 @@ function renderFooter(app) {
       </div>
       <p>${app.copy.footer.statement}</p>
       <div class="footer-links">
-        <a href="${app.createUrl(PRODUCT_LIST_PATH)}">${app.copy.nav.catalog}</a>
         <a href="${app.createUrl('sobre-nosotros.html')}">${app.copy.nav.about}</a>
+        <a href="${app.createUrl(PRODUCT_LIST_PATH)}">${app.copy.nav.catalog}</a>
         <a href="${app.createUrl('contacto.html')}">${app.copy.nav.contact}</a>
         <a href="${app.createUrl('checkout.html')}">${app.copy.nav.checkout}</a>
       </div>
-      <p class="footer-legal">© ${new Date().getFullYear()} ${app.catalog.store.name}. ${app.copy.footer.rights}</p>
+      <div class="social-links">
+        <a href="https://instagram.com/nacho_web3" target="_blank" rel="noopener" class="social-link">Instagram</a>
+        <a href="https://x.com/nachoweb3__x" target="_blank" rel="noopener" class="social-link">X</a>
+      </div>
+      <p class="footer-legal">&copy; ${new Date().getFullYear()} ${app.catalog.store.name}. ${app.copy.footer.rights}</p>
     </div>
   `;
 }
