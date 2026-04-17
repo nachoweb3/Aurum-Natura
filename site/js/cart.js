@@ -266,3 +266,7 @@ document.head.appendChild(style);
 
 // Initialize cart
 const cart = new Cart();
+
+if (typeof window !== 'undefined') {
+  window.cart = cart;
+}
