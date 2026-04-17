@@ -630,6 +630,11 @@ export function getProductMediaGallery(product) {
 export function renderProductCard(app, product) {
   const category = app.getCategoryById(product.category);
   const badge = app.copy.badges[product.badge] ?? product.badge;
+  const rawProduct = app.catalog.products.find((p) => p.id === product.id);
+  const compareAt = rawProduct?.compareAt;
+  const compareMarkup = compareAt
+    ? `<span class="product-card__compare">${app.formatMoney(compareAt)}</span>`
+    : '';
 
   return `
     <article class="product-card">
@@ -640,7 +645,10 @@ export function renderProductCard(app, product) {
       <div class="product-card__body">
         <div class="product-card__meta">
           <span>${category?.label ?? ''}</span>
-          <strong>${app.formatMoney(product.price)}</strong>
+          <div class="product-card__pricing">
+            <strong>${app.formatMoney(product.price)}</strong>
+            ${compareMarkup}
+          </div>
         </div>
         <h3><a href="${app.createUrl('producto.html', { slug: product.slug })}">${product.name}</a></h3>
         <p>${product.shortDescription}</p>

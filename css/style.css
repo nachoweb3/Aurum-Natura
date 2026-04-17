@@ -120,11 +120,10 @@ img {
   align-items: center;
   gap: 18px;
   padding: 18px 22px;
-  background: rgba(9, 7, 6, 0.92);
+  background: #0a0806;
   border: 1px solid var(--line);
   border-radius: 26px;
-  backdrop-filter: blur(28px) saturate(1.4);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow), 0 0 0 1px rgba(0,0,0,0.5);
 }
 
 .brand {
@@ -1041,19 +1040,47 @@ h3 {
 }
 
 .footer-shell {
-  padding: 26px 24px 0;
+  padding: 48px 24px 24px;
   border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.footer-shell > div:first-child {
+  margin-bottom: 16px;
+}
+
+.footer-shell h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  margin: 0;
+}
+
+.footer-shell > p {
+  max-width: 560px;
+  margin: 0 auto 24px;
 }
 
 .footer-links {
   grid-auto-flow: column;
-  justify-content: start;
+  justify-content: center;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--gold-bright);
 }
 
 .footer-legal {
   margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.78rem;
+  color: var(--stone);
 }
 
 .site-toast {
@@ -1138,38 +1165,69 @@ h3 {
 }
 
 .video-hero__content .brand-logo {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 28px;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px;
   filter: drop-shadow(0 8px 32px rgba(217, 177, 106, 0.3));
   animation: heroPulse 4s ease-in-out infinite;
 }
 
 .video-hero__content h1 {
-  margin: 0 0 18px;
-  font-size: clamp(2.8rem, 6vw, 5.4rem);
-  line-height: 0.94;
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.6);
+  margin: 0 0 20px;
+  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  line-height: 1;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.7);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video-hero__content .hero-tagline {
   color: var(--gold-bright);
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
   font-weight: 500;
-  letter-spacing: 0.06em;
-  margin-bottom: 14px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
 .video-hero__content .hero-copy__lede {
-  max-width: 600px;
-  margin: 0 auto 30px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  max-width: 540px;
+  margin: 0 auto 32px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
 .video-hero__content .hero-copy__actions {
   justify-content: center;
+}
+
+.video-hero__content .trust-bar {
+  opacity: 0.8;
+}
+
+.video-hero__content .trust-bar span {
+  font-size: 0.72rem;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Video hero fade-out transition to content ── */
+.video-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: 2;
+  background: linear-gradient(transparent, #090706);
+  pointer-events: none;
 }
 
 .video-hero__scroll-cue {
@@ -1458,6 +1516,27 @@ h3 {
   flex-wrap: wrap;
 }
 
+/* ── Product card pricing ── */
+.product-card__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-card__compare {
+  font-size: 0.85rem;
+  color: var(--stone);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.product-page__compare {
+  font-size: 1rem;
+  color: var(--stone);
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
 /* ── Product card badge labels ── */
 .pill {
   position: absolute;
@@ -1649,7 +1728,8 @@ h3 {
 .social-links {
   display: flex;
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 20px;
+  justify-content: center;
 }
 
 .social-link {
@@ -1941,6 +2021,13 @@ h3 {
 
   .footer-links {
     grid-auto-flow: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .manifesto-band {
