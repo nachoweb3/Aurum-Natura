@@ -3,72 +3,77 @@ import { getMediaAsset, renderCategoryCard, renderProductCard } from '../runtime
 
 const HOME_COPY = {
   es: {
-    kicker: 'Suscripcion de finca en Nombela, Toledo',
-    title: 'Huevos camperos, huerta y fruta de temporada para hogares que quieren comer mejor cada semana.',
+    kicker: 'Finca de origen · Nombela, Toledo',
+    title: 'Lo que crece bien no necesita explicarse. Solo llegar a tu mesa.',
     intro:
-      'Aurum Natura nace en Calle Viana 54, Nombela, y convierte el producto de temporada en una suscripcion premium, tranquila y facil de sostener en casa.',
-    primary: 'Ver suscripciones',
-    secondary: 'Hablar por WhatsApp',
+      'Aurum Natura es una suscripcion de finca que selecciona huevos camperos de gallinas de raza, huerta y fruta de temporada para hogares que han dejado de conformarse.',
+    primary: 'Descubrir las cajas',
+    secondary: 'Reservar por WhatsApp',
     trust: [
-      'Huevos camperos de gallinas de raza',
-      'Producto de temporada y seleccion limitada',
-      'Suscripcion semanal o quincenal'
+      'Gallinas de raza · yema firme',
+      'Seleccion limitada · temporada real',
+      'Entrega semanal o quincenal'
     ],
-    valueKicker: 'Que recibes',
-    valueTitle: 'Una forma mas clara y mas cuidada de llenar la despensa semanal.',
+    manifesto:
+      'No vendemos producto. Vendemos un criterio de compra que cambia la semana entera: desde el desayuno hasta la cena del domingo.',
+    valueKicker: 'La experiencia',
+    valueTitle: 'Cada caja es una lectura del campo de esta semana.',
     valueCards: [
       {
-        title: 'Seleccion real de temporada',
-        body: 'Verdura, hortaliza y fruta elegidas segun el mejor momento del campo, sin obligarte a decidir cada compra desde cero.'
+        icon: '01',
+        title: 'Seleccion de origen',
+        body: 'Verdura, hortaliza y fruta elegidas por su punto exacto de madurez y sabor, no por su vida util en estanteria.'
       },
       {
-        title: 'Huevos camperos con diferencia',
-        body: 'Huevos de gallinas de raza para hogares que notan la diferencia en la yema, en la textura y en la confianza.'
+        icon: '02',
+        title: 'Huevos que se notan',
+        body: 'De gallinas de raza con recogida de ritmo corto. La diferencia esta en la yema, en la textura, en la confianza.'
       },
       {
-        title: 'Ritmo pensado para el hogar',
-        body: 'La suscripcion convierte la calidad en habito: menos supermercado, mejor cocina y una semana mas ordenada.'
+        icon: '03',
+        title: 'Ritmo de hogar, no de supermercado',
+        body: 'La suscripcion convierte la calidad en habito. Menos decisiones, mejor cocina, una semana mas resuelta.'
       }
     ],
-    familyKicker: 'Por que funciona en casa',
-    familyTitle: 'La calidad premium aqui no es pose: es comodidad, sabor y criterio de compra.',
+    familyKicker: 'Pensada para tu casa',
+    familyTitle: 'Premium aqui no es precio. Es saber exactamente de donde viene lo que cocinas.',
     familyPoints: [
-      'Ahorra decisiones durante la semana sin caer en una compra impersonal.',
-      'Mejora la base de desayunos, comidas y cenas con producto que rota de forma natural.',
-      'Permite entrar por una caja y completar el pedido con huevos, huerta o fruta puntual.'
+      'Reduce las decisiones de compra sin renunciar a la calidad que quieres.',
+      'Eleva la base de cada comida con producto que rota con el calendario natural.',
+      'Empieza con una caja. Amplía cuando quieras. Sin permanencia ni compromiso forzado.'
     ],
-    offerKicker: 'Suscripcion primero',
-    offerTitle: 'Tres cajas para entrar con el nivel que mejor encaja con tu casa.',
+    offerKicker: 'Coleccion semanal',
+    offerTitle: 'Tres niveles. Un mismo criterio. Tu eliges la escala.',
     offerBody:
-      'La suscripcion es la opcion prioritaria porque asegura ritmo, continuidad y una mejor seleccion semanal. La compra puntual sigue disponible como primer paso.',
-    originKicker: 'Origen y confianza',
-    originTitle: 'Una finca real, una direccion real y un criterio de seleccion que se nota en el producto.',
+      'La suscripcion tiene prioridad porque garantiza ritmo, frescura y la mejor seleccion de la semana. La compra puntual sigue disponible para quien quiera probar primero.',
+    originKicker: 'Trazabilidad total',
+    originTitle: 'Una finca real. Una direccion real. Un producto con nombre y apellidos.',
     originBody:
-      'Trabajamos desde Calle Viana 54, en Nombela, Toledo, con una escala mas corta y una relacion mucho mas directa con lo que llega a tu mesa.',
-    processKicker: 'Como funciona',
-    processTitle: 'Un sistema simple para que la suscripcion encaje en tu semana.',
+      'Calle Viana 54, Nombela, Toledo. No hay almacen intermedio, no hay central de compras. Solo campo, seleccion y una entrega directa a tu cocina.',
+    processKicker: 'Tres pasos',
+    processTitle: 'Asi de facil es empezar a comer de otra manera.',
     process: [
-      'Eliges la caja que mejor se ajusta a tu hogar.',
-      'Te confirmamos disponibilidad y modalidad de entrega por WhatsApp.',
-      'Recibes una seleccion de temporada preparada para cocinar mejor durante la semana.'
+      'Elige la caja que encaja con tu hogar y tu ritmo de cocina.',
+      'Confirmamos disponibilidad y entrega por WhatsApp — trato humano, sin bots.',
+      'Recibes la seleccion de la semana, lista para abrir y cocinar.'
     ],
-    socialKicker: 'Tranquilidad para comprar',
-    socialTitle: 'Mas confianza, menos ruido y una atencion directa cuando toca decidir.',
+    socialKicker: 'Filosofia de marca',
+    socialTitle: 'No prometemos de mas. Seleccionamos con criterio y cumplimos con silencio.',
     socialCards: [
       {
         quote:
-          'La propuesta esta pensada para hogares que valoran origen, calidad y una relacion mas humana con su compra semanal.'
+          '"Lo que llega a tu mesa ha pasado un filtro que no se automatiza: el ojo del que sabe lo que esta bien y lo que no."'
       },
       {
         quote:
-          'No prometemos industrialmente. Seleccionamos con criterio y confirmamos por WhatsApp para mantener el nivel del producto.'
+          '"Preferimos atender menos hogares con mas atencion que abrir la puerta a todo el mundo y perder el nivel."'
       }
     ],
-    finalKicker: 'Empieza esta semana',
-    finalTitle: 'Reserva tu primera caja o entra en la modalidad de suscripcion.',
+    finalKicker: 'Tu primera caja',
+    finalTitle: 'Reserva ahora y descubre por que no hay vuelta atras.',
     finalBody:
-      'Si buscas una forma mas cuidada de recibir huevos camperos, huerta y fruta de temporada, Aurum Natura ya esta lista para atenderte como una marca real.',
-    finalCta: 'Confirmar pedido'
+      'Cada semana que pasa sin probar Aurum Natura es una semana mas conformandote con el lineal del supermercado. Entra y comprueba la diferencia.',
+    finalCta: 'Reservar mi caja'
   }
 };
 
@@ -101,16 +106,23 @@ export async function renderHomePage(app) {
       <div class="video-hero__scroll-cue">Descubre</div>
     </section>
 
-    <section class="section-block">
-      <div class="section-heading">
+    <section class="manifesto-band">
+      <div class="manifesto-band__inner">
+        <p class="manifesto-text">${copy.manifesto}</p>
+      </div>
+    </section>
+
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
         <p class="eyebrow">${copy.valueKicker}</p>
         <h2>${copy.valueTitle}</h2>
       </div>
-      <div class="detail-card-grid">
+      <div class="detail-card-grid detail-card-grid--numbered">
         ${copy.valueCards
           .map(
             (card) => `
-              <article class="glass-card">
+              <article class="glass-card glass-card--editorial">
+                <span class="card-number">${card.icon}</span>
                 <strong>${card.title}</strong>
                 <p>${card.body}</p>
               </article>
@@ -120,7 +132,7 @@ export async function renderHomePage(app) {
       </div>
     </section>
 
-    <section class="editorial-band editorial-band--split">
+    <section class="editorial-band editorial-band--split editorial-band--spacious">
       <div class="editorial-band__copy">
         <p class="eyebrow">${copy.familyKicker}</p>
         <h2>${copy.familyTitle}</h2>
@@ -132,15 +144,11 @@ export async function renderHomePage(app) {
         <div class="glass-card media-preview-card">
           <img src="${getMediaAsset('familyTable')}" alt="Mesa familiar con producto de temporada" loading="lazy" />
         </div>
-        <div class="glass-card">
-          <strong>${copy.offerKicker}</strong>
-          <p>${copy.offerBody}</p>
-        </div>
       </div>
     </section>
 
-    <section class="section-block">
-      <div class="section-heading">
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
         <p class="eyebrow">${copy.offerKicker}</p>
         <h2>${copy.offerTitle}</h2>
         <p>${copy.offerBody}</p>
@@ -151,26 +159,16 @@ export async function renderHomePage(app) {
     </section>
 
     <section class="section-block">
-      <div class="section-heading">
+      <div class="section-heading section-heading--center">
         <p class="eyebrow">Seleccion complementaria</p>
-        <h2>Huevos, huerta y fruta para completar la cesta segun tu semana.</h2>
+        <h2>Completa tu cesta con lo mejor de la semana.</h2>
       </div>
       <div class="category-grid">
         ${app.categories.map((category) => renderCategoryCard(app, category)).join('')}
       </div>
     </section>
 
-    <section class="editorial-band editorial-band--split">
-      <div class="editorial-band__copy">
-        <p class="eyebrow">${copy.originKicker}</p>
-        <h2>${copy.originTitle}</h2>
-        <p>${copy.originBody}</p>
-        <div class="timeline-list">
-          <div class="timeline-list__item">Calle Viana 54 · Nombela · Toledo · Castilla-La Mancha</div>
-          <div class="timeline-list__item">Produccion limitada y seleccion semanal.</div>
-          <div class="timeline-list__item">Atencion directa para suscripciones, primeras cajas y disponibilidad.</div>
-        </div>
-      </div>
+    <section class="editorial-band editorial-band--split editorial-band--spacious editorial-band--reverse">
       <div class="editorial-band__stack">
         <div class="glass-card media-preview-card">
           <img src="${getMediaAsset('farmOrigin')}" alt="Finca de origen en Nombela" loading="lazy" />
@@ -179,19 +177,29 @@ export async function renderHomePage(app) {
           <img src="${getMediaAsset('vegetableHarvest')}" alt="Recoleccion de huerta" loading="lazy" />
         </div>
       </div>
+      <div class="editorial-band__copy">
+        <p class="eyebrow">${copy.originKicker}</p>
+        <h2>${copy.originTitle}</h2>
+        <p>${copy.originBody}</p>
+        <div class="timeline-list">
+          <div class="timeline-list__item">Calle Viana 54 · Nombela · Toledo</div>
+          <div class="timeline-list__item">Produccion limitada · seleccion semanal</div>
+          <div class="timeline-list__item">Trato directo · sin intermediarios</div>
+        </div>
+      </div>
     </section>
 
-    <section class="section-block">
-      <div class="section-heading">
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
         <p class="eyebrow">${copy.processKicker}</p>
         <h2>${copy.processTitle}</h2>
       </div>
-      <div class="detail-card-grid">
+      <div class="detail-card-grid detail-card-grid--numbered">
         ${copy.process
           .map(
             (step, index) => `
-              <article class="glass-card">
-                <strong>0${index + 1}</strong>
+              <article class="glass-card glass-card--editorial">
+                <span class="card-number">0${index + 1}</span>
                 <p>${step}</p>
               </article>
             `
@@ -200,30 +208,34 @@ export async function renderHomePage(app) {
       </div>
     </section>
 
-    <section class="section-block">
-      <div class="section-heading">
+    <section class="quote-band">
+      <div class="quote-band__inner">
         <p class="eyebrow">${copy.socialKicker}</p>
         <h2>${copy.socialTitle}</h2>
-      </div>
-      <div class="detail-card-grid">
-        ${copy.socialCards
-          .map(
-            (item) => `
-              <article class="glass-card">
-                <p>${item.quote}</p>
-              </article>
-            `
-          )
-          .join('')}
+        <div class="quote-grid">
+          ${copy.socialCards
+            .map(
+              (item) => `
+                <blockquote class="editorial-quote-card">
+                  <p>${item.quote}</p>
+                </blockquote>
+              `
+            )
+            .join('')}
+        </div>
       </div>
     </section>
 
-    <section class="section-block section-block--cta">
-      <div class="cta-panel">
+    <section class="section-block section-block--cta section-block--spacious">
+      <div class="cta-panel cta-panel--final">
+        <img src="assets/img/logo.png" alt="Aurum Natura" class="cta-panel__logo" />
         <p class="eyebrow">${copy.finalKicker}</p>
         <h2>${copy.finalTitle}</h2>
         <p>${copy.finalBody}</p>
-        <a href="${app.createUrl('checkout.html')}" class="button button--primary">${copy.finalCta}</a>
+        <div class="cta-panel__actions">
+          <a href="${app.createUrl('checkout.html')}" class="button button--primary">${copy.finalCta}</a>
+          <a href="https://wa.me/${app.catalog.store.whatsappNumber}" class="button button--ghost">Hablar por WhatsApp</a>
+        </div>
       </div>
     </section>
   `;

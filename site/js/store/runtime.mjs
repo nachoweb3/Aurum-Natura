@@ -73,21 +73,21 @@ const COPY = {
       directWhatsApp: 'Hablar por WhatsApp'
     },
     badges: {
-      signature: 'Entrada premium',
-      bestseller: 'Mas elegida',
-      limited: 'Seleccion alta',
-      'farm-fresh': 'Gallinas de raza',
-      seasonal: 'Temporada',
-      kitchen: 'Para casa',
-      family: 'Hogar',
-      weekly: 'Semanal',
-      pantry: 'Despensa'
+      signature: 'Serie limitada',
+      bestseller: 'La mas deseada',
+      limited: 'Coleccion viva',
+      'farm-fresh': 'Pieza unica',
+      seasonal: 'De temporada',
+      kitchen: 'Hecho a mano',
+      family: 'Para el hogar',
+      weekly: 'Edicion semanal',
+      pantry: 'Seleccion reserva'
     },
     footer: {
       kicker: 'Aurum Natura',
-      title: 'Suscripciones de temporada desde Nombela, Toledo.',
+      title: 'Finca de origen · Suscripcion de temporada · Nombela, Toledo.',
       statement:
-        'Huevos camperos de gallinas de raza, verdura, hortaliza y fruta de temporada seleccionadas para hogares que quieren comer mejor cada semana.',
+        'Seleccion limitada de huevos camperos, huerta y fruta de temporada para hogares que han elegido comer con criterio.',
       rights: 'Todos los derechos reservados.'
     }
   }

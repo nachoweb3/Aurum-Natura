@@ -1304,6 +1304,32 @@ h3 {
   justify-content: center;
 }
 
+/* ── Section spacious modifier ── */
+.section-block--spacious {
+  padding: 60px 0;
+}
+
+.editorial-band--spacious {
+  margin-top: 48px;
+  padding: 48px 30px;
+}
+
+.editorial-band--reverse {
+  direction: rtl;
+}
+
+.editorial-band--reverse > * {
+  direction: ltr;
+}
+
+/* ── Section heading center ── */
+.section-heading--center {
+  text-align: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── Section centering helpers ── */
 .section-block--cta {
   text-align: center;
@@ -1319,12 +1345,212 @@ h3 {
   margin-top: 18px;
 }
 
+/* ── Manifesto band ── */
+.manifesto-band {
+  position: relative;
+  padding: 72px 24px;
+  text-align: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 0;
+}
+
+.manifesto-band__inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.manifesto-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--gold-bright);
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* ── Editorial numbered cards ── */
+.glass-card--editorial {
+  position: relative;
+  text-align: left;
+  padding: 32px 28px;
+}
+
+.card-number {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+/* ── Quote band ── */
+.quote-band {
+  position: relative;
+  padding: 64px 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-top: 48px;
+  text-align: center;
+}
+
+.quote-band__inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.quote-band h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  margin: 10px 0 36px;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.editorial-quote-card {
+  margin: 0;
+  padding: 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(28, 19, 14, 0.82), rgba(12, 9, 8, 0.96));
+  text-align: left;
+}
+
+.editorial-quote-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ── CTA panel final ── */
+.cta-panel--final {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 40px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(217, 177, 106, 0.1), transparent 60%),
+    linear-gradient(180deg, rgba(28, 19, 14, 0.82), rgba(12, 9, 8, 0.96));
+}
+
+.cta-panel__logo {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 24px;
+  filter: drop-shadow(0 4px 16px rgba(217, 177, 106, 0.25));
+}
+
+.cta-panel__actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+/* ── Product card badge labels ── */
+.pill {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Product gallery grid ── */
+.product-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.product-gallery-card {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.product-gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 220px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.product-gallery-card:hover img {
+  transform: scale(1.04);
+}
+
+.product-gallery-card.is-large {
+  grid-column: span 2;
+}
+
+/* ── FAQ list ── */
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-card strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* ── Stack media card (about page) ── */
+.stack-media-card {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.stack-media-card img {
+  width: 100%;
+  display: block;
+  min-height: 180px;
+  object-fit: cover;
+}
+
+.stack-media-card.is-highlight {
+  grid-column: 1 / -1;
+}
+
+.stack-media-card.is-highlight img {
+  min-height: 280px;
+}
+
 @media (max-width: 1100px) {
   .hero-block,
   .product-page,
   .checkout-layout,
   .editorial-band {
     grid-template-columns: 1fr;
+  }
+
+  .editorial-band--reverse {
+    direction: ltr;
+  }
+
+  .product-gallery-card.is-large {
+    grid-column: span 1;
   }
 
   .product-grid {
@@ -1578,5 +1804,40 @@ h3 {
 
   .footer-links {
     grid-auto-flow: row;
+  }
+
+  .manifesto-band {
+    padding: 48px 20px;
+  }
+
+  .manifesto-text {
+    font-size: clamp(1.15rem, 5vw, 1.5rem);
+  }
+
+  .section-block--spacious {
+    padding: 36px 0;
+  }
+
+  .editorial-band--spacious {
+    margin-top: 28px;
+    padding: 28px 20px;
+  }
+
+  .quote-band {
+    padding: 40px 16px;
+    margin-top: 28px;
+  }
+
+  .quote-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-panel--final {
+    padding: 36px 20px;
+  }
+
+  .cta-panel__actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
