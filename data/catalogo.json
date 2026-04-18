@@ -356,6 +356,238 @@
       }
     },
     {
+      "id": "p-soap-rose",
+      "slug": "jabon-rosa-geranio-ritual",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 10,
+      "compareAt": 13,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "gold",
+        "media": "soapRose",
+        "gallery": ["soapRose", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Rosa & Geranio — Jabón Ritual",
+          "shortDescription": "El cuidado no es rutina. Es ritual.",
+          "description": "Jabón en frío con pétalos de rosa damascena y aceite esencial de geranio. Tono rosa natural, espuma cremosa y aroma envolvente. Curado 40 días en tablas de madera de la finca.",
+          "benefits": [
+            "Pétalos de rosa damascena reales, no esencia",
+            "Aceite esencial de geranio equilibrante",
+            "Aceite de oliva virgen extra de almazara local",
+            "Sin sulfatos, parabenos ni conservantes",
+            "Curado 40 días para dureza y duración"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, hidróxido de sodio, pétalos de rosa damascena, aceite esencial de geranio"
+        }
+      }
+    },
+    {
+      "id": "p-soap-rosemary",
+      "slug": "jabon-romero-ortiga-vitalidad",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 9,
+      "compareAt": 12,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "olive",
+        "media": "soapRosemary",
+        "gallery": ["soapRosemary", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Romero & Ortiga — Jabón Vitalidad",
+          "shortDescription": "La naturaleza no calma. Despierta.",
+          "description": "Jabón con romero y ortiga frescos cortados en la finca. Color verde real, aroma herbal intenso y sensación tonificante tras la ducha.",
+          "benefits": [
+            "Romero cortado a mano en la finca",
+            "Ortiga fresca de temporada",
+            "Tonificante natural para el cuero cabelludo",
+            "Aceite de oliva virgen extra como base",
+            "Curado 40 días"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, hidróxido de sodio, romero (Rosmarinus officinalis), ortiga (Urtica dioica), aceite esencial de romero"
+        }
+      }
+    },
+    {
+      "id": "p-soap-honey",
+      "slug": "jabon-miel-avena-nutricion",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 10,
+      "compareAt": 13,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "amber",
+        "media": "soapHoney",
+        "gallery": ["soapHoney", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Miel & Avena — Jabón Nutrición",
+          "shortDescription": "La piel reconoce lo real.",
+          "description": "Jabón con miel de nuestras colmenas y copos de avena molidos. Exfoliación suave, espuma cremosa y nutrición profunda. Ideal para pieles sensibles o muy secas.",
+          "benefits": [
+            "Miel cruda de las colmenas de la finca",
+            "Avena molida como exfoliante suave",
+            "Nutritivo para pieles secas o sensibles",
+            "Aceite de oliva virgen extra como base",
+            "Curado 40 días"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, hidróxido de sodio, miel cruda, avena molida"
+        }
+      }
+    },
+    {
+      "id": "p-soap-chamomile",
+      "slug": "jabon-manzanilla-aciano-calma",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 10,
+      "compareAt": 13,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "gold",
+        "media": "soapChamomile",
+        "gallery": ["soapChamomile", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Manzanilla & Aciano — Jabón Calma",
+          "shortDescription": "Tu piel también necesita silencio.",
+          "description": "Jabón con flores de manzanilla y aciano azul, ambas secadas al sol de Nombela. Aroma floral muy suave, ideal para pieles delicadas o para terminar el día.",
+          "benefits": [
+            "Flores de manzanilla secadas al sol",
+            "Pétalos de aciano azul de la finca",
+            "Calmante para pieles delicadas",
+            "Aceite de oliva virgen extra como base",
+            "Curado 40 días"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, hidróxido de sodio, manzanilla (Matricaria chamomilla), aciano (Centaurea cyanus)"
+        }
+      }
+    },
+    {
+      "id": "p-ceramics-earth",
+      "slug": "ceramica-coleccion-tierra",
+      "category": "artisan",
+      "subcategory": "ceramics",
+      "price": 65,
+      "compareAt": 80,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "ceramics",
+        "palette": "amber",
+        "media": "ceramicsEarth",
+        "gallery": ["ceramicsEarth"]
+      },
+      "content": {
+        "es": {
+          "name": "Colección Tierra — Cerámica Aurum",
+          "shortDescription": "Formas orgánicas y tonos cálidos inspirados en la materia viva.",
+          "description": "Piezas modeladas a mano en la finca, cocidas a leña. Cada una es única — imperfecciones, textura y carácter incluidos. Jarrones, cuencos y tazas en tonos tierra cálidos."
+        }
+      }
+    },
+    {
+      "id": "p-ceramics-calm",
+      "slug": "ceramica-coleccion-calma",
+      "category": "artisan",
+      "subcategory": "ceramics",
+      "price": 70,
+      "compareAt": 85,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "ceramics",
+        "palette": "gold",
+        "media": "ceramicsCalm",
+        "gallery": ["ceramicsCalm"]
+      },
+      "content": {
+        "es": {
+          "name": "Colección Calma — Cerámica Aurum",
+          "shortDescription": "Minimalismo, luz y equilibrio.",
+          "description": "Piezas pensadas para espacios tranquilos. Tonos crema, formas depuradas y una pátina mate que filtra la luz. Jarrón, cuenco y taza como conjunto o piezas sueltas."
+        }
+      }
+    },
+    {
+      "id": "p-esquejes-herbs",
+      "slug": "esquejes-maceta-ceramica-aromaticas",
+      "category": "artisan",
+      "subcategory": "plants",
+      "price": 22,
+      "compareAt": 28,
+      "featured": false,
+      "badge": "seasonal",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "plants",
+        "palette": "olive",
+        "media": "plantsHerbs",
+        "gallery": ["plantsHerbs", "plantsCollage"]
+      },
+      "content": {
+        "es": {
+          "name": "Esquejes en Maceta de Cerámica — Lavanda, Romero, Salvia",
+          "shortDescription": "No vendemos decoración. Vendemos vida que crece contigo.",
+          "description": "Esquejes enraizados en maceta de cerámica modelada a mano en la finca. Elige entre lavanda (calma), romero (energía) o salvia (equilibrio). Cultivados desde semilla, se envían con su primera tierra lista para seguir creciendo en casa."
+        }
+      }
+    },
+    {
+      "id": "p-esquejes-frutales",
+      "slug": "esquejes-maceta-ceramica-frutales",
+      "category": "artisan",
+      "subcategory": "plants",
+      "price": 26,
+      "compareAt": 32,
+      "featured": false,
+      "badge": "seasonal",
+      "shipClass": "fresh",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "plants",
+        "palette": "amber",
+        "media": "plantsCollage",
+        "gallery": ["plantsCollage", "plantsHerbs"]
+      },
+      "content": {
+        "es": {
+          "name": "Esquejes Frutales en Maceta de Cerámica",
+          "shortDescription": "Higuera, almendro, olivo y manzano en miniatura. Cultivo vivo desde la finca.",
+          "description": "Esquejes de frutales seleccionados de los árboles de la finca (higuera, almendro, olivo, manzano), enraizados y presentados en maceta de cerámica modelada a mano. Una pieza viva, no decoración."
+        }
+      }
+    },
+    {
       "id": "p-dried-herbs",
       "slug": "hierbas-aromaticas-secas",
       "category": "artisan",

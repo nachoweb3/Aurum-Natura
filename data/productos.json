@@ -13,7 +13,7 @@
         "Producción 100% orgánica",
         "Sin procesos artificiales"
       ],
-      "imagen": "assets/img/productos/caja-basica.png",
+      "imagen": "assets/productos/caja-huerto-basica.png",
       "emoji": "🧺",
       "disponible": true,
       "stock": 10,
@@ -33,7 +33,7 @@
         "Nota firmada personalizada",
         "Empaque de madera certificada"
       ],
-      "imagen": "assets/img/productos/caja-premium.png",
+      "imagen": "assets/productos/caja-huerto-premium.png",
       "emoji": "🥇",
       "disponible": true,
       "stock": 5,
@@ -54,7 +54,7 @@
         "Miel de nuestras colmenas",
         "Acceso prioritario a novedades"
       ],
-      "imagen": "assets/img/productos/caja-elite.png",
+      "imagen": "assets/productos/caja-huerto-atardecer.png",
       "emoji": "🥉",
       "disponible": true,
       "stock": 2,

@@ -30,20 +30,31 @@ const PRODUCT_LIST_PATH = 'productos.html';
 
 const MEDIA_LIBRARY = {
   homeHero: 'assets/img/ia/home-hero.png',
-  farmOrigin: 'assets/img/ia/finca-origen.png',
-  boxEssential: 'assets/img/ia/caja-esencial-hero.png',
-  boxFamily: 'assets/img/ia/caja-familiar-hero.png',
-  boxReserve: 'assets/img/ia/caja-reserva-hero.png',
+  farmOrigin: 'assets/cultivos.jpeg',
+  cultivos: 'assets/cultivos.jpeg',
+  mentaVisual: 'assets/menta.jpeg',
+  boxEssential: 'assets/productos/caja-huerto-basica.png',
+  boxFamily: 'assets/productos/caja-huerto-campo.png',
+  boxReserve: 'assets/productos/caja-huerto-atardecer.png',
+  boxPremium: 'assets/productos/caja-huerto-premium.png',
   eggsHero: 'assets/huevos-finca.jpg',
   seasonKitchen: 'assets/img/ia/temporada-cocina.png',
   familyTable: 'assets/img/ia/familia-mesa.png',
   vegetableHarvest: 'assets/cesta.png',
   fruitSelection: 'assets/frutas.png',
-  soapLavender: 'assets/img/products/soap-lavender.jpg',
-  soapMint: 'assets/img/products/soap-mint.jpg',
-  soapAsh: 'assets/img/products/soap-ash.jpg',
-  soapCollection: 'assets/img/products/soap-collection.jpg',
-  driedHerbs: 'assets/img/products/hierbas-secas.jpg'
+  soapLavender: 'assets/productos/jabon-lavanda-calendula.png',
+  soapMint: 'assets/productos/jabon-menta-ceniza.png',
+  soapAsh: 'assets/productos/jabon-menta-ceniza.png',
+  soapRose: 'assets/productos/jabon-rosa-geranio.png',
+  soapRosemary: 'assets/productos/jabon-romero-ortiga.png',
+  soapHoney: 'assets/productos/jabon-miel-avena.png',
+  soapChamomile: 'assets/productos/jabon-manzanilla-aciano.png',
+  soapCollection: 'assets/productos/jabon-lavanda-calendula.png',
+  driedHerbs: 'assets/productos/plantas-lavanda-romero-salvia.png',
+  ceramicsEarth: 'assets/productos/ceramica-tierra.png',
+  ceramicsCalm: 'assets/productos/ceramica-calma.png',
+  plantsCollage: 'assets/productos/plantas-vivas-collage.png',
+  plantsHerbs: 'assets/productos/plantas-lavanda-romero-salvia.png'
 };
 
 const COPY = {
@@ -129,8 +140,65 @@ export async function bootStorefront(pageId, renderPage) {
   bindGlobalEvents(app);
   await renderPage(app);
   app.renderCartDrawer();
+  initScrollAnimations();
 
   return app;
+}
+
+function initScrollAnimations() {
+  if (typeof window === 'undefined') return;
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  // Auto-tag common blocks with .reveal if not already flagged
+  const autoTargets = document.querySelectorAll(
+    '.section-block, .editorial-band, .product-card, .category-card, .testimonial-card, .glass-card, .soap-landing, .manifesto-band, .quote-band, .cta-panel, .page-hero'
+  );
+  autoTargets.forEach((el, idx) => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${Math.min(idx % 6, 5) * 80}ms`;
+    }
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Parallax: video hero background and any .parallax element
+  const hero = document.querySelector('.video-hero__media');
+  const heroVideo = hero?.querySelector('video');
+  const parallaxEls = document.querySelectorAll('.parallax, .parallax-bg');
+
+  let ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (heroVideo) {
+        heroVideo.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(1.05)`;
+      }
+      parallaxEls.forEach((el) => {
+        const speed = parseFloat(el.dataset.parallax ?? '0.25');
+        el.style.transform = `translate3d(0, ${y * speed}px, 0)`;
+      });
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 function createStorefrontApp(catalog, pageId) {
@@ -454,8 +522,24 @@ function renderHeader(app) {
   ];
   const showLocaleSwitcher = (app.catalog.store.supportedLocales ?? []).length > 1;
 
+  const cornerSvg = `<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+    <path d="M2 2 L2 30 M2 2 L30 2" />
+    <path d="M2 14 C 10 14, 14 10, 14 2" />
+    <path d="M2 22 C 18 22, 22 18, 22 2" />
+    <circle cx="14" cy="14" r="2.4" fill="currentColor" />
+    <path d="M2 30 Q 8 30 12 26 Q 16 22 16 16" />
+    <path d="M30 2 Q 30 8 26 12 Q 22 16 16 16" />
+    <path d="M6 6 L10 10" />
+    <path d="M20 4 Q 22 8 22 12" />
+    <path d="M4 20 Q 8 22 12 22" />
+  </svg>`;
+
   return `
     <div class="header-shell">
+      <span class="corner corner--tl">${cornerSvg}</span>
+      <span class="corner corner--tr">${cornerSvg}</span>
+      <span class="corner corner--bl">${cornerSvg}</span>
+      <span class="corner corner--br">${cornerSvg}</span>
       <a href="${app.createUrl('index.html')}" class="brand">
         <span class="brand__seal"><img src="assets/img/logo.png" alt="Aurum Natura" /></span>
         <span>
