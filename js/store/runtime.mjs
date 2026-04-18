@@ -34,7 +34,7 @@ const MEDIA_LIBRARY = {
   boxEssential: 'assets/img/ia/caja-esencial-hero.png',
   boxFamily: 'assets/img/ia/caja-familiar-hero.png',
   boxReserve: 'assets/img/ia/caja-reserva-hero.png',
-  eggsHero: 'assets/img/ia/huevos-camperos.png',
+  eggsHero: 'assets/huevos-finca.jpg',
   seasonKitchen: 'assets/img/ia/temporada-cocina.png',
   familyTable: 'assets/img/ia/familia-mesa.png',
   vegetableHarvest: 'assets/img/ia/recoleccion-finca.png'
