@@ -59,6 +59,17 @@
       "description": {
         "es": "Fruta escogida para hogares que valoran sabor, origen y una compra más cuidada."
       }
+    },
+    {
+      "id": "artisan",
+      "slug": "artesanal",
+      "tone": "gold",
+      "label": {
+        "es": "Artesanal"
+      },
+      "description": {
+        "es": "Jabones naturales y hierbas aromáticas secas, elaborados a mano en la finca con ingredientes de origen."
+      }
     }
   ],
   "products": [
@@ -209,6 +220,56 @@
           "name": "Selección de fruta de temporada",
           "shortDescription": "Fruta escogida para hogares que quieren sabor, origen y compra bien hecha.",
           "description": "Una selección de temporada que cambia con el calendario natural y acompaña desayunos, meriendas y una forma más cuidada de comprar fruta para casa."
+        }
+      }
+    },
+    {
+      "id": "p-artisan-soap",
+      "slug": "jabon-artesanal-de-finca",
+      "category": "artisan",
+      "subcategory": "handmade",
+      "price": 12,
+      "compareAt": 15,
+      "featured": false,
+      "badge": "handmade",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "gold",
+        "media": "artisanSoap",
+        "gallery": ["artisanSoap"]
+      },
+      "content": {
+        "es": {
+          "name": "Jabón artesanal de finca",
+          "shortDescription": "Jabón natural elaborado a mano con aceite de oliva, lavanda y hierbas de la finca.",
+          "description": "Cada pastilla se elabora en frío con aceite de oliva virgen extra, lavanda silvestre y plantas aromáticas cultivadas en nuestra finca. Sin químicos, sin conservantes artificiales, sin prisas. Un jabón que cuida la piel y respeta el entorno."
+        }
+      }
+    },
+    {
+      "id": "p-dried-herbs",
+      "slug": "hierbas-aromaticas-secas",
+      "category": "artisan",
+      "subcategory": "handmade",
+      "price": 9,
+      "compareAt": 12,
+      "featured": false,
+      "badge": "seasonal",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "herb-bundle",
+        "palette": "olive",
+        "media": "driedHerbs",
+        "gallery": ["driedHerbs"]
+      },
+      "content": {
+        "es": {
+          "name": "Hierbas aromáticas secas",
+          "shortDescription": "Romero, tomillo, orégano y lavanda secados al sol de la finca.",
+          "description": "Selección de hierbas aromáticas recogidas a mano y secadas de forma natural en la finca. Ideales para cocina, infusiones o aromatizar el hogar. Cada paquete varía según la temporada y el momento de la cosecha."
         }
       }
     }
