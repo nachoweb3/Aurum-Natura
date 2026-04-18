@@ -1,4 +1,4 @@
-import { renderProductCard } from '../runtime.mjs';
+import { renderProductCard, getNextSundayCutoff, formatCountdown, FREE_SHIPPING_THRESHOLD } from '../runtime.mjs';
 
 const CATALOG_COPY = {
   es: {
@@ -45,7 +45,34 @@ export async function renderCatalogPage(app) {
   const initialSearch = query.searchParams.get('search') ?? '';
   const subscriptionBoxes = app.getProducts().filter((product) => product.category === 'subscriptions');
 
+  const cutoff = getNextSundayCutoff();
+  const cartTotal = (app.state.cart ?? []).reduce((sum, line) => {
+    const p = app.catalog.products.find((prod) => prod.id === line.productId);
+    return sum + (p ? p.price * (line.quantity ?? 1) : 0);
+  }, 0);
+  const shippingMissing = Math.max(0, FREE_SHIPPING_THRESHOLD - cartTotal);
+  const shippingProgress = Math.min(100, Math.round((cartTotal / FREE_SHIPPING_THRESHOLD) * 100));
+
   app.shell.pageRoot.innerHTML = `
+    <section class="urgency-banner">
+      <div class="urgency-banner__item urgency-banner__item--countdown">
+        <span class="urgency-banner__label">Cierre de pedidos semanal</span>
+        <strong id="urgency-countdown">${formatCountdown(cutoff)}</strong>
+        <small>domingo 22:00 · cosecha del lunes</small>
+      </div>
+      <div class="urgency-banner__item urgency-banner__item--shipping">
+        <span class="urgency-banner__label">
+          ${shippingMissing > 0
+            ? `Te faltan <strong>${shippingMissing.toFixed(2)}€</strong> para envío gratis`
+            : '<strong>¡Envío gratis conseguido!</strong>'}
+        </span>
+        <div class="shipping-bar">
+          <div class="shipping-bar__fill" style="width: ${shippingProgress}%;"></div>
+        </div>
+        <small>Envío gratis a partir de ${FREE_SHIPPING_THRESHOLD}€</small>
+      </div>
+    </section>
+
     <section class="page-hero">
       <p class="eyebrow">${copy.eyebrow}</p>
       <h1>${copy.title}</h1>
@@ -190,4 +217,13 @@ export async function renderCatalogPage(app) {
   });
 
   render();
+
+  const countdownEl = document.getElementById('urgency-countdown');
+  if (countdownEl) {
+    const tick = () => {
+      countdownEl.textContent = formatCountdown(cutoff);
+    };
+    tick();
+    setInterval(tick, 30000);
+  }
 }
