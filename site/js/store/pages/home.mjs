@@ -226,6 +226,48 @@ export async function renderHomePage(app) {
       </div>
     </section>
 
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Lo que dicen nuestros clientes</p>
+        <h2>Hogares que ya no vuelven al supermercado.</h2>
+      </div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <img src="assets/img/reviews/elena-m.jpg" alt="Elena M." class="testimonial-card__avatar" />
+            <div>
+              <strong>Elena M.</strong>
+              <span>Madrid · Suscriptora semanal</span>
+            </div>
+          </div>
+          <p>"Desde que recibo la caja, he dejado de ir al supermercado para fruta y verdura. La diferencia en sabor es brutal, sobre todo los huevos. Mi familia ya no quiere otros."</p>
+          <div class="testimonial-card__stars">★★★★★</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <img src="assets/img/reviews/carlos-r.jpg" alt="Carlos R." class="testimonial-card__avatar" />
+            <div>
+              <strong>Carlos R.</strong>
+              <span>Toledo · Suscriptor quincenal</span>
+            </div>
+          </div>
+          <p>"Soy cocinero profesional y noto al instante cuando un producto es real. La yema de estos huevos tiene un color y una textura que no encuentras en ningun proveedor convencional."</p>
+          <div class="testimonial-card__stars">★★★★★</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-card__header">
+            <img src="assets/img/reviews/maria-l.jpg" alt="Maria L." class="testimonial-card__avatar" />
+            <div>
+              <strong>Maria L.</strong>
+              <span>Talavera · Compra puntual</span>
+            </div>
+          </div>
+          <p>"Pedi una caja para probar y a la semana siguiente ya estaba suscrita. El trato directo, la calidad del producto y saber exactamente de donde viene todo... no tiene precio."</p>
+          <div class="testimonial-card__stars">★★★★★</div>
+        </article>
+      </div>
+    </section>
+
     <section class="section-block section-block--cta section-block--spacious">
       <div class="cta-panel cta-panel--final">
         <img src="assets/img/logo.png" alt="Aurum Natura" class="cta-panel__logo" />

@@ -279,14 +279,15 @@ h3 {
 .button--primary {
   background: linear-gradient(135deg, rgba(235, 194, 130, 1), rgba(170, 120, 63, 1));
   color: #1a120d;
-  box-shadow: 0 18px 38px rgba(128, 89, 49, 0.28);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(128, 89, 49, 0.35);
 }
 
 .button--secondary,
 .button--ghost {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.06);
   border-color: var(--line);
   color: var(--text);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 .button--full {
@@ -1138,11 +1139,11 @@ h3 {
   z-index: 1;
   background:
     linear-gradient(180deg,
-      rgba(9, 7, 6, 0.7) 0%,
-      rgba(9, 7, 6, 0.4) 25%,
-      rgba(9, 7, 6, 0.3) 50%,
-      rgba(9, 7, 6, 0.4) 75%,
-      rgba(9, 7, 6, 0.85) 100%);
+      rgba(9, 7, 6, 0.75) 0%,
+      rgba(9, 7, 6, 0.5) 25%,
+      rgba(9, 7, 6, 0.45) 50%,
+      rgba(9, 7, 6, 0.5) 75%,
+      rgba(9, 7, 6, 0.88) 100%);
 }
 
 .video-hero__vignette {
@@ -1173,8 +1174,10 @@ h3 {
 
 .video-hero__content h1 {
   margin: 0 0 20px;
-  font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
   line-height: 1;
+  -webkit-text-stroke: 0.7px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.85), 0 4px 60px rgba(0, 0, 0, 0.6), 0 0 120px rgba(0, 0, 0, 0.4);
   color: #fff;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 4px 60px rgba(0, 0, 0, 0.5);
   max-width: 700px;
@@ -1185,7 +1188,8 @@ h3 {
 .video-hero__content .hero-tagline {
   color: var(--gold-bright);
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.5);
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1194,9 +1198,12 @@ h3 {
 }
 
 .video-hero__content .hero-copy__lede {
-  max-width: 540px;
+  max-width: 580px;
   margin: 0 auto 32px;
-  color: rgba(243, 232, 218, 0.9);
+  color: rgba(243, 232, 218, 0.95);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
   font-size: 0.95rem;
   line-height: 1.75;
@@ -1422,8 +1429,34 @@ h3 {
   font-weight: 500;
   line-height: 1.5;
   color: var(--gold-bright);
+  position: relative;
+  padding: 36px 42px;
+  border: 1.5px solid rgba(217, 177, 106, 0.35);
+  border-radius: 6px;
+  box-shadow: inset 0 0 30px rgba(217, 177, 106, 0.04), 0 0 0 4px rgba(12, 9, 8, 1), 0 0 0 5.5px rgba(217, 177, 106, 0.18);
+  background: linear-gradient(135deg, rgba(217, 177, 106, 0.04) 0%, transparent 50%, rgba(217, 177, 106, 0.04) 100%);
   font-style: italic;
   letter-spacing: 0.01em;
+}
+
+.manifesto-text::before,
+.manifesto-text::after {
+  content: '❧';
+  position: absolute;
+  font-size: 1.6rem;
+  color: rgba(217, 177, 106, 0.4);
+  font-style: normal;
+}
+
+.manifesto-text::before {
+  top: 8px;
+  left: 14px;
+}
+
+.manifesto-text::after {
+  bottom: 8px;
+  right: 14px;
+  transform: rotate(180deg);
 }
 
 /* ── Editorial numbered cards ── */
@@ -1486,6 +1519,72 @@ h3 {
   font-style: italic;
   color: var(--text);
   line-height: 1.65;
+}
+
+/* ── Testimonials ── */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.testimonial-card {
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(28, 19, 14, 0.82), rgba(12, 9, 8, 0.96));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.testimonial-card__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-card__avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+.testimonial-card__header strong {
+  display: block;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.testimonial-card__header span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.testimonial-card p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.testimonial-card__stars {
+  color: var(--gold-bright);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 880px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── CTA panel final ── */
@@ -1928,7 +2027,7 @@ h3 {
   }
 
   .video-hero__content h1 {
-    font-size: clamp(1.8rem, 8vw, 2.6rem);
+    font-size: clamp(2rem, 9vw, 2.8rem);
     line-height: 1.05;
   }
 
