@@ -38,7 +38,9 @@ const MEDIA_LIBRARY = {
   seasonKitchen: 'assets/img/ia/temporada-cocina.png',
   familyTable: 'assets/img/ia/familia-mesa.png',
   vegetableHarvest: 'assets/cesta.png',
-  fruitSelection: 'assets/frutas.png'
+  fruitSelection: 'assets/frutas.png',
+  artisanSoap: 'assets/img/products/jabon-artesanal.jpg',
+  driedHerbs: 'assets/img/products/hierbas-secas.jpg'
 };
 
 const COPY = {
