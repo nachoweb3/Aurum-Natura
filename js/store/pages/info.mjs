@@ -57,16 +57,40 @@ const INFO_COPY = {
         'Aurum Natura confirma cada pedido con trato directo para mantener el nivel del producto y evitar promesas imprecisas sobre disponibilidad o zona de entrega.',
       faqs: [
         {
-          q: 'Como funciona la suscripcion?',
-          a: 'Puedes empezar con una caja semanal o quincenal. Te ayudamos por WhatsApp a elegir modalidad, volumen y primera entrega.'
+          q: '¿Qué llevan realmente vuestros productos?',
+          a: 'Solo agua, aire, tierra y sol. Nada más. Trabajamos con permacultura: sin pesticidas, sin fertilizantes sintéticos, sin herbicidas, sin hormonas, sin conservantes. La tierra se nutre con compost propio y estiércol de nuestras gallinas, las plantas crecen a su ritmo natural, y la fruta y verdura madura en planta hasta el día de la cosecha. Lo que te llega es lo que la finca genera con los cuatro elementos.'
         },
         {
-          q: 'Puedo hacer una compra puntual?',
-          a: 'Si. La compra puntual sigue disponible para probar la marca o completar una semana concreta.'
+          q: '¿Qué es la permacultura y por qué la usáis?',
+          a: 'La permacultura es un sistema agrícola que imita los ciclos de la naturaleza. En lugar de forzar monocultivos con químicos, diseñamos la finca para que cada elemento alimente al siguiente: las gallinas fertilizan el huerto, los cultivos protegen la tierra, el compost cierra el ciclo. Es más lento y da menos volumen, pero produce alimentos con sabor y densidad nutricional real.'
         },
         {
-          q: 'Se reparte en cualquier zona?',
-          a: 'Atendemos solicitudes segun disponibilidad y area de reparto. Por eso confirmamos cada pedido de forma directa antes del cierre.'
+          q: '¿Cómo funciona la suscripción?',
+          a: 'Puedes empezar con una caja semanal o quincenal. Te ayudamos por WhatsApp a elegir modalidad, volumen y primera entrega. Cancelas o pausas cuando quieras, sin permanencia.'
+        },
+        {
+          q: '¿Cuándo se cosecha y se envía mi pedido?',
+          a: 'Cosechamos el lunes por la mañana lo que va en tu caja de esa semana. Preparamos y salen los envíos entre lunes y martes. Cierre de pedidos: domingo a las 22:00. Lo que pides el domingo, se corta al día siguiente — no hay cámaras frigoríficas de semanas.'
+        },
+        {
+          q: '¿Cuánto tarda en llegar el envío?',
+          a: 'Península: 24–48h desde la salida (martes o miércoles). Baleares: 48–72h. Zonas rurales aisladas pueden requerir 24h más. Al ser producto fresco y cosechado al momento, coordinamos la entrega para que no coincida con festivos locales o fines de semana.'
+        },
+        {
+          q: '¿Cuánto cuesta el envío?',
+          a: 'Envío gratis en pedidos desde 35€. Por debajo: 4,90€ en península, 8,90€ en Baleares. Jabones, cerámica y hierbas secas pueden enviarse por separado (envío estándar, sin cadena de frío).'
+        },
+        {
+          q: '¿Se reparte en cualquier zona?',
+          a: 'Enviamos a toda la península y Baleares. Canarias, Ceuta y Melilla bajo consulta (la fruta/verdura fresca no viaja bien a esas zonas). Atendemos cada pedido de forma directa antes del cierre para confirmar disponibilidad.'
+        },
+        {
+          q: '¿Y si algo llega en mal estado?',
+          a: 'Escríbenos por WhatsApp con una foto en las 24h siguientes. Reemplazamos la pieza en la siguiente caja o te devolvemos el importe, sin preguntas. Somos una familia pequeña, no un call center — resolvemos rápido.'
+        },
+        {
+          q: '¿Puedo hacer una compra puntual?',
+          a: 'Sí. La compra puntual sigue disponible para probar la marca o completar una semana concreta, sin compromiso de suscripción.'
         }
       ]
     },
@@ -91,16 +115,24 @@ const INFO_COPY = {
       ],
       faqs: [
         {
-          q: 'Que necesito para empezar?',
-          a: 'Solo decirnos que caja te interesa, si la quieres semanal o quincenal y en que zona te encuentras.'
+          q: '¿Qué necesito para empezar?',
+          a: 'Solo decirnos qué caja te interesa, si la quieres semanal o quincenal y en qué zona te encuentras. Nosotros confirmamos disponibilidad y te damos la fecha de la primera entrega.'
         },
         {
-          q: 'Puedo regalar una caja?',
-          a: 'Si. La Caja Reserva y la Caja Familiar funcionan muy bien como regalo cuando buscas producto premium con mas sentido.'
+          q: '¿Vuestros productos son ecológicos?',
+          a: 'Vamos más allá que ecológico: trabajamos con permacultura. Agua, aire, tierra y sol, nada más. Sin químicos de ningún tipo, sin fertilizantes industriales, sin pesticidas. El certificado ecológico regula lo que NO puedes usar — nosotros directamente no usamos nada que no venga de la propia finca.'
         },
         {
-          q: 'Cuanto tardais en responder?',
-          a: 'Respondemos lo antes posible dentro del horario de trabajo, con un trato directo y sin respuestas automatizadas.'
+          q: '¿Puedo regalar una caja?',
+          a: 'Sí. La Caja Reserva y la Caja Familiar funcionan muy bien como regalo cuando buscas producto premium con más sentido. Nos dices el día de entrega y dedicatoria, y la preparamos con una nota a mano.'
+        },
+        {
+          q: '¿Cuánto tardáis en responder?',
+          a: 'Respondemos lo antes posible dentro del horario de trabajo (9:00–20:00, L–S), con trato directo y sin respuestas automatizadas. Por WhatsApp solemos contestar en menos de 2 horas.'
+        },
+        {
+          q: '¿Puedo visitar la finca?',
+          a: 'Sí, concertando cita. Nombela está a 1h15 de Madrid y abrimos puertas a clientes que quieran conocer el proyecto, ver las gallinas y los cultivos, y probar el producto en origen.'
         }
       ]
     }
@@ -256,19 +288,64 @@ function renderHelpPage(copy) {
       <p>${copy.help.body}</p>
     </section>
 
-    <section class="detail-card-grid">
-      <article class="glass-card">
-        <strong>Suscripcion semanal o quincenal</strong>
-        <p>Te ayudamos a elegir la modalidad mas natural para tu casa y para tu ritmo de cocina.</p>
-      </article>
-      <article class="glass-card">
-        <strong>Primera caja sin friccion</strong>
-        <p>Puedes entrar por una compra puntual y pasar a suscripcion cuando quieras.</p>
-      </article>
-      <article class="glass-card">
-        <strong>Entrega confirmada caso por caso</strong>
-        <p>Preferimos concretar bien la disponibilidad y la zona antes que prometer de mas.</p>
-      </article>
+    <section class="elements-band">
+      <div class="elements-band__intro">
+        <p class="eyebrow">Nuestro método</p>
+        <h2>Agua, aire, tierra y sol. Nada más.</h2>
+        <p>Permacultura real en la finca de Nombela. Sin pesticidas, sin fertilizantes sintéticos, sin hormonas, sin conservantes. Los cuatro elementos y el tiempo que cada planta necesita. Eso es todo lo que hay en tu caja.</p>
+      </div>
+      <div class="elements-band__grid">
+        <article class="element-card">
+          <span class="element-card__symbol">◈</span>
+          <strong>Agua</strong>
+          <p>Riego por goteo con agua de pozo. Sin cloro, sin aditivos. La misma que bebe la finca.</p>
+        </article>
+        <article class="element-card">
+          <span class="element-card__symbol">◇</span>
+          <strong>Aire</strong>
+          <p>Campo abierto en Nombela, a 600m de altitud. Sin invernaderos forzados, sin atmósferas controladas.</p>
+        </article>
+        <article class="element-card">
+          <span class="element-card__symbol">◉</span>
+          <strong>Tierra</strong>
+          <p>Compost propio y estiércol de gallinas de raza. La tierra se nutre de lo que genera la propia finca.</p>
+        </article>
+        <article class="element-card">
+          <span class="element-card__symbol">✺</span>
+          <strong>Sol</strong>
+          <p>Maduración en planta, nunca en cámara. La fruta se corta el día que sale hacia tu casa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-heading">
+        <p class="eyebrow">Tiempos de envío</p>
+        <h2>Del campo a tu casa en 48–72h</h2>
+      </div>
+      <div class="shipping-timeline">
+        <div class="shipping-step">
+          <span class="shipping-step__dot">1</span>
+          <strong>Domingo 22:00</strong>
+          <p>Cierre de pedidos de la semana.</p>
+        </div>
+        <div class="shipping-step">
+          <span class="shipping-step__dot">2</span>
+          <strong>Lunes AM</strong>
+          <p>Cosecha y preparación de tu caja.</p>
+        </div>
+        <div class="shipping-step">
+          <span class="shipping-step__dot">3</span>
+          <strong>Lunes/Martes</strong>
+          <p>Salida del envío refrigerado.</p>
+        </div>
+        <div class="shipping-step">
+          <span class="shipping-step__dot">4</span>
+          <strong>Martes–Jueves</strong>
+          <p>Entrega en península (24–48h) · Baleares 48–72h.</p>
+        </div>
+      </div>
+      <p class="shipping-note">Envío gratis desde 35€ · 4,90€ península · 8,90€ Baleares · Canarias bajo consulta</p>
     </section>
 
     <section class="section-block">
