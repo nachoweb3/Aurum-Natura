@@ -143,8 +143,7 @@ export async function renderHomePage(app) {
       <div class="editorial-band__stack">
         <div class="glass-card media-preview-card video-placeholder">
           <video autoplay muted loop playsinline>
-            <source src="assets/huerto.MOV" type="video/quicktime" />
-            <source src="assets/huerto.MOV" type="video/mp4" />
+            <source src="assets/cultivos1.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -237,7 +236,7 @@ export async function renderHomePage(app) {
       <div class="testimonial-grid">
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/elena-m.jpg" alt="Elena M." class="testimonial-card__avatar" />
+            <img src="assets/img/reviews/review-huevos.jpg" alt="Huevos recien recogidos junto a fresas de la finca" class="testimonial-card__avatar" />
             <div>
               <strong>Elena M.</strong>
               <span>Madrid · Suscriptora semanal</span>
@@ -248,24 +247,24 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/carlos-r.jpg" alt="Carlos R." class="testimonial-card__avatar" />
+            <img src="assets/img/reviews/review-nahomi.jpg" alt="Nahomi plantando en la finca Aurum Natura" class="testimonial-card__avatar" />
             <div>
-              <strong>Carlos R.</strong>
-              <span>Toledo · Suscriptor quincenal</span>
+              <strong>Nahomi G.</strong>
+              <span>Nombela · Finca Aurum Natura</span>
             </div>
           </div>
-          <p>"Soy cocinero profesional y noto al instante cuando un producto es real. La yema de estos huevos tiene un color y una textura que no encuentras en ningun proveedor convencional."</p>
+          <p>"Sin abonos quimicos, solo estiercol de gallina y compost. Cada planta crece con lo que da la tierra. Cuando pruebas la diferencia, ya no vuelves atras."</p>
           <div class="testimonial-card__stars">★★★★★</div>
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/maria-l.jpg" alt="Maria L." class="testimonial-card__avatar" />
+            <img src="assets/img/reviews/review-pollito.jpg" alt="Pollito recien nacido en la finca" class="testimonial-card__avatar" />
             <div>
               <strong>Maria L.</strong>
               <span>Talavera · Compra puntual</span>
             </div>
           </div>
-          <p>"Pedi una caja para probar y a la semana siguiente ya estaba suscrita. El trato directo, la calidad del producto y saber exactamente de donde viene todo... no tiene precio."</p>
+          <p>"Pedi una caja para probar y a la semana siguiente ya estaba suscrita. El trato directo, saber que los pollitos se crian en la finca... no tiene precio."</p>
           <div class="testimonial-card__stars">★★★★★</div>
         </article>
       </div>
@@ -298,7 +297,7 @@ export async function renderHomePage(app) {
         </div>
         <div class="soap-landing__story-visual">
           <div class="glass-card media-preview-card">
-            <img src="${getMediaAsset('soapCollection')}" alt="Coleccion jabones Aurum Natura" loading="lazy" />
+            <img src="${getMediaAsset('mentaVisual')}" alt="Menta cultivada en la finca Aurum Natura" loading="lazy" />
           </div>
         </div>
       </div>
@@ -310,6 +309,34 @@ export async function renderHomePage(app) {
           <a href="${app.createUrl('productos.html')}?cat=artisan" class="button button--primary">Ver jabones artesanales</a>
           <a href="https://wa.me/${app.catalog.store.whatsappNumber}" class="button button--ghost">Reservar por WhatsApp</a>
         </div>
+      </div>
+    </section>
+
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Cerámica Aurum Natura</p>
+        <h2>Cada pieza es única. Modelada a mano, imperfecta.</h2>
+        <p>No buscamos la perfección industrial, sino la belleza de lo real.</p>
+      </div>
+      <div class="product-grid">
+        ${getProductsByCategory(app.catalog, 'artisan', app.state.locale)
+          .filter((p) => p.id.startsWith('p-ceramics'))
+          .map((product) => renderProductCard(app, product))
+          .join('')}
+      </div>
+    </section>
+
+    <section class="section-block section-block--spacious">
+      <div class="section-heading section-heading--center">
+        <p class="eyebrow">Esquejes en Maceta de Cerámica</p>
+        <h2>No vendemos decoración. Vendemos vida que crece contigo.</h2>
+        <p>Esquejes enraizados en macetas modeladas a mano en la finca. Aromáticas y frutales seleccionados para que la casa respire lo mismo que respira el campo.</p>
+      </div>
+      <div class="product-grid">
+        ${getProductsByCategory(app.catalog, 'artisan', app.state.locale)
+          .filter((p) => p.id.startsWith('p-esquejes'))
+          .map((product) => renderProductCard(app, product))
+          .join('')}
       </div>
     </section>
 
