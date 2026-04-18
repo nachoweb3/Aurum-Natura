@@ -1,4 +1,4 @@
-import { getFeaturedProducts } from '../catalog.mjs';
+import { getFeaturedProducts, getProductsByCategory } from '../catalog.mjs';
 import { getMediaAsset, renderCategoryCard, renderProductCard } from '../runtime.mjs';
 
 const HOME_COPY = {
@@ -268,6 +268,48 @@ export async function renderHomePage(app) {
           <p>"Pedi una caja para probar y a la semana siguiente ya estaba suscrita. El trato directo, la calidad del producto y saber exactamente de donde viene todo... no tiene precio."</p>
           <div class="testimonial-card__stars">★★★★★</div>
         </article>
+      </div>
+    </section>
+
+    <section class="soap-landing">
+      <div class="soap-landing__hero">
+        <p class="eyebrow">Nueva coleccion artesanal</p>
+        <h2>Jabones de finca. Hechos a mano. Sin quimica.</h2>
+        <p class="soap-landing__lede">Tres piezas elaboradas en frio con aceite de oliva virgen extra, plantas de nuestra finca y el tiempo que necesita cada pastilla para curarse. Sin sulfatos, sin parabenos, sin conservantes sinteticos. Solo grasa noble, planta real y manos que saben lo que hacen.</p>
+      </div>
+
+      <div class="soap-landing__grid">
+        ${getProductsByCategory(app.catalog, 'artisan', app.state.locale)
+          .filter((p) => p.id.startsWith('p-soap'))
+          .map((product) => renderProductCard(app, product))
+          .join('')}
+      </div>
+
+      <div class="soap-landing__story">
+        <div class="soap-landing__story-copy">
+          <p class="eyebrow">Origen real</p>
+          <h3>De la chimenea y el huerto a tu piel.</h3>
+          <p>La lavanda crece silvestre junto al huerto. La menta la plantamos entre las acelgas. La ceniza viene de la encina que calienta la casa en invierno. No compramos ingredientes — los recogemos. Cada jabón sale de lo que la finca produce y de un proceso en frio que respeta la materia prima.</p>
+          <div class="timeline-list">
+            <div class="timeline-list__item">Curado minimo 40 dias para maxima dureza</div>
+            <div class="timeline-list__item">100–120g por pastilla artesanal</div>
+            <div class="timeline-list__item">Produccion limitada a lo que da la temporada</div>
+          </div>
+        </div>
+        <div class="soap-landing__story-visual">
+          <div class="glass-card media-preview-card">
+            <img src="${getMediaAsset('soapCollection')}" alt="Coleccion jabones Aurum Natura" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <div class="soap-landing__cta">
+        <p class="eyebrow">Pack Ritual Completo · 29€</p>
+        <h3>Los tres jabones en caja de madera. El regalo que no se olvida.</h3>
+        <div class="hero-copy__actions" style="justify-content:center;">
+          <a href="${app.createUrl('productos.html')}?cat=artisan" class="button button--primary">Ver jabones artesanales</a>
+          <a href="https://wa.me/${app.catalog.store.whatsappNumber}" class="button button--ghost">Reservar por WhatsApp</a>
+        </div>
       </div>
     </section>
 

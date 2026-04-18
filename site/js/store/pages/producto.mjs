@@ -46,6 +46,11 @@ const CATEGORY_NARRATIVE = {
     title: 'Fruta de temporada para una compra mas cuidada',
     body:
       'Seleccionada para hogares que valoran sabor, textura y una compra mas consciente que la del lineal habitual.'
+  },
+  artisan: {
+    title: 'Hecho a mano en la finca',
+    body:
+      'Jabones de proceso en frio, hierbas secas y piezas artesanales elaboradas con ingredientes que recogemos nosotros. Produccion limitada a lo que da cada temporada.'
   }
 };
 
@@ -88,6 +93,18 @@ export async function renderProductPage(app) {
         </div>
         <p class="product-page__lede">${product.shortDescription}</p>
         <p>${product.description}</p>
+        ${product.benefits ? `
+          <div class="product-page__benefits">
+            <strong>Beneficios</strong>
+            <ul>${product.benefits.map((b) => `<li>${b}</li>`).join('')}</ul>
+          </div>
+        ` : ''}
+        ${product.ingredients ? `
+          <div class="product-page__ingredients">
+            <strong>Ingredientes</strong>
+            <p>${product.ingredients}</p>
+          </div>
+        ` : ''}
         <div class="product-page__actions">
           <button type="button" class="button button--primary" data-action="add-to-cart" data-product-id="${product.id}">
             ${copy.buy}

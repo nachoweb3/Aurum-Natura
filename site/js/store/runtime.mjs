@@ -39,7 +39,10 @@ const MEDIA_LIBRARY = {
   familyTable: 'assets/img/ia/familia-mesa.png',
   vegetableHarvest: 'assets/cesta.png',
   fruitSelection: 'assets/frutas.png',
-  artisanSoap: 'assets/img/products/jabon-artesanal.jpg',
+  soapLavender: 'assets/img/products/soap-lavender.jpg',
+  soapMint: 'assets/img/products/soap-mint.jpg',
+  soapAsh: 'assets/img/products/soap-ash.jpg',
+  soapCollection: 'assets/img/products/soap-collection.jpg',
   driedHerbs: 'assets/img/products/hierbas-secas.jpg'
 };
 
@@ -84,7 +87,8 @@ const COPY = {
       kitchen: 'Hecho a mano',
       family: 'Para el hogar',
       weekly: 'Edicion semanal',
-      pantry: 'Seleccion reserva'
+      pantry: 'Seleccion reserva',
+      handmade: 'Hecho a mano'
     },
     footer: {
       kicker: 'Aurum Natura',

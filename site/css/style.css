@@ -517,6 +517,53 @@ h3 {
 .cart-summary,
 .header-actions,
 .checkout-line,
+.product-page__benefits,
+.product-page__ingredients {
+  margin: 20px 0;
+  padding: 20px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(217, 177, 106, 0.03);
+}
+
+.product-page__benefits strong,
+.product-page__ingredients strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold-bright);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.product-page__benefits ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-page__benefits li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.product-page__benefits li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.product-page__ingredients p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
 .product-page__actions {
   display: flex;
   align-items: center;
@@ -1600,6 +1647,97 @@ h3 {
 @media (max-width: 880px) {
   .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── Soap landing section ── */
+.soap-landing {
+  padding: 72px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.soap-landing__hero {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+}
+
+.soap-landing__hero h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.08;
+  margin-bottom: 22px;
+}
+
+.soap-landing__lede {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.soap-landing__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 24px;
+  margin-bottom: 56px;
+}
+
+.soap-landing__story {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding: 56px 30px;
+  margin: 0 0 48px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.soap-landing__story-copy h3 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.soap-landing__story-copy p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.soap-landing__cta {
+  text-align: center;
+  padding: 48px 24px 72px;
+}
+
+.soap-landing__cta h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1024px) {
+  .soap-landing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 880px) {
+  .soap-landing__story {
+    grid-template-columns: 1fr;
+    padding: 36px 20px;
+  }
+
+  .soap-landing__grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
