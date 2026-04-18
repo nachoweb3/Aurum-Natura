@@ -65,10 +65,10 @@
       "slug": "artesanal",
       "tone": "gold",
       "label": {
-        "es": "Artesanal"
+        "es": "Jabones y Artesanal"
       },
       "description": {
-        "es": "Jabones naturales y hierbas aromáticas secas, elaborados a mano en la finca con ingredientes de origen."
+        "es": "Jabones de proceso en frío, hierbas secas y piezas elaboradas a mano en la finca. Producción limitada, sin químicos, sin prisas."
       }
     }
   ],
@@ -224,12 +224,12 @@
       }
     },
     {
-      "id": "p-artisan-soap",
-      "slug": "jabon-artesanal-de-finca",
+      "id": "p-soap-lavender",
+      "slug": "jabon-lavanda-calma-nocturna",
       "category": "artisan",
-      "subcategory": "handmade",
-      "price": 12,
-      "compareAt": 15,
+      "subcategory": "soaps",
+      "price": 9,
+      "compareAt": 12,
       "featured": false,
       "badge": "handmade",
       "shipClass": "standard",
@@ -237,14 +237,121 @@
       "art": {
         "scene": "soap-bar",
         "palette": "gold",
-        "media": "artisanSoap",
-        "gallery": ["artisanSoap"]
+        "media": "soapLavender",
+        "gallery": ["soapLavender", "soapCollection"]
       },
       "content": {
         "es": {
-          "name": "Jabón artesanal de finca",
-          "shortDescription": "Jabón natural elaborado a mano con aceite de oliva, lavanda y hierbas de la finca.",
-          "description": "Cada pastilla se elabora en frío con aceite de oliva virgen extra, lavanda silvestre y plantas aromáticas cultivadas en nuestra finca. Sin químicos, sin conservantes artificiales, sin prisas. Un jabón que cuida la piel y respeta el entorno."
+          "name": "Calma Nocturna — Jabón de Lavanda",
+          "shortDescription": "Lavanda silvestre de la finca. Relaja la piel y cierra el día como mereces.",
+          "description": "Elaborado en frío con aceite de oliva virgen extra de almazara local y lavanda silvestre cortada a mano en nuestra finca de Nombela. Sin sulfatos, sin parabenos, sin conservantes sintéticos. Solo grasa noble, planta real y el tiempo que necesita para curarse. La espuma es densa, el aroma llega sin forzar y la piel queda limpia sin tirantez. Un jabón pensado para quien entiende que descansar empieza antes de acostarse.",
+          "benefits": [
+            "Relaja la piel y calma los sentidos antes de dormir",
+            "Lavanda real cortada en la finca, no esencia sintética",
+            "Aceite de oliva virgen extra como base hidratante",
+            "Sin sulfatos, sin parabenos, sin conservantes",
+            "Curado mínimo 40 días para máxima dureza y duración"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, hidróxido de sodio, lavanda silvestre (Lavandula angustifolia), aceite esencial de lavanda"
+        }
+      }
+    },
+    {
+      "id": "p-soap-mint",
+      "slug": "jabon-menta-despertar-verde",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 9,
+      "compareAt": 12,
+      "featured": false,
+      "badge": "limited",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "olive",
+        "media": "soapMint",
+        "gallery": ["soapMint", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Despertar Verde — Jabón de Menta",
+          "shortDescription": "Menta fresca de huerto. Sensación fría real que activa la piel desde el primer contacto.",
+          "description": "Jabón de proceso en frío con aceite de girasol alto oleico y hojas de menta piperita cultivada en nuestro huerto sin tratamientos. La sensación fría es real — no viene de un aditivo, viene de la planta. Pensado para la ducha de mañana, para después del trabajo físico, para quien necesita que el jabón haga algo más que limpiar. Espuma firme, frescor que dura y una piel que respira.",
+          "benefits": [
+            "Sensación fría natural que activa la circulación",
+            "Menta piperita cultivada sin pesticidas en la finca",
+            "Aceite de girasol alto oleico como base nutritiva",
+            "Ideal para ducha matinal o post-ejercicio",
+            "Efecto tonificante sin resecar la piel"
+          ],
+          "ingredients": "Aceite de girasol alto oleico, agua, hidróxido de sodio, hojas de menta piperita (Mentha × piperita), aceite esencial de menta"
+        }
+      }
+    },
+    {
+      "id": "p-soap-ash",
+      "slug": "jabon-ceniza-tierra-negra",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 11,
+      "compareAt": 14,
+      "featured": false,
+      "badge": "signature",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-bar",
+        "palette": "ember",
+        "media": "soapAsh",
+        "gallery": ["soapAsh", "soapCollection"]
+      },
+      "content": {
+        "es": {
+          "name": "Tierra Negra — Jabón de Ceniza",
+          "shortDescription": "Ceniza de encina y carbón activo. Detox real para una piel que trabaja.",
+          "description": "El jabón más crudo de la colección. Elaborado con ceniza de encina filtrada de nuestra propia chimenea y carbón activo natural. La lejía de ceniza es el método más antiguo de hacer jabón — nosotros lo recuperamos porque funciona. Exfolia sin agredir, arrastra la grasa acumulada y deja la piel con una limpieza profunda que se nota. Color negro natural, textura rústica, aroma a leña seca. Para manos que trabajan, pieles que necesitan más que un gel de supermercado.",
+          "benefits": [
+            "Exfoliante natural con ceniza de encina filtrada",
+            "Carbón activo que absorbe impurezas y exceso de grasa",
+            "Detox profundo sin químicos agresivos",
+            "Ideal para manos, cuerpo y pieles mixtas o grasas",
+            "Color negro natural — sin tintes artificiales"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, agua, lejía de ceniza de encina, carbón activo natural, aceite esencial de romero"
+        }
+      }
+    },
+    {
+      "id": "p-soap-pack",
+      "slug": "pack-aurum-ritual-completo",
+      "category": "artisan",
+      "subcategory": "soaps",
+      "price": 29,
+      "compareAt": 38,
+      "featured": false,
+      "badge": "bestseller",
+      "shipClass": "standard",
+      "restrictedCountries": [],
+      "art": {
+        "scene": "soap-pack",
+        "palette": "gold",
+        "media": "soapCollection",
+        "gallery": ["soapCollection", "soapLavender", "soapMint", "soapAsh"]
+      },
+      "content": {
+        "es": {
+          "name": "Ritual Completo — Pack Aurum Natura",
+          "shortDescription": "Los tres jabones en caja de madera. El regalo que no se olvida.",
+          "description": "Lavanda para cerrar el día, menta para abrirlo y ceniza para limpiar en serio. Los tres jabones artesanales de Aurum Natura reunidos en una caja de madera con virutas naturales. Cada pastilla pesa entre 100 y 120 gramos y está curada un mínimo de 40 días. Es el pack que regalas cuando quieres que se note que has elegido bien — o el que te quedas tú porque no tiene sentido elegir solo uno. Producción limitada a lo que da la finca cada temporada.",
+          "benefits": [
+            "3 jabones artesanales: Lavanda + Menta + Ceniza",
+            "Caja de madera natural con virutas — listo para regalo",
+            "Ahorro real frente a compra individual",
+            "Producción limitada — cada temporada es diferente",
+            "Peso total: 300–360g de jabón artesanal curado"
+          ],
+          "ingredients": "Aceite de oliva virgen extra, aceite de girasol alto oleico, agua, hidróxido de sodio, lejía de ceniza de encina, carbón activo, lavanda silvestre, menta piperita, romero, aceites esenciales naturales"
         }
       }
     },
@@ -252,9 +359,9 @@
       "id": "p-dried-herbs",
       "slug": "hierbas-aromaticas-secas",
       "category": "artisan",
-      "subcategory": "handmade",
-      "price": 9,
-      "compareAt": 12,
+      "subcategory": "herbs",
+      "price": 8,
+      "compareAt": 11,
       "featured": false,
       "badge": "seasonal",
       "shipClass": "standard",
@@ -267,9 +374,9 @@
       },
       "content": {
         "es": {
-          "name": "Hierbas aromáticas secas",
-          "shortDescription": "Romero, tomillo, orégano y lavanda secados al sol de la finca.",
-          "description": "Selección de hierbas aromáticas recogidas a mano y secadas de forma natural en la finca. Ideales para cocina, infusiones o aromatizar el hogar. Cada paquete varía según la temporada y el momento de la cosecha."
+          "name": "Hierbas de Finca — Aromáticas Secas",
+          "shortDescription": "Romero, tomillo, orégano y lavanda secados al sol de Nombela.",
+          "description": "Selección de hierbas aromáticas recogidas a mano y secadas de forma natural en la finca. Cada manojo varía según la temporada y el momento de la cosecha. Para cocina, infusiones, aromatizar el hogar o acompañar los jabones en un baño con más sentido."
         }
       }
     }

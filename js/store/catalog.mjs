@@ -69,7 +69,9 @@ export function getLocalizedProduct(product, locale) {
     locale: safeLocale,
     name: translated.name,
     shortDescription: translated.shortDescription,
-    description: translated.description
+    description: translated.description,
+    benefits: translated.benefits ?? null,
+    ingredients: translated.ingredients ?? null
   };
 }
 
