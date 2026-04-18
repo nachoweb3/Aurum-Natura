@@ -173,13 +173,24 @@ function renderAboutPage(copy) {
       </div>
     </section>
 
+    <section class="editorial-band editorial-band--split editorial-band--spacious">
+      <div class="editorial-band__copy">
+        <p class="eyebrow">Raza Plymouth Rock</p>
+        <h2>Nuestras gallinas no son cualquier gallina.</h2>
+        <p>Criamos Plymouth Rock, una raza reconocida por la calidad de su huevo: yema firme, color intenso, sabor que se nota. No las forzamos con luz artificial ni con piensos acelerados. Comen natural, viven con espacio y ponen cuando estan listas.</p>
+        <p class="about-closing-line">Eso se traduce en un huevo que no necesita etiqueta para distinguirse del resto.</p>
+      </div>
+      <div class="editorial-band__stack">
+        <figure class="stack-media-card is-highlight">
+          <img src="assets/gallo.jpg" alt="Gallo Plymouth Rock de Aurum Natura" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
     <section class="editorial-band editorial-band--split editorial-band--spacious editorial-band--reverse">
       <div class="editorial-band__stack">
         <figure class="stack-media-card is-highlight">
           <img src="${getMediaAsset('vegetableHarvest')}" alt="Recoleccion de huerta" loading="lazy" />
-        </figure>
-        <figure class="stack-media-card">
-          <img src="${getMediaAsset('eggsHero')}" alt="Huevos camperos" loading="lazy" />
         </figure>
       </div>
       <div class="editorial-band__copy">
