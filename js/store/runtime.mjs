@@ -171,10 +171,20 @@ function initScrollAnimations() {
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0, rootMargin: '0px 0px -10% 0px' }
   );
 
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  const reveals = document.querySelectorAll('.reveal');
+  reveals.forEach((el) => io.observe(el));
+
+  // Fallback: ensure nothing stays hidden after 2.5s (safety net for mobile / tall blocks)
+  setTimeout(() => {
+    reveals.forEach((el) => {
+      if (!el.classList.contains('is-visible')) {
+        el.classList.add('is-visible');
+      }
+    });
+  }, 2500);
 
   // Parallax: video hero background and any .parallax element
   const hero = document.querySelector('.video-hero__media');
