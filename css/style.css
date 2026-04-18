@@ -1614,6 +1614,14 @@ h3 {
   min-height: 280px;
 }
 
+.stack-media-card--video video {
+  width: 100%;
+  display: block;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
 /* ── About page ── */
 .page-hero--about {
   max-width: 820px;

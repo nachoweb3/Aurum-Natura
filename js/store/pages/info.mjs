@@ -144,8 +144,11 @@ function renderAboutPage(copy) {
         <p>${a.farmBody}</p>
       </div>
       <div class="editorial-band__stack">
-        <figure class="stack-media-card is-highlight">
-          <img src="${getMediaAsset('farmOrigin')}" alt="Finca de Aurum Natura en Nombela" loading="lazy" />
+        <figure class="stack-media-card is-highlight stack-media-card--video">
+          <video autoplay muted loop playsinline>
+            <source src="assets/huerto.MOV" type="video/quicktime" />
+            <source src="assets/huerto.MOV" type="video/mp4" />
+          </video>
         </figure>
       </div>
     </section>
