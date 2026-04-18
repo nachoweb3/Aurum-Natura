@@ -37,7 +37,8 @@ const MEDIA_LIBRARY = {
   eggsHero: 'assets/huevos-finca.jpg',
   seasonKitchen: 'assets/img/ia/temporada-cocina.png',
   familyTable: 'assets/img/ia/familia-mesa.png',
-  vegetableHarvest: 'assets/img/ia/recoleccion-finca.png'
+  vegetableHarvest: 'assets/cesta.png',
+  fruitSelection: 'assets/frutas.png'
 };
 
 const COPY = {
