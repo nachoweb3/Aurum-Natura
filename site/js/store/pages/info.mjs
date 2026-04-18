@@ -150,8 +150,11 @@ function renderAboutPage(copy) {
       </div>
     </section>
 
-    <section class="about-chapter">
-      <div class="about-chapter__inner">
+    <section class="about-founders">
+      <div class="about-founders__photo">
+        <img src="assets/miauymua.JPG" alt="Nacho y Nahomi en la finca de Aurum Natura" />
+      </div>
+      <div class="about-founders__copy">
         <p class="eyebrow">Quienes somos</p>
         <h2>${a.usTitle}</h2>
         <p>${a.usBody}</p>
