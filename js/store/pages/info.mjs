@@ -189,7 +189,7 @@ function renderAboutPage(copy) {
             <img src="assets/pollito-plymouth.jpg" alt="Pollito Plymouth Rock recien nacido" loading="lazy" />
           </figure>
           <figure class="stack-media-card">
-            <img src="assets/pollito-huerto.jpg" alt="Pollito Plymouth Rock entre las acelgas del huerto" loading="lazy" />
+            <img src="assets/gallo.jpg" alt="Gallo Plymouth Rock de Aurum Natura" loading="lazy" />
           </figure>
         </div>
       </div>
