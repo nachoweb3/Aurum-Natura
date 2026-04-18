@@ -13,6 +13,12 @@ const CATALOG_COPY = {
     all: 'Todo',
     search: 'Buscar por nombre o descripcion',
     results: 'resultados',
+    subcategoryLabels: {
+      soaps: 'Jabones',
+      ceramics: 'Cerámica',
+      plants: 'Plantas',
+      herbs: 'Hierbas'
+    },
     supportKicker: 'Por que cambia el contenido',
     supportCards: [
       {
@@ -35,6 +41,7 @@ export async function renderCatalogPage(app) {
   const copy = CATALOG_COPY[app.state.locale] ?? CATALOG_COPY.es;
   const query = new URL(window.location.href);
   const initialCategory = query.searchParams.get('category') ?? 'all';
+  const initialSub = query.searchParams.get('sub') ?? 'all';
   const initialSearch = query.searchParams.get('search') ?? '';
   const subscriptionBoxes = app.getProducts().filter((product) => product.category === 'subscriptions');
 
@@ -56,8 +63,9 @@ export async function renderCatalogPage(app) {
       </div>
     </section>
 
-    <section class="filters-bar">
+    <section class="filters-bar filters-bar--sticky">
       <div class="chip-row" id="catalog-category-row"></div>
+      <div class="chip-row chip-row--sub" id="catalog-sub-row" hidden></div>
       <label class="search-field">
         <span>⌕</span>
         <input id="catalog-search" type="search" value="${initialSearch}" placeholder="${copy.search}" />
@@ -86,15 +94,20 @@ export async function renderCatalogPage(app) {
   `;
 
   const categoryRow = document.getElementById('catalog-category-row');
+  const subRow = document.getElementById('catalog-sub-row');
   const searchInput = document.getElementById('catalog-search');
   const grid = document.getElementById('catalog-grid');
   const count = document.getElementById('catalog-results-count');
 
   let category = initialCategory;
+  let sub = initialSub;
   let search = initialSearch;
 
   const render = () => {
-    const matches = app.search(search, category);
+    let matches = app.search(search, category);
+    if (category === 'artisan' && sub !== 'all') {
+      matches = matches.filter((p) => p.subcategory === sub);
+    }
 
     categoryRow.innerHTML = `
       <button type="button" class="filter-chip ${category === 'all' ? 'is-active' : ''}" data-category="all">${copy.all}</button>
@@ -108,6 +121,27 @@ export async function renderCatalogPage(app) {
         )
         .join('')}
     `;
+
+    if (category === 'artisan') {
+      const subs = ['soaps', 'ceramics', 'plants', 'herbs'];
+      subRow.hidden = false;
+      subRow.innerHTML = `
+        <button type="button" class="filter-chip filter-chip--sub ${sub === 'all' ? 'is-active' : ''}" data-sub="all">${copy.all}</button>
+        ${subs
+          .map(
+            (s) => `
+              <button type="button" class="filter-chip filter-chip--sub ${sub === s ? 'is-active' : ''}" data-sub="${s}">
+                ${copy.subcategoryLabels[s] ?? s}
+              </button>
+            `
+          )
+          .join('')}
+      `;
+    } else {
+      subRow.hidden = true;
+      subRow.innerHTML = '';
+    }
+
     count.textContent = `${matches.length} ${copy.results}`;
     grid.innerHTML = matches.map((product) => renderProductCard(app, product)).join('');
 
@@ -116,6 +150,11 @@ export async function renderCatalogPage(app) {
       next.searchParams.set('category', category);
     } else {
       next.searchParams.delete('category');
+    }
+    if (category === 'artisan' && sub !== 'all') {
+      next.searchParams.set('sub', sub);
+    } else {
+      next.searchParams.delete('sub');
     }
     if (search.trim()) {
       next.searchParams.set('search', search.trim());
@@ -132,6 +171,16 @@ export async function renderCatalogPage(app) {
       return;
     }
     category = button.dataset.category;
+    sub = 'all';
+    render();
+  });
+
+  subRow.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-sub]');
+    if (!button) {
+      return;
+    }
+    sub = button.dataset.sub;
     render();
   });
 
