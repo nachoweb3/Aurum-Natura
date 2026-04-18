@@ -201,8 +201,8 @@
       "art": {
         "scene": "fruit-basket",
         "palette": "moss",
-        "media": "seasonKitchen",
-        "gallery": ["seasonKitchen", "familyTable", "homeHero"]
+        "media": "fruitSelection",
+        "gallery": ["fruitSelection", "familyTable", "homeHero"]
       },
       "content": {
         "es": {
