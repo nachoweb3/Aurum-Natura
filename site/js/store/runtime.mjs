@@ -131,6 +131,43 @@ function injectVictorianBorder() {
   }
 }
 
+export function getFakeStock(productId) {
+  if (!productId) return null;
+  const today = new Date();
+  const daySeed = today.getUTCFullYear() * 10000 + (today.getUTCMonth() + 1) * 100 + today.getUTCDate();
+  let hash = 0;
+  const input = `${productId}-${daySeed}`;
+  for (let i = 0; i < input.length; i++) {
+    hash = ((hash << 5) - hash + input.charCodeAt(i)) | 0;
+  }
+  const pool = Math.abs(hash) % 18;
+  return pool < 12 ? null : pool - 10;
+}
+
+export function getNextSundayCutoff() {
+  const now = new Date();
+  const day = now.getDay();
+  const daysUntilSunday = day === 0 ? 0 : 7 - day;
+  const target = new Date(now);
+  target.setDate(now.getDate() + daysUntilSunday);
+  target.setHours(22, 0, 0, 0);
+  if (target.getTime() <= now.getTime()) {
+    target.setDate(target.getDate() + 7);
+  }
+  return target;
+}
+
+export function formatCountdown(targetDate) {
+  const diff = targetDate.getTime() - Date.now();
+  if (diff <= 0) return '00d 00h 00m';
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const minutes = Math.floor((diff % 3600000) / 60000);
+  return `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m`;
+}
+
+export const FREE_SHIPPING_THRESHOLD = 35;
+
 export async function bootStorefront(pageId, renderPage) {
   const catalog = await fetch('data/catalogo.json').then((response) => response.json());
   const app = createStorefrontApp(catalog, pageId);
@@ -733,8 +770,15 @@ export function renderProductCard(app, product) {
   const badge = app.copy.badges[product.badge] ?? product.badge;
   const rawProduct = app.catalog.products.find((p) => p.id === product.id);
   const compareAt = rawProduct?.compareAt;
+  const savingsPct = compareAt && compareAt > product.price
+    ? Math.round(((compareAt - product.price) / compareAt) * 100)
+    : 0;
   const compareMarkup = compareAt
-    ? `<span class="product-card__compare">${app.formatMoney(compareAt)}</span>`
+    ? `<span class="product-card__compare">${app.formatMoney(compareAt)}</span>${savingsPct > 0 ? `<span class="product-card__savings">-${savingsPct}%</span>` : ''}`
+    : '';
+  const stock = getFakeStock(product.id);
+  const stockBadge = stock !== null && stock <= 6
+    ? `<span class="product-card__stock ${stock <= 3 ? 'product-card__stock--low' : ''}">Sólo ${stock} ${stock === 1 ? 'unidad' : 'unidades'}</span>`
     : '';
 
   return `
@@ -742,6 +786,7 @@ export function renderProductCard(app, product) {
       <a href="${app.createUrl('producto.html', { slug: product.slug })}" class="product-card__media">
         ${renderProductVisual(product, 'card')}
         <span class="pill">${badge}</span>
+        ${stockBadge}
       </a>
       <div class="product-card__body">
         <div class="product-card__meta">
