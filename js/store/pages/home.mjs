@@ -141,8 +141,11 @@ export async function renderHomePage(app) {
         </div>
       </div>
       <div class="editorial-band__stack">
-        <div class="glass-card media-preview-card">
-          <img src="${getMediaAsset('familyTable')}" alt="Mesa familiar con producto de temporada" loading="lazy" />
+        <div class="glass-card media-preview-card video-placeholder">
+          <video autoplay muted loop playsinline>
+            <source src="assets/huerto.MOV" type="video/quicktime" />
+            <source src="assets/huerto.MOV" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -173,8 +176,8 @@ export async function renderHomePage(app) {
         <div class="glass-card media-preview-card">
           <img src="${getMediaAsset('farmOrigin')}" alt="Finca de origen en Nombela" loading="lazy" />
         </div>
-        <div class="glass-card media-preview-card">
-          <img src="${getMediaAsset('vegetableHarvest')}" alt="Recoleccion de huerta" loading="lazy" />
+        <div class="glass-card media-preview-card map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.5!2d-4.5138!3d40.0567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4019a7b5e5b7e7%3A0x0!2sCalle%20Viana%2054%2C%20Nombela%2C%20Toledo!5e0!3m2!1ses!2ses!4v1713400000000" width="100%" height="100%" style="border:0;border-radius:var(--radius);min-height:280px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
       <div class="editorial-band__copy">
