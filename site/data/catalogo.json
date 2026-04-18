@@ -290,39 +290,6 @@
       }
     },
     {
-      "id": "p-soap-ash",
-      "slug": "jabon-ceniza-tierra-negra",
-      "category": "artisan",
-      "subcategory": "soaps",
-      "price": 11,
-      "compareAt": 14,
-      "featured": false,
-      "badge": "signature",
-      "shipClass": "standard",
-      "restrictedCountries": [],
-      "art": {
-        "scene": "soap-bar",
-        "palette": "ember",
-        "media": "soapAsh",
-        "gallery": ["soapAsh", "soapCollection"]
-      },
-      "content": {
-        "es": {
-          "name": "Tierra Negra — Jabón de Ceniza",
-          "shortDescription": "Ceniza de encina y carbón activo. Detox real para una piel que trabaja.",
-          "description": "El jabón más crudo de la colección. Elaborado con ceniza de encina filtrada de nuestra propia chimenea y carbón activo natural. La lejía de ceniza es el método más antiguo de hacer jabón — nosotros lo recuperamos porque funciona. Exfolia sin agredir, arrastra la grasa acumulada y deja la piel con una limpieza profunda que se nota. Color negro natural, textura rústica, aroma a leña seca. Para manos que trabajan, pieles que necesitan más que un gel de supermercado.",
-          "benefits": [
-            "Exfoliante natural con ceniza de encina filtrada",
-            "Carbón activo que absorbe impurezas y exceso de grasa",
-            "Detox profundo sin químicos agresivos",
-            "Ideal para manos, cuerpo y pieles mixtas o grasas",
-            "Color negro natural — sin tintes artificiales"
-          ],
-          "ingredients": "Aceite de oliva virgen extra, agua, lejía de ceniza de encina, carbón activo natural, aceite esencial de romero"
-        }
-      }
-    },
-    {
       "id": "p-soap-pack",
       "slug": "pack-aurum-ritual-completo",
       "category": "artisan",
