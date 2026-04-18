@@ -182,15 +182,26 @@ function renderAboutPage(copy) {
       </div>
       <div class="editorial-band__stack">
         <figure class="stack-media-card is-highlight">
-          <img src="assets/gallo.jpg" alt="Gallo Plymouth Rock de Aurum Natura" loading="lazy" />
+          <img src="assets/huevos-finca.jpg" alt="Huevos camperos recien recogidos junto a fresas de la finca" loading="lazy" />
         </figure>
+        <div class="about-photo-grid">
+          <figure class="stack-media-card">
+            <img src="assets/pollito-plymouth.jpg" alt="Pollito Plymouth Rock recien nacido" loading="lazy" />
+          </figure>
+          <figure class="stack-media-card">
+            <img src="assets/gallo.jpg" alt="Gallo Plymouth Rock de Aurum Natura" loading="lazy" />
+          </figure>
+        </div>
       </div>
     </section>
 
     <section class="editorial-band editorial-band--split editorial-band--spacious editorial-band--reverse">
       <div class="editorial-band__stack">
         <figure class="stack-media-card is-highlight">
-          <img src="${getMediaAsset('vegetableHarvest')}" alt="Recoleccion de huerta" loading="lazy" />
+          <img src="assets/nahomi-plantando.jpg" alt="Nahomi plantando en la finca con compost natural" loading="lazy" />
+        </figure>
+        <figure class="stack-media-card">
+          <img src="assets/pollito-huerto.jpg" alt="Pollito entre las acelgas del huerto" loading="lazy" />
         </figure>
       </div>
       <div class="editorial-band__copy">
