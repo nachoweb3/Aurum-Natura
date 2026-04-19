@@ -258,9 +258,9 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/resenas/resena3.webp" alt="Rebeca L. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
+            <img src="assets/resenas/resena3.webp" alt="Oscar L. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
-              <strong>Rebeca L.</strong>
+              <strong>Oscar L.</strong>
               <span>Talavera · Compra puntual</span>
             </div>
           </div>
