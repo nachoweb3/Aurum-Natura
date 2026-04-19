@@ -247,9 +247,9 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/resenas/resena2.avif" alt="Nahomi G. — Finca Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
+            <img src="assets/resenas/resena2.avif" alt="Pablo G. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
-              <strong>Nahomi G.</strong>
+              <strong>Pablo G.</strong>
               <span>Nombela · Finca Aurum Natura</span>
             </div>
           </div>
@@ -258,9 +258,9 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/resenas/resena3.webp" alt="Maria L. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
+            <img src="assets/resenas/resena3.webp" alt="Rebeca L. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
-              <strong>Maria L.</strong>
+              <strong>Rebeca L.</strong>
               <span>Talavera · Compra puntual</span>
             </div>
           </div>
