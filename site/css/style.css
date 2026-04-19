@@ -3287,20 +3287,23 @@ h3 {
   }
 }
 
+.video-hero__content h1.hero-title-plate,
 .hero-title-plate {
-  display: inline-block;
-  background: #000000;
-  color: #f5d89a;
-  padding: 18px 32px;
-  border-radius: 18px;
-  border: 1.5px solid rgba(245, 216, 154, 0.55);
-  box-shadow:
-    0 0 0 1px rgba(245, 216, 154, 0.2),
-    0 0 22px rgba(245, 216, 154, 0.35),
-    0 0 48px rgba(245, 216, 154, 0.22),
-    inset 0 0 18px rgba(245, 216, 154, 0.12);
-  text-shadow: 0 0 14px rgba(245, 216, 154, 0.35);
-  -webkit-text-stroke: 0;
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-stroke: 0 !important;
+  text-stroke: 0 !important;
+  text-shadow: none !important;
+  filter:
+    drop-shadow(0 0 14px rgba(245, 216, 154, 0.85))
+    drop-shadow(0 0 28px rgba(245, 216, 154, 0.55))
+    drop-shadow(0 0 48px rgba(245, 216, 154, 0.35)) !important;
+  padding: 0;
+  border: 0;
+  box-shadow: none;
 }
 
 @media (max-width: 640px) {
