@@ -236,7 +236,7 @@ export async function renderHomePage(app) {
       <div class="testimonial-grid">
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/review-huevos.jpg" alt="Huevos recien recogidos junto a fresas de la finca" class="testimonial-card__avatar" />
+            <img src="assets/resenas/resena1.webp" alt="Elena M. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
               <strong>Elena M.</strong>
               <span>Madrid · Suscriptora semanal</span>
@@ -247,7 +247,7 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/review-nahomi.jpg" alt="Nahomi plantando en la finca Aurum Natura" class="testimonial-card__avatar" />
+            <img src="assets/resenas/resena2.avif" alt="Nahomi G. — Finca Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
               <strong>Nahomi G.</strong>
               <span>Nombela · Finca Aurum Natura</span>
@@ -258,7 +258,7 @@ export async function renderHomePage(app) {
         </article>
         <article class="testimonial-card">
           <div class="testimonial-card__header">
-            <img src="assets/img/reviews/review-pollito.jpg" alt="Pollito recien nacido en la finca" class="testimonial-card__avatar" />
+            <img src="assets/resenas/resena3.webp" alt="Maria L. — Cliente Aurum Natura" class="testimonial-card__avatar" loading="lazy" />
             <div>
               <strong>Maria L.</strong>
               <span>Talavera · Compra puntual</span>
