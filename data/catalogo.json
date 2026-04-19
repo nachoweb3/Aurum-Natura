@@ -94,7 +94,16 @@
         "es": {
           "name": "Caja Esencial",
           "shortDescription": "La forma elegante de empezar a comer mejor en casa cada semana.",
-          "description": "Una selección compacta y premium para parejas o hogares pequeños. Incluye huevos camperos de gallinas de raza, verdura, hortaliza y fruta de temporada en una proporción pensada para una cocina semanal más consciente."
+          "description": "La puerta de entrada a Aurum Natura. Una caja compacta pensada para parejas o personas que cocinan para uno o dos, con la misma calidad que las cajas mayores pero en formato más ligero. Todo cosechado el lunes por la mañana con permacultura real — agua, aire, tierra y sol. Sin químicos, sin cámaras de conservación, sin intermediarios.",
+          "ingredients": "Media docena de huevos camperos de gallinas Plymouth Rock · 4-5 variedades de verdura de temporada (aprox. 2,5-3 kg) · 3-4 variedades de fruta de temporada (aprox. 2 kg) · 1 manojo de hierbas aromáticas frescas del huerto",
+          "benefits": [
+            "Ideal para parejas o hogares de 1-2 personas — sin desperdicio",
+            "Variedad semanal suficiente para cubrir 4-5 comidas principales",
+            "Huevos de gallinas de raza con yema naranja intensa y clara firme",
+            "Fruta madurada en planta, no en cámara — sabor real de temporada",
+            "Permacultura estricta: sin pesticidas, sin fertilizantes sintéticos, sin conservantes",
+            "Cosecha del lunes, entrega martes-miércoles en península"
+          ]
         }
       }
     },
@@ -119,7 +128,17 @@
         "es": {
           "name": "Caja Familiar",
           "shortDescription": "La suscripción familiar y semanal para hogares que quieren una mesa mejor toda la semana.",
-          "description": "Nuestra opción más completa para el ritmo real de una familia o una pareja que cocina en serio. Más variedad, más cantidad útil y una combinación equilibrada de huevos camperos, huerta y fruta de temporada."
+          "description": "La caja más vendida. Pensada para familias de 3-5 personas o parejas que cocinan de verdad y necesitan variedad para toda la semana. Más volumen, más diversidad y un equilibrio entre huevos, huerta y fruta pensado para que no falte nada en la nevera entre lunes y domingo. Todo cosechado con permacultura en la finca — nada viene de fuera, nada lleva químicos.",
+          "ingredients": "Docena completa de huevos camperos de gallinas Plymouth Rock · 6-8 variedades de verdura de temporada (aprox. 5-6 kg) · 4-5 variedades de fruta de temporada (aprox. 3,5-4 kg) · 2 manojos de hierbas aromáticas · 1 producto sorpresa del huerto (legumbre fresca, rabanitos, o lo que dé la semana)",
+          "benefits": [
+            "Pensada para familias 3-5 personas o parejas que cocinan a diario",
+            "Variedad suficiente para cubrir 10-12 comidas principales a la semana",
+            "Docena entera de huevos — suficiente para desayunos, tortillas y repostería",
+            "Incluye producto sorpresa del día: lo mejor que salga el lunes",
+            "Fruta para meriendas, postres y batidos sin tener que comprar fuera",
+            "Permacultura certificada por la tierra, no por un sello — agua, aire, tierra, sol",
+            "Ahorro de 10€ frente a compra puntual equivalente"
+          ]
         }
       }
     },
@@ -144,7 +163,18 @@
         "es": {
           "name": "Caja Reserva",
           "shortDescription": "La expresión más amplia de la finca para hogares que quieren lo mejor.",
-          "description": "Una caja con más presencia, más producto y una selección especialmente cuidada para quienes valoran el origen, la estacionalidad y una experiencia semanal más abundante."
+          "description": "La caja premium de Aurum Natura. Todo lo que da la finca en su mejor momento, seleccionado personalmente por Nacho y Nahomi el lunes por la mañana. Incluye producciones limitadas (miel de abejas propias cuando hay temporada, setas silvestres del campo, conservas elaboradas en casa) que no están disponibles en las cajas menores. Para hogares grandes, personas que reciben invitados a menudo, o quien simplemente quiere comer como se comía antes de que todo esto se industrializara.",
+          "ingredients": "18 huevos camperos de gallinas Plymouth Rock seleccionados · 10-12 variedades de verdura de temporada (aprox. 8-10 kg) · 6-8 variedades de fruta de temporada (aprox. 6 kg) · 3 manojos de hierbas aromáticas · 1 tarro de conserva casera o miel de la finca (según temporada) · 2 productos limitados del día (setas silvestres, flores comestibles, legumbres frescas, etc.)",
+          "benefits": [
+            "Para hogares grandes (5+ personas) o amantes de la cocina que reciben",
+            "Acceso a productos limitados que no entran en otras cajas",
+            "Selección personal de Nacho y Nahomi cada lunes — no es reparto automatizado",
+            "Incluye conserva artesanal o miel de abejas propias según temporada",
+            "Variedad para cubrir una semana entera sin ir al supermercado",
+            "Producciones en serie muy corta: lo que da la finca, nada más",
+            "Prioridad en primicias de temporada (primeras cerezas, tomates corazón, etc.)",
+            "Ahorro de 13€ frente a compra puntual — pero la diferencia real es el acceso"
+          ]
         }
       }
     },
@@ -169,7 +199,16 @@
         "es": {
           "name": "Docena de huevos camperos",
           "shortDescription": "Huevos de gallinas de raza con yema firme y recogida de ritmo corto.",
-          "description": "Una docena de huevos camperos seleccionados para clientes que quieren asegurar calidad diaria en tortillas, desayunos, repostería y cocina de base."
+          "description": "Doce huevos de gallinas Plymouth Rock y Maran Cobrizo criadas en libertad en Nombela. Comen grano ecológico, escarban tierra, toman sol y duermen en gallinero de madera. La diferencia con el huevo de supermercado no es marketing: yema naranja por alto beta-caroteno, clara firme por dieta variada, cáscara gruesa por calcio real. Recogidos el lunes, enviados el martes.",
+          "ingredients": "12 huevos camperos tamaño L · razas Plymouth Rock Barrada y Maran Cobrizo · pienso base ecológico + pasto y restos del huerto · sin antibióticos, sin hormonas, sin estabulación",
+          "benefits": [
+            "Yema naranja intensa — indicador real de calidad de la alimentación",
+            "Clara firme que se mantiene en la sartén, no se escurre",
+            "Aptos para merengues, tortillas francesas, mayonesas caseras y repostería exigente",
+            "Gallinas de raza — los huevos son más densos y sabrosos que los híbridos industriales",
+            "Cáscara natural sin lavar — dura más tiempo fuera de la nevera",
+            "Trazabilidad total: sabes qué gallina, qué día, qué pasto"
+          ]
         }
       }
     },
@@ -194,7 +233,16 @@
         "es": {
           "name": "Selección de huerta de temporada",
           "shortDescription": "Verdura y hortaliza fresca para cocinar con variedad real durante la semana.",
-          "description": "Una selección variable según el momento del campo, pensada para complementar la suscripción o para una compra puntual con más nivel que el lineal habitual."
+          "description": "Una selección de 6-8 variedades cosechadas esa misma semana, según lo que mejor esté dando el campo. Permacultura pura: la tierra se fertiliza con compost propio y estiércol de las gallinas, las plantas se riegan con agua de pozo y crecen sin pesticidas ni herbicidas de ningún tipo. Cada verdura madura en su momento, sin forzar con invernaderos ni calor artificial. El resultado es sabor, textura y densidad nutricional que ya no se encuentran en la compra habitual.",
+          "ingredients": "6-8 variedades de verdura y hortaliza de temporada (aprox. 5-6 kg total) · ejemplos según época: tomate corazón de buey, calabacín, pimiento italiano, acelga, lechuga viva, rabanitos, zanahoria morada, puerro, calabaza, coles · 1 manojo de hierbas aromáticas (perejil, cilantro, menta o albahaca según la semana)",
+          "benefits": [
+            "Cosechada el lunes — máxima frescura y vida útil en tu nevera",
+            "Variedades tradicionales recuperadas, no híbridos comerciales de supermercado",
+            "Sin pesticidas, sin fungicidas, sin ceras ni tratamientos postcosecha",
+            "Tomates con sabor real, acelgas con hoja gruesa, lechugas con raíz viva",
+            "Perfecta para complementar la caja de suscripción o como prueba puntual",
+            "Lo que te llega es lo que habrías cultivado tú mismo si tuvieras huerto"
+          ]
         }
       }
     },
@@ -219,7 +267,16 @@
         "es": {
           "name": "Selección de fruta de temporada",
           "shortDescription": "Fruta escogida para hogares que quieren sabor, origen y compra bien hecha.",
-          "description": "Una selección de temporada que cambia con el calendario natural y acompaña desayunos, meriendas y una forma más cuidada de comprar fruta para casa."
+          "description": "4-5 variedades de fruta madurada en planta, no en cámara. Lo que la finca y los frutales vecinos de Nombela dan en su mejor momento del año. La fruta se corta el día que sale para tu casa, así llega con el azúcar, el aroma y la textura reales — no con la firmeza artificial que exige la cadena de supermercado. Sin tratamientos postcosecha, sin ceras, sin cámaras de frío prolongadas.",
+          "ingredients": "4-5 variedades de fruta de temporada (aprox. 3,5-4 kg total) · ejemplos según época: cerezas del Jerte, fresas de temporada, melocotón amarillo, nectarina, manzana reineta, pera conferencia, higo breva, uva moscatel, granada, níspero · fruta de productores locales con el mismo método, cuando la finca no da suficiente variedad",
+          "benefits": [
+            "Madurada en planta hasta el día del corte — sabor y aroma reales",
+            "Variedades de temporada auténtica: nada de mango en enero o cerezas en noviembre",
+            "Sin ceras, sin gases de maduración artificial, sin tratamientos postcosecha",
+            "Perfecta para desayunos, meriendas, batidos y postres sin azúcar añadido",
+            "Textura real: melocotones jugosos, manzanas crujientes, fresas aromáticas",
+            "Permacultura y producción local — si no la da la finca, viene de vecinos con el mismo método"
+          ]
         }
       }
     },
