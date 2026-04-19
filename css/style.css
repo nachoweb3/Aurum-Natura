@@ -3286,3 +3286,26 @@ h3 {
     background-size: 28px 28px;
   }
 }
+
+.hero-title-plate {
+  display: inline-block;
+  background: #000000;
+  color: #f5d89a;
+  padding: 18px 32px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(245, 216, 154, 0.55);
+  box-shadow:
+    0 0 0 1px rgba(245, 216, 154, 0.2),
+    0 0 22px rgba(245, 216, 154, 0.35),
+    0 0 48px rgba(245, 216, 154, 0.22),
+    inset 0 0 18px rgba(245, 216, 154, 0.12);
+  text-shadow: 0 0 14px rgba(245, 216, 154, 0.35);
+  -webkit-text-stroke: 0;
+}
+
+@media (max-width: 640px) {
+  .hero-title-plate {
+    padding: 14px 20px;
+    border-radius: 14px;
+  }
+}

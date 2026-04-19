@@ -93,7 +93,7 @@ export async function renderHomePage(app) {
       <div class="video-hero__content">
         <img src="assets/img/logo.png" alt="Aurum Natura" class="brand-logo" />
         <p class="hero-tagline">${copy.kicker}</p>
-        <h1>${copy.title}</h1>
+        <h1 class="hero-title-plate">${copy.title}</h1>
         <p class="hero-copy__lede">${copy.intro}</p>
         <div class="hero-copy__actions">
           <a href="${app.createUrl('productos.html')}" class="button button--primary">${copy.primary}</a>
