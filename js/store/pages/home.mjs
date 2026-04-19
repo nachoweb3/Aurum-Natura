@@ -84,7 +84,7 @@ export async function renderHomePage(app) {
   app.shell.pageRoot.innerHTML = `
     <section class="video-hero">
       <div class="video-hero__media">
-        <video autoplay muted loop playsinline poster="${getMediaAsset('homeHero')}">
+        <video autoplay muted loop playsinline>
           <source src="assets/img/extras/VIDEOHEADER.mp4" type="video/mp4" />
         </video>
       </div>
